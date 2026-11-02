@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DoughType" format=3 uid="uid://c5h2glwx6bd3t"]
+
+[ext_resource type="Script" uid="uid://dtvo6h8m3136a" path="res://scripts/battle/DoughType.cs" id="1_dtvv0"]
+
+[resource]
+script = ExtResource("1_dtvv0")
+Name = "Centeno"
+Id = "centeno"
+Weak = PackedStringArray("integral", "oblea")
+Resist = PackedStringArray("blanco")
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
