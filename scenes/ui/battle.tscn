@@ -177,3 +177,4 @@ autowrap_mode = 3
 
 [connection signal="pressed" from="Panel/main/Attack" to="." method="ShowBasicAttackMenu"]
 [connection signal="pressed" from="Panel/main/bread" to="." method="ShowBreadAttackMenu"]
+[connection signal="pressed" from="Panel/attack/MarginContainer2/Button4" to="." method="ShowMainMenu"]
