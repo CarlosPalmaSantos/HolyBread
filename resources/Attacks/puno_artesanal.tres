@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Attack" format=3 uid="uid://b6uwittxgurb1"]
+
+[ext_resource type="Resource" uid="uid://dfbyd68s7hp8g" path="res://resources/Doughs/blanco.tres" id="1_0emta"]
+[ext_resource type="Script" uid="uid://crtwedyyvaw5g" path="res://scripts/battle/Attack.cs" id="1_ld2ca"]
+
+[resource]
+script = ExtResource("1_ld2ca")
+Name = "Puño Artesanal"
+DoughType = ExtResource("1_0emta")
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"

@@ -1,0 +1,64 @@
+[gd_resource type="Theme" format=3 uid="uid://cd1o8bhkt0xo"]
+
+[ext_resource type="FontFile" uid="uid://c0fsdy16b3wie" path="res://resources/PixelifySans-VariableFont_wght.ttf" id="1_d4nwg"]
+
+[sub_resource type="FontVariation" id="FontVariation_h3t5t"]
+base_font = ExtResource("1_d4nwg")
+variation_opentype = {
+"weight": 700
+}
+opentype_features = {
+"calt": false,
+"ss04": true,
+"tnum": true
+}
+spacing_top = -1
+spacing_bottom = -1
+
+[sub_resource type="FontVariation" id="FontVariation_bnwdf"]
+base_font = ExtResource("1_d4nwg")
+variation_opentype = {
+"weight": 700
+}
+variation_transform = Transform2D(1, 0.2, 0, 1, 0, 0)
+opentype_features = {
+"calt": false,
+"ss04": true,
+"tnum": true
+}
+spacing_top = -1
+spacing_bottom = -1
+
+[sub_resource type="FontVariation" id="FontVariation_lx1xq"]
+base_font = ExtResource("1_d4nwg")
+variation_opentype = {
+"weight": 400
+}
+variation_transform = Transform2D(1, 0.2, 0, 1, 0, 0)
+opentype_features = {
+"calt": false,
+"ss04": true,
+"tnum": true
+}
+spacing_top = -1
+spacing_bottom = -1
+
+[sub_resource type="FontVariation" id="FontVariation_ctxtu"]
+base_font = ExtResource("1_d4nwg")
+variation_opentype = {
+"weight": 400
+}
+opentype_features = {
+"calt": false,
+"ss04": true,
+"tnum": true
+}
+spacing_top = -1
+spacing_bottom = -1
+
+[resource]
+Button/fonts/font = ExtResource("1_d4nwg")
+RichTextLabel/fonts/bold_font = SubResource("FontVariation_h3t5t")
+RichTextLabel/fonts/bold_italics_font = SubResource("FontVariation_bnwdf")
+RichTextLabel/fonts/italics_font = SubResource("FontVariation_lx1xq")
+RichTextLabel/fonts/normal_font = SubResource("FontVariation_ctxtu")

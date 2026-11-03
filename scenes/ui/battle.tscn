@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://bw13yaim54o43"]
+
+[ext_resource type="Script" uid="uid://b26vrkcm2jbew" path="res://scripts/BattleUi.cs" id="1_bg8yg"]
+[ext_resource type="Script" uid="uid://irur1cjkbubm" path="res://scripts/battle/BattleManager.cs" id="1_m63d4"]
+[ext_resource type="Theme" uid="uid://cd1o8bhkt0xo" path="res://resources/theme.tres" id="2_bg8yg"]
+[ext_resource type="Resource" uid="uid://b6uwittxgurb1" path="res://resources/Attacks/puno_artesanal.tres" id="3_evq16"]
+[ext_resource type="Resource" uid="uid://dfbyd68s7hp8g" path="res://resources/Doughs/blanco.tres" id="5_tfm2p"]
+[ext_resource type="Resource" uid="uid://b3fm511m6stxr" path="res://resources/Doughs/arroz.tres" id="6_fbd0j"]
+[ext_resource type="Script" uid="uid://dnv0pgk1tcyws" path="res://scripts/battle/Entity.cs" id="6_mqini"]
+[ext_resource type="Script" uid="uid://cqjs7dteads80" path="res://scripts/battle/Enemy.cs" id="7_04581"]
+
+[sub_resource type="Resource" id="Resource_epnum"]
+script = ExtResource("6_mqini")
+Name = "Ejemplo"
+Description = "Pan"
+DoughType = ExtResource("5_tfm2p")
+CurrentHp = 10
+Hp = 10
+Atk = 10
+Def = 10
+Spd = 10
+AttackSet = Array[Object]([ExtResource("3_evq16")])
+metadata/_custom_type_script = "uid://dnv0pgk1tcyws"
+
+[sub_resource type="Resource" id="Resource_eovmx"]
+script = ExtResource("7_04581")
+DoughType = ExtResource("6_fbd0j")
+CurrentHp = 10
+Hp = 10
+Atk = 10
+Def = 10
+Spd = 10
+AttackSet = null
+metadata/_custom_type_script = "uid://cqjs7dteads80"
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=942398595 node_paths=PackedStringArray("Manager", "MainMenu", "AttackMenu", "Attack1Button", "Attack2Button", "Attack3Button")]
+script = ExtResource("1_bg8yg")
+Manager = NodePath("Node")
+MainMenu = NodePath("Panel/main")
+AttackMenu = NodePath("Panel/attack")
+Attack1Button = NodePath("Panel/attack/MarginContainer/Main/Attack1")
+Attack2Button = NodePath("Panel/attack/MarginContainer/Main/Attack2")
+Attack3Button = NodePath("Panel/attack/MarginContainer/Main/Attack3")
+
+[node name="Node" type="Node" parent="." unique_id=2039075978 node_paths=PackedStringArray("Ui")]
+script = ExtResource("1_m63d4")
+Ui = NodePath("..")
+Player = SubResource("Resource_epnum")
+Enemy = SubResource("Resource_eovmx")
+
+[node name="Panel" type="Panel" parent="." unique_id=678694151]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 300.0
+grow_vertical = 2
+
+[node name="main" type="VBoxContainer" parent="Panel" unique_id=1737144836]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="Attack" type="Button" parent="Panel/main" unique_id=110686804]
+custom_minimum_size = Vector2(200, 0)
+custom_maximum_size = Vector2(200, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_bg8yg")
+theme_override_font_sizes/font_size = 40
+text = "ATACAR"
+autowrap_mode = 3
+
+[node name="bread" type="Button" parent="Panel/main" unique_id=934590800]
+custom_minimum_size = Vector2(200, 0)
+custom_maximum_size = Vector2(200, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_bg8yg")
+theme_override_font_sizes/font_size = 40
+text = "PAN"
+autowrap_mode = 3
+
+[node name="run away" type="Button" parent="Panel/main" unique_id=303882329]
+custom_minimum_size = Vector2(200, 0)
+custom_maximum_size = Vector2(200, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_bg8yg")
+theme_override_font_sizes/font_size = 40
+text = "HUIR"
+autowrap_mode = 3
+
+[node name="attack" type="VBoxContainer" parent="Panel" unique_id=2075663717]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/attack" unique_id=52424533]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 80
+
+[node name="Main" type="VBoxContainer" parent="Panel/attack/MarginContainer" unique_id=1084024592]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Attack1" type="Button" parent="Panel/attack/MarginContainer/Main" unique_id=408097863]
+custom_minimum_size = Vector2(250, 0)
+custom_maximum_size = Vector2(250, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_bg8yg")
+theme_override_font_sizes/font_size = 30
+text = "Ataque 1"
+autowrap_mode = 3
+clip_text = true
+
+[node name="Attack2" type="Button" parent="Panel/attack/MarginContainer/Main" unique_id=829233442]
+custom_minimum_size = Vector2(250, 0)
+custom_maximum_size = Vector2(250, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_bg8yg")
+theme_override_font_sizes/font_size = 30
+text = "Ataque 2
+
+"
+autowrap_mode = 3
+
+[node name="Attack3" type="Button" parent="Panel/attack/MarginContainer/Main" unique_id=1753997078]
+custom_minimum_size = Vector2(250, 0)
+custom_maximum_size = Vector2(250, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_bg8yg")
+theme_override_font_sizes/font_size = 30
+text = "Ataque 3
+
+"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/attack" unique_id=1128810136]
+layout_mode = 2
+theme_override_constants/margin_bottom = 40
+
+[node name="Button4" type="Button" parent="Panel/attack/MarginContainer2" unique_id=129296074]
+custom_minimum_size = Vector2(200, 0)
+custom_maximum_size = Vector2(200, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_bg8yg")
+theme_override_font_sizes/font_size = 30
+text = "Volver
+
+"
+autowrap_mode = 3
+
+[connection signal="pressed" from="Panel/main/Attack" to="." method="ShowBasicAttackMenu"]
+[connection signal="pressed" from="Panel/main/bread" to="." method="ShowBreadAttackMenu"]
