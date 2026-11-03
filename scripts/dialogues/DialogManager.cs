@@ -32,18 +32,39 @@ public partial class DialogManager : CanvasLayer
 
     public override void _UnhandledInput(InputEvent @event)
     {
-        if (WaitingForContinue && @event.IsActionPressed("ui_accept"))
+        if (@event.IsActionPressed("ui_accept"))
         {
-            Continue = true;
-        }
-        else if (!WaitingForContinue && @event.IsActionPressed("ui_accept"))
-        {
-            FastForward = true;
+            if (WaitingForContinue) Continue = true;
+            else FastForward = true;
         }
     }
 
 
-    public static void Play(Dialogue dialogue) => Co.Run(Instance.PlayDialogueCoroutine(dialogue));
+    public static void Play(string text, float speed = 1) => Co.Run(PlayCoroutine(text, speed));
+
+    public static IEnumerator PlayCoroutine(string text, float speed = 1)
+    {
+        yield return Instance.PlayDialogueCoroutine(
+            new Dialogue()
+            {
+                Lines =
+                [
+                    new DialogueLine
+                    {
+                        Text = text,
+                        Speed = speed,
+                    }
+                ],
+                Shadow = true,
+            });
+    }
+
+    public static void Play(Dialogue dialogue) => Co.Run(PlayCoroutine(dialogue));
+
+    public static IEnumerator PlayCoroutine(Dialogue dialogue)
+    {
+        yield return Instance.PlayDialogueCoroutine(dialogue);
+    }
 
     [Export] public bool Continue { get; private set; }
     private bool WaitingForContinue { get; set; }
@@ -52,10 +73,10 @@ public partial class DialogManager : CanvasLayer
     {
         TextLabel.Text = "";
         MainPanel.Show();
-        
-        if(dialogue.Shadow) Background.Show();
+
+        if (dialogue.Shadow) Background.Show();
         else Background.Hide();
-        
+
         foreach (var line in dialogue.Lines)
         {
             if (!string.IsNullOrEmpty(line.Speaker))
@@ -78,6 +99,7 @@ public partial class DialogManager : CanvasLayer
         }
 
         MainPanel.Hide();
+        Background.Hide();
 
         dialogue.FinishDialogue();
     }
@@ -104,5 +126,12 @@ public partial class DialogManager : CanvasLayer
         }
 
         FastForward = false;
+    }
+
+    public void OnMainPanelGuiInput(InputEvent @event)
+    {
+        if (@event.IsActionPressed("ui_accept"))
+        {
+        }
     }
 }

@@ -21,6 +21,9 @@ public partial class Entity : Resource
     [Export] public Attack[] AttackSet { get; set; }
     [Export] public Bread Bread { get; set; }
 
+    public Attack GetAttack(int attack) => AttackSet.Length > attack ? AttackSet[attack] : null;
+    public Attack GetBreadAttack(int attack) => Bread.AttackSet.Length > attack ? Bread.AttackSet[attack] : null;
+
     public void TakeDamage(float damage)
     {
         CurrentHp = Mathf.FloorToInt(Mathf.Clamp(CurrentHp - damage, 0, Hp));

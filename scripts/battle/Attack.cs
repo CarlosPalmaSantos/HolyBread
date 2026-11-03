@@ -7,11 +7,21 @@ public partial class Attack : Resource
 {
     [Export] public string Name { get; set; }
     [Export(PropertyHint.MultilineText)] public string Description { get; set; }
-    [Export] public DoughType DoughType { get; set; }
+    [Export] private DoughType DoughType { get; set; }
     [Export] public int Power { get; set; }
 
-    public virtual void Act(Entity user, Entity target)
+    public virtual DoughType GetDoughType(Entity user, Entity target) => DoughType;
+
+    public virtual void Act(Entity user, Entity target, out Effectiveness effectiveness)
     {
-        target.TakeDamage((float)Power * user.Atk / target.Def);
+        var type = GetDoughType(user, target);
+        target.TakeDamage(target.DoughType.GetMultiplier(type, out effectiveness) * Power * user.Atk / target.Def);
+    }
+
+    public enum Effectiveness
+    {
+        NORMAL,
+        WEAK,
+        RESIST
     }
 }

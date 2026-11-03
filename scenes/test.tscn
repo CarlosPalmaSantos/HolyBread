@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://cx3flur656dqs"]
 
+[ext_resource type="PackedScene" uid="uid://bw13yaim54o43" path="res://scenes/ui/battle.tscn" id="4_74lek"]
+
 [node name="Test" type="Node2D" unique_id=86767213]
+
+[node name="CanvasLayer" parent="." unique_id=942398595 instance=ExtResource("4_74lek")]

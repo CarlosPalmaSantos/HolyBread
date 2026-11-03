@@ -1,15 +1,13 @@
 [gd_scene format=3 uid="uid://bpiyqjyitfhmr"]
 
 [ext_resource type="Script" uid="uid://hgmhq318v3q3" path="res://scripts/dialogues/DialogManager.cs" id="1_tsvfq"]
-[ext_resource type="FontFile" uid="uid://c0fsdy16b3wie" path="res://resources/PixelifySans-VariableFont_wght.ttf" id="1_xygkm"]
+[ext_resource type="Theme" uid="uid://cd1o8bhkt0xo" path="res://resources/theme.tres" id="2_32ftu"]
 
-[sub_resource type="FontVariation" id="FontVariation_uffp4"]
-base_font = ExtResource("1_xygkm")
-variation_opentype = {
-2003265652: 600
-}
-spacing_glyph = 1
-spacing_space = 1
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7yt6"]
+bg_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32ftu"]
+bg_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
 
 [node name="DialogLayer" type="CanvasLayer" unique_id=476305273 node_paths=PackedStringArray("MainPanel", "SpeakerPanel", "Background", "TextLabel", "SpeakerLabel")]
 layer = 10
@@ -38,6 +36,7 @@ offset_right = -852.0
 offset_bottom = -173.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h7yt6")
 
 [node name="MarginContainer" type="MarginContainer" parent="SpeakerPanel" unique_id=67204622]
 layout_mode = 1
@@ -53,8 +52,7 @@ theme_override_constants/margin_bottom = 15
 
 [node name="SpeakerText" type="RichTextLabel" parent="SpeakerPanel/MarginContainer" unique_id=214608832]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("1_xygkm")
-theme_override_fonts/bold_font = SubResource("FontVariation_uffp4")
+theme = ExtResource("2_32ftu")
 theme_override_font_sizes/normal_font_size = 26
 theme_override_font_sizes/bold_font_size = 28
 bbcode_enabled = true
@@ -72,6 +70,7 @@ anchor_bottom = 1.0
 offset_top = -164.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_32ftu")
 
 [node name="MarginContainer" type="MarginContainer" parent="MainPanel" unique_id=1340328574]
 layout_mode = 1
@@ -87,10 +86,11 @@ theme_override_constants/margin_bottom = 20
 
 [node name="MainText" type="RichTextLabel" parent="MainPanel/MarginContainer" unique_id=1088278146]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("1_xygkm")
-theme_override_fonts/bold_font = SubResource("FontVariation_uffp4")
+theme = ExtResource("2_32ftu")
 theme_override_font_sizes/normal_font_size = 26
 theme_override_font_sizes/bold_font_size = 28
 bbcode_enabled = true
 text = "TEXT TO SPEAK"
 tab_size = 5
+
+[connection signal="gui_input" from="MainPanel" to="." method="OnMainPanelGuiInput"]
