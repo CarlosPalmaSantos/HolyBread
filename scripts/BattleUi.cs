@@ -5,6 +5,7 @@ using HolyBread.scripts.battle;
 public partial class BattleUi : CanvasLayer
 {
     [Export] public BattleManager Manager { get; set; }
+    [Export] public Panel Panel { get; set; }
     [Export] public Container MainMenu { get; set; }
     [Export] public Container AttackMenu { get; set; }
 
@@ -23,8 +24,9 @@ public partial class BattleUi : CanvasLayer
     {
         MainMenu.Hide();
         AttackMenu.Hide();
+        Panel.Hide();
     }
-    
+
     public void ShowMainMenu()
     {
         MainMenu.Show();

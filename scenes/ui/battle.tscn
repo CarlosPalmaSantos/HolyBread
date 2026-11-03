@@ -33,9 +33,10 @@ Spd = 10
 AttackSet = null
 metadata/_custom_type_script = "uid://cqjs7dteads80"
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=942398595 node_paths=PackedStringArray("Manager", "MainMenu", "AttackMenu", "Attack1Button", "Attack2Button", "Attack3Button")]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=942398595 node_paths=PackedStringArray("Manager", "Panel", "MainMenu", "AttackMenu", "Attack1Button", "Attack2Button", "Attack3Button")]
 script = ExtResource("1_bg8yg")
 Manager = NodePath("Node")
+Panel = NodePath("Panel")
 MainMenu = NodePath("Panel/main")
 AttackMenu = NodePath("Panel/attack")
 Attack1Button = NodePath("Panel/attack/MarginContainer/Main/Attack1")
