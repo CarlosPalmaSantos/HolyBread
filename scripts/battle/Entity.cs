@@ -8,60 +8,69 @@ namespace HolyBread.scripts.battle;
 [GlobalClass]
 public partial class Entity : Resource, IBinary<Entity>
 {
-	[Export] public string Name { get; set; }
-	[Export(PropertyHint.MultilineText)] public string Description { get; set; }
+    [Export] public string Name { get; set; }
+    [Export(PropertyHint.MultilineText)] public string Description { get; set; }
 
-	[Export] public DoughType DoughType { get; set; }
+    [Export] public DoughType DoughType { get; set; }
 
-	[Export] public int CurrentHp { get; set; }
-	[Export] public int Hp { get; set; }
-	[Export] public int Atk { get; set; }
-	[Export] public int Def { get; set; }
-	[Export] public int Spd { get; set; }
+    [Export] public int CurrentHp { get; set; }
+    [Export] public int Level { get; set; }
 
-	[Export] public Texture2D Texture { get; set; }
-	[Export] public Attack[] AttackSet { get; set; }
-	[Export] public Bread[] Bread { get; set; }
+    [Export] private int BaseHp { get; set; }
+    public int Hp => Mathf.FloorToInt(Mathf.Pow(DoughType.HpAff, Level) * BaseHp);
 
-	public Attack GetAttack(int attack) => AttackSet.Length > attack ? AttackSet[attack] : null;
-	public Attack GetBreadAttack(int bread) => Bread.Length > bread ? Bread[bread].Attack : null;
+    [Export] private int BaseAtk { get; set; }
+    public int Atk => Mathf.FloorToInt(Mathf.Pow(DoughType.AtkAff, Level) * BaseAtk);
 
-	public void TakeDamage(float damage)
-	{
-		CurrentHp = Mathf.FloorToInt(Mathf.Clamp(CurrentHp - damage, 0, Hp));
-		GD.Print("chp: ", CurrentHp);
-	}
+    [Export] private int BaseDef { get; set; }
+    public int Def => Mathf.FloorToInt(Mathf.Pow(DoughType.DefAff, Level) * BaseDef);
 
-	public void WriteBinary(BinaryWriter writer)
-	{
-		
-		writer.Write(Name);
-		writer.Write(Description);
-		DoughType.WriteBinary(writer);
-		writer.Write(CurrentHp);
-		writer.Write(Hp);
-		writer.Write(Atk);
-		writer.Write(Def);
-		writer.Write(Spd);
+    [Export] private int BaseSpd { get; set; }
+    public int Spd => Mathf.FloorToInt(Mathf.Pow(DoughType.SpdAff, Level) * BaseSpd);
 
-		AttackSet.WriteBinary(writer);
-		Bread.WriteBinary(writer);
-	}
+    [Export] public Texture2D Texture { get; set; }
+    [Export] public Attack[] AttackSet { get; set; }
+    [Export] public Bread[] BreadList { get; set; }
 
-	public static Entity ReadBinary(BinaryReader reader)
-	{
-		return new Entity()
-		{
-			Name = reader.ReadString(),
-			Description = reader.ReadString(),
-			DoughType = DoughType.ReadBinary(reader),
-			Hp = reader.ReadInt32(),
-			Atk = reader.ReadInt32(),
-			Def = reader.ReadInt32(),
-			Spd = reader.ReadInt32(),
-			
-			AttackSet = Binary.ReadArray<Attack>(reader),
-			Bread = Binary.ReadArray<Bread>(reader),
-		};
-	}
+    public Attack GetAttack(int attack) => AttackSet.Length > attack ? AttackSet[attack] : null;
+    public Attack GetBreadAttack(int attack) => BreadList.Length > attack ? BreadList[attack].Attack : null;
+
+    public void TakeDamage(float damage)
+    {
+        CurrentHp = Mathf.FloorToInt(Mathf.Clamp(CurrentHp - damage, 0, Hp));
+    }
+
+    public void WriteBinary(BinaryWriter writer)
+    {
+        writer.Write(Name);
+        writer.Write(Description);
+        writer.Write(DoughType);
+        writer.Write(CurrentHp);
+        writer.Write(Hp);
+        writer.Write(Atk);
+        writer.Write(Def);
+        writer.Write(Spd);
+
+        writer.Write(AttackSet);
+        writer.Write(BreadList);
+    }
+
+    public static Entity ReadBinary(BinaryReader reader)
+    {
+        return new()
+        {
+            Name = reader.ReadString(),
+            Description = reader.ReadString(),
+            DoughType = DoughType.ReadBinary(reader),
+            CurrentHp = reader.ReadInt32(),
+
+            BaseHp = reader.ReadInt32(),
+            BaseAtk = reader.ReadInt32(),
+            BaseDef = reader.ReadInt32(),
+            BaseSpd = reader.ReadInt32(),
+
+            AttackSet = reader.ReadArray<Attack>(),
+            BreadList = reader.ReadArray<Bread>(),
+        };
+    }
 }

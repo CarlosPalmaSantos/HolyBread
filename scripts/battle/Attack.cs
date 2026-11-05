@@ -34,8 +34,7 @@ public partial class Attack : Resource, IBinary<Attack>
 
     public static Attack ReadBinary(BinaryReader reader)
     {
-        var uid= reader.ReadInt64();
-        return GD.Load<Attack>($"uid://${uid}");
-
+        var uid = reader.ReadInt64();
+        return GD.Load<Attack>($"uid://{uid}");
     }
 }

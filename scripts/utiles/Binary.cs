@@ -16,15 +16,18 @@ public interface IBinary<T> : IBinary
 
 public static class Binary
 {
-    public static void WriteBinary<T>(this T[] array, BinaryWriter writer) where T : IBinary
+    public static void Write<T>(this BinaryWriter writer, T obj) where T : IBinary<T> =>
+        obj.WriteBinary(writer);
+
+    public static void Write<T>(this BinaryWriter writer, T[] array) where T : IBinary<T>
     {
         writer.Write(array.Length);
         foreach (var item in array)
             item.WriteBinary(writer);
     }
 
-    public static void WriteBinary<TK, TV>(this Dictionary<TK, TV> array, BinaryWriter writer)
-        where TK : IBinary where TV : IBinary
+    public static void Write<K, V>(this BinaryWriter writer, Dictionary<K, V> array)
+        where K : IBinary<K> where V : IBinary<V>
     {
         writer.Write(array.Keys.Count);
         foreach (var item in array)
@@ -33,9 +36,11 @@ public static class Binary
             item.Value.WriteBinary(writer);
         }
     }
-    
-    
-    public static T[] ReadArray<T>(BinaryReader reader) where T : IBinary<T>
+
+
+    public static T Read<T>(this BinaryReader reader) where T : IBinary<T> => T.ReadBinary(reader);
+
+    public static T[] ReadArray<T>(this BinaryReader reader) where T : IBinary<T>
     {
         int length = reader.ReadInt32();
         T[] array = new T[length];
@@ -43,11 +48,12 @@ public static class Binary
         {
             array[i] = T.ReadBinary(reader);
         }
+
         return array;
     }
 
-    public static Dictionary<TK, TV> ReadDictionary<TK, TV>(BinaryReader reader)
-        where TK : IBinary<TK> 
+    public static Dictionary<TK, TV> ReadDictionary<TK, TV>(this BinaryReader reader)
+        where TK : IBinary<TK>
         where TV : IBinary<TV>
     {
         int count = reader.ReadInt32();
@@ -58,6 +64,7 @@ public static class Binary
             TV value = TV.ReadBinary(reader);
             dictionary.Add(key, value);
         }
+
         return dictionary;
     }
 }

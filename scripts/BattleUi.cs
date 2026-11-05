@@ -27,9 +27,9 @@ public partial class BattleUi : CanvasLayer
         Attack2Button.Pressed += () => Manager.PlayerAction(ActionType.ATTACK, 1);
         Attack3Button.Pressed += () => Manager.PlayerAction(ActionType.ATTACK, 2);
 
-        for (var i = 0; i < Manager.Player.Bread.Length; i++)
+        for (var i = 0; i < Manager.Player.BreadList.Length; i++)
         {
-            var bread = Manager.Player.Bread[i];
+            var bread = Manager.Player.BreadList[i];
             var b = new Button();
             b.Text = bread.Name;
             

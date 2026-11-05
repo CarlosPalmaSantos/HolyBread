@@ -18,7 +18,7 @@ public partial class BattleManager : Node
 
     private static void UseBreadAttack(Entity user, Entity target, int attack,
         out Attack.Effectiveness effectiveness) =>
-        target.Bread[attack].Attack.Act(user, target, out effectiveness);
+        target.BreadList[attack].Attack.Act(user, target, out effectiveness);
 
     public void PlayerAction(ActionType actionType, int arg)
     {

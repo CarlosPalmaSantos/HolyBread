@@ -6,7 +6,6 @@ using HolyBread.scripts.utiles;
 
 namespace HolyBread.scripts.battle;
 
-// TODO: Agregar IBinary
 public class Player : IBinary<Player>
 {
     private Dictionary<DoughType, Entity> DoughVariants { get; init; } = [];
@@ -20,13 +19,13 @@ public class Player : IBinary<Player>
 
     public void WriteBinary(BinaryWriter writer)
     {
-        DoughVariants.WriteBinary(writer);
+        writer.Write(DoughType);
         DoughType.WriteBinary(writer);
     }
 
     public static Player ReadBinary(BinaryReader reader) => new()
     {
-        DoughVariants = Binary.ReadDictionary<DoughType, Entity>(reader),
-        DoughType = DoughType.ReadBinary(reader),
+        DoughVariants = reader.ReadDictionary<DoughType, Entity>(),
+        DoughType = reader.Read<DoughType>(),
     };
 }
