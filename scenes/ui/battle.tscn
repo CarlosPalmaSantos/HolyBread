@@ -14,23 +14,17 @@ script = ExtResource("6_mqini")
 Name = "Ejemplo"
 Description = "Pan"
 DoughType = ExtResource("5_tfm2p")
-CurrentHp = 10
-Hp = 10
-Atk = 10
-Def = 10
-Spd = 10
+CurrentHp = 100
 AttackSet = Array[Object]([ExtResource("3_evq16")])
+Bread = null
 metadata/_custom_type_script = "uid://dnv0pgk1tcyws"
 
 [sub_resource type="Resource" id="Resource_eovmx"]
 script = ExtResource("7_04581")
 DoughType = ExtResource("6_fbd0j")
-CurrentHp = 10
-Hp = 10
-Atk = 10
-Def = 10
-Spd = 10
+CurrentHp = 100
 AttackSet = null
+Bread = null
 metadata/_custom_type_script = "uid://cqjs7dteads80"
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=942398595 node_paths=PackedStringArray("Manager", "Panel", "MainMenu", "AttackMenu", "Attack1Button", "Attack2Button", "Attack3Button")]

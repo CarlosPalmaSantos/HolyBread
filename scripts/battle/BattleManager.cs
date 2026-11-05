@@ -18,7 +18,7 @@ public partial class BattleManager : Node
 
     private static void UseBreadAttack(Entity user, Entity target, int attack,
         out Attack.Effectiveness effectiveness) =>
-        target.Bread.AttackSet[attack].Act(user, target, out effectiveness);
+        target.Bread[attack].Attack.Act(user, target, out effectiveness);
 
     public void PlayerAction(ActionType actionType, int arg)
     {
@@ -57,11 +57,11 @@ public partial class BattleManager : Node
             case ActionType.NONE:
                 break;
             case ActionType.ATTACK:
-                yield return DialogManager.PlayCoroutine($"{user.Name} usó [b]{user.AttackSet[action.Item2].Name}[/b]");
+                yield return DialogManager.PlayCoroutine($"[b]{user.Name}[/b] usó [b]{user.AttackSet[action.Item2].Name}[/b]");
                 UseAttack(user, target, action.Item2, out var basicEff);
                 break;
             case ActionType.BREAD:
-                yield return DialogManager.PlayCoroutine($"{user.Name} usó [b]{user.AttackSet[action.Item2].Name}[/b]");
+                yield return DialogManager.PlayCoroutine($"[b]{user.Name}[/b] usó [b]{user.AttackSet[action.Item2].Name}[/b]");
                 UseBreadAttack(user, target, action.Item2, out var breadEff);
                 break;
             default:

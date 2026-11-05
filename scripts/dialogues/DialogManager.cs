@@ -120,7 +120,7 @@ public partial class DialogManager : CanvasLayer
             if (!richFlag)
             {
                 TextLabel.Text = str;
-                yield return FastForward ? null : Co.Wait(0.05f / speed);
+                yield return FastForward ? null : Co.Wait(0.01f / speed);
             }
             else if (c == ']') richFlag = false;
         }
@@ -132,6 +132,7 @@ public partial class DialogManager : CanvasLayer
     {
         if (@event.IsActionPressed("ui_accept"))
         {
+            //TODO: Agregar esto :3
         }
     }
 }

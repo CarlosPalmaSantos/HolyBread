@@ -8,4 +8,6 @@ Name = "Maiz"
 Id = "maiz"
 Weak = PackedStringArray("arroz", "maiz")
 Resist = PackedStringArray("integral", "brioche")
+AtkAff = 1.35
+SpdAff = 1.15
 metadata/_custom_type_script = "uid://dtvo6h8m3136a"

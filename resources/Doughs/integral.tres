@@ -8,4 +8,6 @@ Name = "Integral"
 Id = "integral"
 Weak = PackedStringArray("brioche", "oblea")
 Resist = PackedStringArray("centeno")
+AtkAff = 1.15
+DefAff = 1.35
 metadata/_custom_type_script = "uid://dtvo6h8m3136a"

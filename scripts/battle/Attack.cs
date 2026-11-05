@@ -1,9 +1,11 @@
+using System.IO;
 using Godot;
+using HolyBread.scripts.utiles;
 
 namespace HolyBread.scripts.battle;
 
 [GlobalClass]
-public partial class Attack : Resource
+public partial class Attack : Resource, IBinary<Attack>
 {
     [Export] public string Name { get; set; }
     [Export(PropertyHint.MultilineText)] public string Description { get; set; }
@@ -23,5 +25,17 @@ public partial class Attack : Resource
         NORMAL,
         WEAK,
         RESIST
+    }
+
+    public void WriteBinary(BinaryWriter writer)
+    {
+        writer.Write(ResourceLoader.GetResourceUid(ResourcePath));
+    }
+
+    public static Attack ReadBinary(BinaryReader reader)
+    {
+        var uid= reader.ReadInt64();
+        return GD.Load<Attack>($"uid://${uid}");
+
     }
 }

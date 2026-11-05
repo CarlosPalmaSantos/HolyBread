@@ -8,4 +8,6 @@ Name = "Centeno"
 Id = "centeno"
 Weak = PackedStringArray("integral", "oblea")
 Resist = PackedStringArray("blanco")
+DefAff = 1.35
+SpdAff = 1.15
 metadata/_custom_type_script = "uid://dtvo6h8m3136a"
