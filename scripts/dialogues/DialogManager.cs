@@ -25,20 +25,38 @@ public partial class DialogManager : CanvasLayer
 
     public override void _Ready()
     {
+        MainPanel.GuiInput += OnMainPanelGuiInput;
+        
         MainPanel.Hide();
         SpeakerPanel.Hide();
         Background.Hide();
     }
 
+    public override void _ExitTree()
+    {
+        MainPanel.GuiInput -= OnMainPanelGuiInput;
+    }
+
+    private void OnMainPanelGuiInput(InputEvent @event)
+    {
+        if (@event is InputEventMouseButton mb)
+            GD.Print($"Botón: {mb.ButtonIndex}, Pressed: {mb.Pressed}");
+        
+        if(@event is InputEventMouseButton {ButtonIndex: MouseButton.Left, Pressed: true})
+            Advance();
+    }
+
     public override void _UnhandledInput(InputEvent @event)
     {
         if (@event.IsActionPressed("ui_accept"))
-        {
-            if (WaitingForContinue) Continue = true;
-            else FastForward = true;
-        }
+            Advance();
     }
 
+    private void Advance()
+    {
+        if (WaitingForContinue) Continue = true;
+        else FastForward = true;
+    }
 
     public static void Play(string text, float speed = 1) => Co.Run(PlayCoroutine(text, speed));
 
@@ -55,7 +73,7 @@ public partial class DialogManager : CanvasLayer
                         Speed = speed,
                     }
                 ],
-                Shadow = true,
+                Shadow = false,
             });
     }
 
@@ -126,13 +144,5 @@ public partial class DialogManager : CanvasLayer
         }
 
         FastForward = false;
-    }
-
-    public void OnMainPanelGuiInput(InputEvent @event)
-    {
-        if (@event.IsActionPressed("ui_accept"))
-        {
-            //TODO: Agregar esto :3
-        }
     }
 }

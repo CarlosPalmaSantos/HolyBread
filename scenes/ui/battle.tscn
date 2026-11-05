@@ -8,34 +8,74 @@
 [ext_resource type="Resource" uid="uid://b3fm511m6stxr" path="res://resources/Doughs/arroz.tres" id="6_fbd0j"]
 [ext_resource type="Script" uid="uid://dnv0pgk1tcyws" path="res://scripts/battle/Entity.cs" id="6_mqini"]
 [ext_resource type="Script" uid="uid://cqjs7dteads80" path="res://scripts/battle/Enemy.cs" id="7_04581"]
+[ext_resource type="Texture2D" uid="uid://b2yylqvqk5yu5" path="res://resources/Sprites/granjera_1_1.png" id="7_mqini"]
+[ext_resource type="Texture2D" uid="uid://ks4sqhjahn62" path="res://resources/Sprites/player.png" id="7_tfm2p"]
+[ext_resource type="Texture2D" uid="uid://cylpgf5nhhr73" path="res://icon.svg" id="9_xeu4k"]
 
 [sub_resource type="Resource" id="Resource_epnum"]
 script = ExtResource("6_mqini")
 Name = "Ejemplo"
 Description = "Pan"
 DoughType = ExtResource("5_tfm2p")
-CurrentHp = 100
+CurrentHp = -1
+Level = 1
+BaseHp = 100
+BaseAtk = 1
+BaseDef = 1
+BaseSpd = 1
 AttackSet = Array[Object]([ExtResource("3_evq16")])
-Bread = null
+BreadList = null
 metadata/_custom_type_script = "uid://dnv0pgk1tcyws"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeu4k"]
+atlas = ExtResource("7_mqini")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="Resource" id="Resource_eovmx"]
 script = ExtResource("7_04581")
+Name = "Granjera Prueba"
 DoughType = ExtResource("6_fbd0j")
-CurrentHp = 100
+CurrentHp = -1
+Level = 1
+BaseHp = 100
+BaseAtk = 1
+BaseDef = 1
+BaseSpd = 1
+Texture = SubResource("AtlasTexture_xeu4k")
 AttackSet = null
-Bread = null
+BreadList = null
 metadata/_custom_type_script = "uid://cqjs7dteads80"
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=942398595 node_paths=PackedStringArray("Manager", "Panel", "MainMenu", "AttackMenu", "Attack1Button", "Attack2Button", "Attack3Button")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqini"]
+atlas = ExtResource("7_tfm2p")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5lci"]
+bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lirfm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8b6bk"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=942398595 node_paths=PackedStringArray("Manager", "Panel", "MainMenu", "AttackMenu", "BreadMenu", "EnemyBar", "PlayerBar", "EnemyRect", "PlayerRect", "EnemyName", "Attack1Button", "Attack2Button", "Attack3Button", "BreadContainer")]
 script = ExtResource("1_bg8yg")
 Manager = NodePath("Node")
 Panel = NodePath("Panel")
 MainMenu = NodePath("Panel/main")
 AttackMenu = NodePath("Panel/attack")
+BreadMenu = NodePath("Panel/bread")
+EnemyBar = NodePath("Panel2/MarginContainer/VBoxContainer/MarginContainer/ProgressBar")
+PlayerBar = NodePath("Player/MarginContainer/VBoxContainer/MarginContainer/ProgressBar")
+EnemyRect = NodePath("TextureRect2")
+PlayerRect = NodePath("TextureRect")
+GoodHP = Color(0.5058824, 0.48235294, 0.101960786, 1)
+MediumHP = Color(1, 0.8666667, 0.23921569, 1)
+BadHP = Color(0.6745098, 0.26666668, 0.15294118, 1)
+EnemyName = NodePath("Panel2/MarginContainer/VBoxContainer/MarginContainer2/RichTextLabel")
 Attack1Button = NodePath("Panel/attack/MarginContainer/Main/Attack1")
 Attack2Button = NodePath("Panel/attack/MarginContainer/Main/Attack2")
 Attack3Button = NodePath("Panel/attack/MarginContainer/Main/Attack3")
+BreadContainer = NodePath("Panel/bread/MarginContainer/ScrollContainer/VBoxContainer")
 
 [node name="Node" type="Node" parent="." unique_id=2039075978 node_paths=PackedStringArray("Ui")]
 script = ExtResource("1_m63d4")
@@ -43,14 +83,76 @@ Ui = NodePath("..")
 Player = SubResource("Resource_epnum")
 Enemy = SubResource("Resource_eovmx")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1273425548]
+custom_minimum_size = Vector2(300, 300)
+offset_left = 320.0
+offset_top = 280.0
+offset_right = 720.0
+offset_bottom = 680.0
+size_flags_horizontal = 0
+size_flags_vertical = 10
+offset_transform_position = Vector2(10, 0)
+texture = SubResource("AtlasTexture_mqini")
+
+[node name="Player" type="Panel" parent="." unique_id=2132637584]
+custom_minimum_size = Vector2(0, 120)
+offset_left = 310.0
+offset_top = 518.0
+offset_right = 810.0
+offset_bottom = 638.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_l5lci")
+
+[node name="MarginContainer" type="MarginContainer" parent="Player" unique_id=1514102994]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Player/MarginContainer" unique_id=251275122]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="Player/MarginContainer/VBoxContainer" unique_id=1410211495]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 30
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/MarginContainer/VBoxContainer/MarginContainer2" unique_id=481533889]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_bg8yg")
+theme_override_font_sizes/normal_font_size = 28
+text = "Tú"
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Player/MarginContainer/VBoxContainer" unique_id=1388849305]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ProgressBar" type="ProgressBar" parent="Player/MarginContainer/VBoxContainer/MarginContainer" unique_id=1702204126]
+layout_mode = 2
+theme = ExtResource("2_bg8yg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lirfm")
+step = 1.0
+value = 100.0
+
 [node name="Panel" type="Panel" parent="." unique_id=678694151]
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 300.0
+offset_right = 280.0
 grow_vertical = 2
 
 [node name="main" type="VBoxContainer" parent="Panel" unique_id=1737144836]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -94,6 +196,7 @@ text = "HUIR"
 autowrap_mode = 3
 
 [node name="attack" type="VBoxContainer" parent="Panel" unique_id=2075663717]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -170,6 +273,115 @@ text = "Volver
 "
 autowrap_mode = 3
 
+[node name="bread" type="VBoxContainer" parent="Panel" unique_id=1974491678]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/bread" unique_id=1942429592]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 40
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/bread/MarginContainer" unique_id=853810853]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/bread/MarginContainer/ScrollContainer" unique_id=2116404151]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/bread" unique_id=656166847]
+layout_mode = 2
+theme_override_constants/margin_bottom = 40
+
+[node name="Button4" type="Button" parent="Panel/bread/MarginContainer2" unique_id=1346739944]
+custom_minimum_size = Vector2(200, 0)
+custom_maximum_size = Vector2(200, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_bg8yg")
+theme_override_font_sizes/font_size = 30
+text = "Volver
+
+"
+autowrap_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1192657058]
+custom_minimum_size = Vector2(300, 300)
+offset_left = 742.0
+offset_top = 130.0
+offset_right = 1092.0
+offset_bottom = 480.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+offset_transform_position = Vector2(-10, 0)
+texture = ExtResource("9_xeu4k")
+
+[node name="Panel2" type="Panel" parent="." unique_id=664867423]
+custom_minimum_size = Vector2(0, 120)
+offset_left = 622.0
+offset_top = 10.0
+offset_right = 1122.0
+offset_bottom = 130.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_l5lci")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel2" unique_id=575206722]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2/MarginContainer" unique_id=1715416989]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel2/MarginContainer/VBoxContainer" unique_id=1693138651]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_right = 30
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel2/MarginContainer/VBoxContainer/MarginContainer2" unique_id=227192638]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_bg8yg")
+theme_override_font_sizes/normal_font_size = 28
+text = "Enemigo"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel2/MarginContainer/VBoxContainer" unique_id=957893866]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel2/MarginContainer/VBoxContainer/MarginContainer" unique_id=2129313069]
+layout_mode = 2
+theme = ExtResource("2_bg8yg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8b6bk")
+step = 1.0
+value = 100.0
+
 [connection signal="pressed" from="Panel/main/Attack" to="." method="ShowBasicAttackMenu"]
 [connection signal="pressed" from="Panel/main/bread" to="." method="ShowBreadAttackMenu"]
 [connection signal="pressed" from="Panel/attack/MarginContainer2/Button4" to="." method="ShowMainMenu"]
+[connection signal="pressed" from="Panel/bread/MarginContainer2/Button4" to="." method="ShowMainMenu"]

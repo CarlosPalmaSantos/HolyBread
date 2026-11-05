@@ -14,6 +14,7 @@ public partial class Entity : Resource, IBinary<Entity>
     [Export] public DoughType DoughType { get; set; }
 
     [Export] public int CurrentHp { get; set; }
+    public float PercentualHP => (float)CurrentHp / Hp;
     [Export] public int Level { get; set; }
 
     [Export] private int BaseHp { get; set; }
@@ -38,6 +39,7 @@ public partial class Entity : Resource, IBinary<Entity>
     public void TakeDamage(float damage)
     {
         CurrentHp = Mathf.FloorToInt(Mathf.Clamp(CurrentHp - damage, 0, Hp));
+        GD.Print($"Current: {CurrentHp}, Damage: {damage}");
     }
 
     public void WriteBinary(BinaryWriter writer)

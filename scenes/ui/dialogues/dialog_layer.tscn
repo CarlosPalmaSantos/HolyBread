@@ -79,13 +79,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
 
 [node name="MainText" type="RichTextLabel" parent="MainPanel/MarginContainer" unique_id=1088278146]
 layout_mode = 2
+mouse_filter = 1
 theme = ExtResource("2_32ftu")
 theme_override_font_sizes/normal_font_size = 26
 theme_override_font_sizes/bold_font_size = 28

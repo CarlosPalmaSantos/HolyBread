@@ -7,5 +7,5 @@
 script = ExtResource("1_ld2ca")
 Name = "Puño Artesanal"
 DoughType = ExtResource("1_0emta")
-Power = 50
+Power = 30
 metadata/_custom_type_script = "uid://crtwedyyvaw5g"

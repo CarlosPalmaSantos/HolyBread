@@ -2,6 +2,36 @@
 
 [ext_resource type="FontFile" uid="uid://c0fsdy16b3wie" path="res://resources/PixelifySans-VariableFont_wght.ttf" id="1_d4nwg"]
 
+[sub_resource type="FontVariation" id="FontVariation_mqini"]
+base_font = ExtResource("1_d4nwg")
+variation_opentype = {
+2003265652: 650
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4nwg"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ct1h"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
 [sub_resource type="FontVariation" id="FontVariation_h3t5t"]
 base_font = ExtResource("1_d4nwg")
 variation_opentype = {
@@ -58,6 +88,13 @@ spacing_bottom = -1
 
 [resource]
 Button/fonts/font = ExtResource("1_d4nwg")
+ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 0
+ProgressBar/font_sizes/font_size = 22
+ProgressBar/fonts/font = SubResource("FontVariation_mqini")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_d4nwg")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_7ct1h")
 RichTextLabel/fonts/bold_font = SubResource("FontVariation_h3t5t")
 RichTextLabel/fonts/bold_italics_font = SubResource("FontVariation_bnwdf")
 RichTextLabel/fonts/italics_font = SubResource("FontVariation_lx1xq")
