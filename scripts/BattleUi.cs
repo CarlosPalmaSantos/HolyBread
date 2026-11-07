@@ -1,6 +1,9 @@
 using Godot;
 using System;
+using System.Collections;
+using HCoroutines;
 using HolyBread.scripts.battle;
+using HolyBread.scripts.dialogues;
 
 public partial class BattleUi : CanvasLayer
 {
@@ -43,25 +46,39 @@ public partial class BattleUi : CanvasLayer
         UpdateInfo();
     }
 
+    public void UpdateHpBar(ProgressBar bar, Entity entity)
+    {
+        bar.MaxValue = entity.Hp;
+        bar.Value = entity.CurrentHp;
+        bar.AddThemeStyleboxOverride("fill",
+            new StyleBoxFlat()
+            {
+                BgColor = entity.PercentualHP > 0.5f ? GoodHP :
+                    entity.PercentualHP > 0.25f ? MediumHP : BadHP
+            });
+    }
+
+    public void UpdateHpBar(Entity entity)
+    {
+        if (entity == Manager.Player) UpdateHpBar(PlayerBar, entity);
+        else if (entity == Manager.Enemy) UpdateHpBar(EnemyBar, entity);
+    }
+
+    public IEnumerator AnimHpBar(Entity entity)
+    {
+        var bar = entity == Manager.Player ? PlayerBar : EnemyBar;
+
+        for (var hp = bar.Value; hp >= entity.CurrentHp; hp--)
+        {
+            bar.Value = hp;
+            yield return Co.Wait(0.02f);
+        }
+    }
+
     public void UpdateInfo()
     {
-        PlayerBar.MaxValue = Manager.Player.Hp;
-        PlayerBar.Value = Manager.Player.CurrentHp;
-        PlayerBar.AddThemeStyleboxOverride("fill",
-            new StyleBoxFlat()
-            {
-                BgColor = Manager.Player.PercentualHP > 0.5f ? GoodHP :
-                    Manager.Player.PercentualHP > 0.25f ? MediumHP : BadHP
-            });
-
-        EnemyBar.MaxValue = Manager.Enemy.Hp;
-        EnemyBar.Value = Manager.Enemy.CurrentHp;
-        EnemyBar.AddThemeStyleboxOverride("fill",
-            new StyleBoxFlat()
-            {
-                BgColor = Manager.Enemy.PercentualHP > 0.5f ? GoodHP :
-                    Manager.Enemy.PercentualHP > 0.25f ? MediumHP : BadHP
-            });
+        UpdateHpBar(Manager.Player);
+        UpdateHpBar(Manager.Enemy);
 
         EnemyName.Text = Manager.Enemy.Name;
         EnemyRect.Texture = Manager.Enemy.Texture;
@@ -121,5 +138,25 @@ public partial class BattleUi : CanvasLayer
         MainMenu.Hide();
         AttackMenu.Hide();
         BreadMenu.Show();
+    }
+
+    public void RunAway()
+    {
+        HideMenu();
+        var dialog = new Dialogue()
+        {
+            Lines =
+            [
+                new DialogueLine()
+                {
+                    Text = "NO PUEDES HUIR DE TU [b]DESTINO[/b]",
+                    Centered = true,
+                }
+            ],
+        };
+        dialog.OnDialogueEnd += () => ShowMainMenu();
+        DialogManager.Play(dialog);
+
+        GetViewport().GuiReleaseFocus();
     }
 }

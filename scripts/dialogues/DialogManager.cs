@@ -26,7 +26,7 @@ public partial class DialogManager : CanvasLayer
     public override void _Ready()
     {
         MainPanel.GuiInput += OnMainPanelGuiInput;
-        
+
         MainPanel.Hide();
         SpeakerPanel.Hide();
         Background.Hide();
@@ -41,8 +41,8 @@ public partial class DialogManager : CanvasLayer
     {
         if (@event is InputEventMouseButton mb)
             GD.Print($"Botón: {mb.ButtonIndex}, Pressed: {mb.Pressed}");
-        
-        if(@event is InputEventMouseButton {ButtonIndex: MouseButton.Left, Pressed: true})
+
+        if (@event is InputEventMouseButton { ButtonIndex: MouseButton.Left, Pressed: true })
             Advance();
     }
 
@@ -71,6 +71,7 @@ public partial class DialogManager : CanvasLayer
                     {
                         Text = text,
                         Speed = speed,
+                        Centered = true,
                     }
                 ],
                 Shadow = false,
@@ -103,6 +104,17 @@ public partial class DialogManager : CanvasLayer
                 SpeakerLabel.Text = line.Speaker;
             }
 
+            if (line.Centered)
+            {
+                TextLabel.HorizontalAlignment = HorizontalAlignment.Center;
+                TextLabel.VerticalAlignment = VerticalAlignment.Center;
+            }
+            else
+            {
+                TextLabel.HorizontalAlignment = HorizontalAlignment.Left;
+                TextLabel.VerticalAlignment = VerticalAlignment.Top;
+            }
+
             yield return ShowTextCoroutine(line.Text, line.Speed);
 
             WaitingForContinue = true;
@@ -126,6 +138,8 @@ public partial class DialogManager : CanvasLayer
 
     private IEnumerator ShowTextCoroutine(string text, float speed)
     {
+        text = text.Replace("[b]", "[b][color=ffbc30]").Replace("[/b]", "[/color][/b]");
+        
         var richFlag = false;
         var str = "";
         foreach (var c in text)

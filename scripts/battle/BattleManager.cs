@@ -19,8 +19,10 @@ public partial class BattleManager : Node
         if (Enemy.CurrentHp < 0) Enemy.CurrentHp = Enemy.Hp;
     }
 
-    private static void UseAttack(Entity user, Entity target, int attack, out Attack.Effectiveness effectiveness) =>
+    private static void UseAttack(Entity user, Entity target, int attack, out Attack.Effectiveness effectiveness)
+    {
         user.AttackSet[attack].Act(user, target, out effectiveness);
+    }
 
     private static void UseBreadAttack(Entity user, Entity target, int attack,
         out Attack.Effectiveness effectiveness) =>
@@ -62,11 +64,15 @@ public partial class BattleManager : Node
         switch (action.Item1)
         {
             case ActionType.NONE:
+                yield return DialogManager.PlayCoroutine(
+                    $"[b]{user.Name}[/b] te mira fijamente");
                 break;
             case ActionType.ATTACK:
                 yield return DialogManager.PlayCoroutine(
                     $"[b]{user.Name}[/b] usó [b]{user.AttackSet[action.Item2].Name}[/b]");
                 UseAttack(user, target, action.Item2, out var basicEff);
+                yield return Ui.AnimHpBar(target);
+
                 break;
             case ActionType.BREAD:
                 yield return DialogManager.PlayCoroutine(

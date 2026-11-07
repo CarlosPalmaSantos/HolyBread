@@ -14,7 +14,7 @@
 
 [sub_resource type="Resource" id="Resource_epnum"]
 script = ExtResource("6_mqini")
-Name = "Ejemplo"
+Name = "Tú"
 Description = "Pan"
 DoughType = ExtResource("5_tfm2p")
 CurrentHp = -1
@@ -40,7 +40,7 @@ Level = 1
 BaseHp = 100
 BaseAtk = 1
 BaseDef = 1
-BaseSpd = 1
+BaseSpd = 2
 Texture = SubResource("AtlasTexture_xeu4k")
 AttackSet = null
 BreadList = null
@@ -383,5 +383,6 @@ value = 100.0
 
 [connection signal="pressed" from="Panel/main/Attack" to="." method="ShowBasicAttackMenu"]
 [connection signal="pressed" from="Panel/main/bread" to="." method="ShowBreadAttackMenu"]
+[connection signal="pressed" from="Panel/main/run away" to="." method="RunAway"]
 [connection signal="pressed" from="Panel/attack/MarginContainer2/Button4" to="." method="ShowMainMenu"]
 [connection signal="pressed" from="Panel/bread/MarginContainer2/Button4" to="." method="ShowMainMenu"]

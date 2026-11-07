@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolyBread", "HolyBread.csproj", "{F0FB00AF-F3F0-4246-9E22-F454F2A81E9D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolyBread", "HolyBread.csproj", "{6A15A7FE-7E04-4492-9F0F-599366AA15C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,11 +9,11 @@ Global
 	ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F0FB00AF-F3F0-4246-9E22-F454F2A81E9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F0FB00AF-F3F0-4246-9E22-F454F2A81E9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F0FB00AF-F3F0-4246-9E22-F454F2A81E9D}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
-		{F0FB00AF-F3F0-4246-9E22-F454F2A81E9D}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
-		{F0FB00AF-F3F0-4246-9E22-F454F2A81E9D}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
-		{F0FB00AF-F3F0-4246-9E22-F454F2A81E9D}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{6A15A7FE-7E04-4492-9F0F-599366AA15C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A15A7FE-7E04-4492-9F0F-599366AA15C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A15A7FE-7E04-4492-9F0F-599366AA15C5}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{6A15A7FE-7E04-4492-9F0F-599366AA15C5}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{6A15A7FE-7E04-4492-9F0F-599366AA15C5}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{6A15A7FE-7E04-4492-9F0F-599366AA15C5}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
 	EndGlobalSection
 EndGlobal
