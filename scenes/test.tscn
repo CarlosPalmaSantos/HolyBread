@@ -1,7 +1,470 @@
 [gd_scene format=3 uid="uid://cx3flur656dqs"]
 
-[ext_resource type="PackedScene" uid="uid://bw13yaim54o43" path="res://scenes/ui/battle.tscn" id="4_74lek"]
+[ext_resource type="Script" uid="uid://c5ull5h1glc4l" path="res://scripts/MainMenu.cs" id="1_iyx0m"]
+[ext_resource type="PackedScene" uid="uid://yibfl2kvpyn2" path="res://scenes/ui/game.tscn" id="2_74lek"]
+[ext_resource type="Script" uid="uid://oa12qcxp7bxb" path="res://scripts/dialogues/DialogueLine.cs" id="2_j5jx5"]
+[ext_resource type="Script" uid="uid://cjdyw14nsx3u5" path="res://scripts/dialogues/Dialogue.cs" id="3_lpvoh"]
+[ext_resource type="Script" uid="uid://c6ihq4ime4cid" path="res://scripts/Paths/Map.cs" id="6_lpvoh"]
+[ext_resource type="Script" uid="uid://dvyych56brp2e" path="res://scripts/Paths/PathConnection.cs" id="7_7mbro"]
+[ext_resource type="Script" uid="uid://lymbpxjw8y4j" path="res://scripts/Paths/Path.cs" id="7_44saj"]
+[ext_resource type="Script" uid="uid://cqf8sw07ulelr" path="res://scripts/Paths/Spot.cs" id="8_7mbro"]
+[ext_resource type="Texture2D" uid="uid://bcj6nd1fbir63" path="res://resources/Sprites/blue.png" id="8_c6rvn"]
+[ext_resource type="Resource" uid="uid://dfbyd68s7hp8g" path="res://resources/Doughs/blanco.tres" id="8_ghpyy"]
+[ext_resource type="Resource" uid="uid://byu7lrnocc77n" path="res://resources/Attacks/lanza_migajera.tres" id="9_7yos8"]
+[ext_resource type="Resource" uid="uid://b6uwittxgurb1" path="res://resources/Attacks/puno_artesanal.tres" id="9_ff6ho"]
+[ext_resource type="Resource" uid="uid://cp2lypvv3en07" path="res://resources/Paths/RegularLowPath.tres" id="10_5jxlq"]
+[ext_resource type="Texture2D" uid="uid://bl852wxcd05rd" path="res://resources/Sprites/granjero_1.tres" id="10_7mbro"]
+[ext_resource type="Resource" uid="uid://c5h2glwx6bd3t" path="res://resources/Doughs/centeno.tres" id="10_7yos8"]
+[ext_resource type="Texture2D" uid="uid://i2jqdq8s8rtq" path="res://resources/Sprites/granjera_1.tres" id="11_5jxlq"]
+[ext_resource type="Texture2D" uid="uid://ry3im3g3s05j" path="res://resources/Sprites/granjera_2.tres" id="13_5jxlq"]
+[ext_resource type="Texture2D" uid="uid://dgh1j2kfogcfi" path="res://resources/Sprites/green.png" id="13_7mbro"]
+[ext_resource type="Resource" uid="uid://b3b1d6ptym1ui" path="res://resources/Attacks/pipazo.tres" id="13_75pfo"]
+[ext_resource type="Script" uid="uid://t4qwh37cywa1" path="res://scripts/EnemyPreset.cs" id="13_daiq8"]
+[ext_resource type="Texture2D" uid="uid://cwpxhpoqdmnr7" path="res://resources/Sprites/red.png" id="14_ff6ho"]
+[ext_resource type="Texture2D" uid="uid://lknjlm64ictr" path="res://resources/Sprites/granjero_2.tres" id="14_xrtyr"]
+[ext_resource type="Theme" uid="uid://cd1o8bhkt0xo" path="res://resources/theme.tres" id="15_ff6ho"]
+[ext_resource type="Resource" uid="uid://cmoo5pkm4jhym" path="res://resources/Attacks/mantequillazo.tres" id="15_gv2t6"]
+[ext_resource type="Resource" uid="uid://ci81aokyil1p6" path="res://resources/Attacks/latigo_integral.tres" id="16_xrtyr"]
+[ext_resource type="Resource" uid="uid://bq3n4e1i0nohg" path="res://resources/Sprites/names.tres" id="17_mi64w"]
+[ext_resource type="Texture2D" uid="uid://bp5c5nhg2ov5w" path="res://resources/Sprites/guerrero_1.tres" id="21_1xwo4"]
+[ext_resource type="Script" uid="uid://cdkvovpwj7cn" path="res://scripts/SaveManager.cs" id="21_gm488"]
+[ext_resource type="Texture2D" uid="uid://cewcjac82d8yo" path="res://resources/Sprites/guerrero_2.tres" id="22_gv2t6"]
+[ext_resource type="Resource" uid="uid://c7bmbms1mp5g6" path="res://resources/Breads/viena.tres" id="22_kay4s"]
+[ext_resource type="Resource" uid="uid://cu01qjkny5nt4" path="res://resources/Breads/baguette.tres" id="23_j7bvy"]
+[ext_resource type="Script" uid="uid://dnv0pgk1tcyws" path="res://scripts/battle/Entity.cs" id="24_1dqgb"]
+[ext_resource type="Resource" uid="uid://dff151iu4v3ec" path="res://resources/Doughs/brioche.tres" id="25_mi64w"]
+[ext_resource type="Script" uid="uid://gco72akkni3y" path="res://scripts/battle/Player.cs" id="25_y81of"]
+[ext_resource type="Resource" uid="uid://ugp12pmplwrt" path="res://resources/Doughs/integral.tres" id="26_ds53i"]
+[ext_resource type="Resource" uid="uid://cj6574k1f47b1" path="res://resources/Doughs/maiz.tres" id="27_1xwo4"]
+[ext_resource type="Resource" uid="uid://b3fm511m6stxr" path="res://resources/Doughs/arroz.tres" id="28_1xwo4"]
+
+[sub_resource type="Resource" id="Resource_lpvoh"]
+script = ExtResource("2_j5jx5")
+Text = "Cuenta la leyenda que cada mil años, en el [g]monte sagrado[/g], los dioses hacen un alimento sagrado..."
+Speed = 0.25
+Centered = true
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_j5jx5"]
+script = ExtResource("2_j5jx5")
+Text = "Unos dicen que es capaz de curar cualquier enfermedad..."
+Speed = 0.25
+Centered = true
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_uacia"]
+script = ExtResource("2_j5jx5")
+Text = "Otros creen que otorga la vida eterna..."
+Speed = 0.25
+Centered = true
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_at5dv"]
+script = ExtResource("2_j5jx5")
+Text = "Nadie sabe concerteza que ocurre al tomar tal alimento..."
+Speed = 0.25
+Centered = true
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_jcd4p"]
+script = ExtResource("2_j5jx5")
+Text = "Pero, ante tamaña promesa, gentes de todo el reino pretenden conseguirlo a [g]cualquier costo[/g]..."
+Speed = 0.25
+Centered = true
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_yk7ts"]
+script = ExtResource("3_lpvoh")
+Lines = Array[Object]([SubResource("Resource_lpvoh"), SubResource("Resource_j5jx5"), SubResource("Resource_uacia"), SubResource("Resource_at5dv"), SubResource("Resource_jcd4p")])
+metadata/_custom_type_script = "uid://cjdyw14nsx3u5"
+
+[sub_resource type="Resource" id="Resource_daiq8"]
+script = ExtResource("13_daiq8")
+MinLevel = 2
+MaxLevel = 3
+DoughType = ExtResource("8_ghpyy")
+Names = ExtResource("17_mi64w")
+Textures = [ExtResource("11_5jxlq"), ExtResource("10_7mbro"), ExtResource("13_5jxlq"), ExtResource("14_xrtyr"), ExtResource("21_1xwo4"), ExtResource("22_gv2t6")]
+Attacks = [ExtResource("9_ff6ho"), ExtResource("9_7yos8"), ExtResource("13_75pfo"), ExtResource("16_xrtyr"), ExtResource("15_gv2t6")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_5jxlq"]
+script = ExtResource("13_daiq8")
+MinLevel = 2
+MaxLevel = 3
+DoughType = ExtResource("10_7yos8")
+Names = ExtResource("17_mi64w")
+Textures = [ExtResource("11_5jxlq"), ExtResource("10_7mbro"), ExtResource("13_5jxlq"), ExtResource("14_xrtyr"), ExtResource("21_1xwo4"), ExtResource("22_gv2t6")]
+Attacks = [ExtResource("9_ff6ho"), ExtResource("9_7yos8"), ExtResource("13_75pfo"), ExtResource("16_xrtyr"), ExtResource("15_gv2t6")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_dp3wq"]
+script = ExtResource("13_daiq8")
+MinLevel = 2
+MaxLevel = 3
+DoughType = ExtResource("25_mi64w")
+Names = ExtResource("17_mi64w")
+Textures = [ExtResource("11_5jxlq"), ExtResource("10_7mbro"), ExtResource("13_5jxlq"), ExtResource("14_xrtyr"), ExtResource("21_1xwo4"), ExtResource("22_gv2t6")]
+Attacks = [ExtResource("9_ff6ho"), ExtResource("9_7yos8"), ExtResource("13_75pfo"), ExtResource("16_xrtyr"), ExtResource("15_gv2t6")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_qa11w"]
+script = ExtResource("13_daiq8")
+MinLevel = 2
+MaxLevel = 3
+DoughType = ExtResource("26_ds53i")
+Names = ExtResource("17_mi64w")
+Textures = [ExtResource("11_5jxlq"), ExtResource("10_7mbro"), ExtResource("13_5jxlq"), ExtResource("14_xrtyr"), ExtResource("21_1xwo4"), ExtResource("22_gv2t6")]
+Attacks = [ExtResource("9_ff6ho"), ExtResource("9_7yos8"), ExtResource("13_75pfo"), ExtResource("16_xrtyr"), ExtResource("15_gv2t6")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_dc41f"]
+script = ExtResource("13_daiq8")
+MinLevel = 2
+MaxLevel = 3
+DoughType = ExtResource("27_1xwo4")
+Names = ExtResource("17_mi64w")
+Textures = [ExtResource("21_1xwo4"), ExtResource("22_gv2t6")]
+Attacks = [ExtResource("9_ff6ho"), ExtResource("9_7yos8"), ExtResource("13_75pfo"), ExtResource("16_xrtyr"), ExtResource("15_gv2t6")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_gv2t6"]
+script = ExtResource("13_daiq8")
+MinLevel = 2
+MaxLevel = 3
+DoughType = ExtResource("28_1xwo4")
+Names = ExtResource("17_mi64w")
+Textures = [ExtResource("21_1xwo4"), ExtResource("22_gv2t6")]
+Attacks = [ExtResource("9_ff6ho"), ExtResource("9_7yos8"), ExtResource("13_75pfo"), ExtResource("16_xrtyr"), ExtResource("15_gv2t6")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_ajshl"]
+script = ExtResource("8_7mbro")
+BattleChance = 1.0
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_162l1"]
+script = ExtResource("8_7mbro")
+BattleChance = 0.9
+HardBattleChance = 0.1
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_ff6ho"]
+script = ExtResource("8_7mbro")
+BattleChance = 0.9
+HardBattleChance = 0.1
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_36h8e"]
+script = ExtResource("8_7mbro")
+HardBattleChance = 1.0
+UniqueSpot = 1.0
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_p8c7m"]
+script = ExtResource("7_44saj")
+Spots = [SubResource("Resource_ajshl"), SubResource("Resource_162l1"), SubResource("Resource_ff6ho"), SubResource("Resource_36h8e")]
+Enemies = [SubResource("Resource_daiq8"), SubResource("Resource_5jxlq"), SubResource("Resource_dp3wq"), SubResource("Resource_qa11w"), SubResource("Resource_dc41f"), SubResource("Resource_gv2t6")]
+metadata/_custom_type_script = "uid://lymbpxjw8y4j"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_44saj"]
+load_path = "res://.godot/imported/green.png-00c73af28d81addb598fa1561be3f600.ctex"
+
+[sub_resource type="Resource" id="Resource_gsk6d"]
+script = ExtResource("24_1dqgb")
+Name = "Panson"
+DoughType = ExtResource("8_ghpyy")
+Level = 2
+LevelUpXP = 2
+AttackSet = Array[Object]([ExtResource("9_ff6ho"), ExtResource("16_xrtyr")])
+BreadSet = Array[Object]([])
+metadata/_custom_type_script = "uid://dnv0pgk1tcyws"
+
+[sub_resource type="Resource" id="Resource_2cnsr"]
+script = ExtResource("25_y81of")
+doughVariantList = [SubResource("Resource_gsk6d")]
+BreadSet = [ExtResource("22_kay4s"), ExtResource("23_j7bvy")]
+DoughType = ExtResource("8_ghpyy")
+metadata/_custom_type_script = "uid://gco72akkni3y"
 
 [node name="Test" type="Node2D" unique_id=86767213]
 
-[node name="CanvasLayer" parent="." unique_id=942398595 instance=ExtResource("4_74lek")]
+[node name="MainMenu" type="CanvasLayer" parent="." unique_id=2028892916 node_paths=PackedStringArray("Panel", "Map")]
+visible = false
+script = ExtResource("1_iyx0m")
+Panel = NodePath("MainMenuPanel")
+IntroDialogue = SubResource("Resource_yk7ts")
+Map = NodePath("../Map")
+
+[node name="MainMenuPanel" type="Panel" parent="MainMenu" unique_id=1535792667]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MainMenuPanel" unique_id=119290731]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="MainMenu/MainMenuPanel/VBoxContainer" unique_id=1997247267]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("15_ff6ho")
+theme_override_font_sizes/font_size = 34
+text = "Jugar"
+
+[node name="Map" type="CanvasLayer" parent="." unique_id=1320104553 node_paths=PackedStringArray("Connections", "Buttons", "SaveManager")]
+script = ExtResource("6_lpvoh")
+Connections = [NodePath("Paths/Low/Blanco-Brioche"), NodePath("Paths/Low/Blanco-Integral"), NodePath("Paths/Low/Blanco-Centeno"), NodePath("Paths/Low/Blanco-Z1")]
+Buttons = [NodePath("MarginContainer/Control/SBrioche"), NodePath("MarginContainer/Control/SIntegral"), NodePath("MarginContainer/Control/SCenteno"), NodePath("MarginContainer/Control/SBlanco"), NodePath("MarginContainer/Control/Z1"), NodePath("MarginContainer/Control/SMaiz"), NodePath("MarginContainer/Control/SArroz"), NodePath("MarginContainer/Control/Z2"), NodePath("MarginContainer/Control/SOblea")]
+Position = 3
+GMScene = ExtResource("2_74lek")
+EnabledTexture = ExtResource("13_7mbro")
+CurrentTexture = ExtResource("8_c6rvn")
+SaveManager = NodePath("../SaveManager")
+
+[node name="Paths" type="Node" parent="Map" unique_id=341382231]
+
+[node name="Low" type="Node" parent="Map/Paths" unique_id=1355736463]
+
+[node name="Blanco-Brioche" type="Node" parent="Map/Paths/Low" unique_id=1492956040 node_paths=PackedStringArray("A", "B")]
+script = ExtResource("7_7mbro")
+A = NodePath("../../../MarginContainer/Control/SBlanco")
+B = NodePath("../../../MarginContainer/Control/SBrioche")
+Path = ExtResource("10_5jxlq")
+
+[node name="Blanco-Integral" type="Node" parent="Map/Paths/Low" unique_id=34009262 node_paths=PackedStringArray("A", "B")]
+script = ExtResource("7_7mbro")
+A = NodePath("../../../MarginContainer/Control/SIntegral")
+B = NodePath("../../../MarginContainer/Control/SBlanco")
+Path = ExtResource("10_5jxlq")
+
+[node name="Blanco-Centeno" type="Node" parent="Map/Paths/Low" unique_id=1640849025 node_paths=PackedStringArray("A", "B")]
+script = ExtResource("7_7mbro")
+A = NodePath("../../../MarginContainer/Control/SBlanco")
+B = NodePath("../../../MarginContainer/Control/SCenteno")
+Path = ExtResource("10_5jxlq")
+
+[node name="Blanco-Z1" type="Node" parent="Map/Paths/Low" unique_id=1657206477 node_paths=PackedStringArray("A", "B")]
+script = ExtResource("7_7mbro")
+A = NodePath("../../../MarginContainer/Control/SBlanco")
+B = NodePath("../../../MarginContainer/Control/Z1")
+Path = SubResource("Resource_p8c7m")
+
+[node name="MarginContainer" type="MarginContainer" parent="Map" unique_id=1542845737]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="Control" type="Control" parent="Map/MarginContainer" unique_id=442800029]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Map/MarginContainer/Control" unique_id=459222588]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.56, 0.56, 0.56, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Map/MarginContainer/Control" unique_id=1062071375]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 152.00012
+offset_top = -169.0
+offset_right = 176.00012
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.56, 0.56, 0.56, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Map/MarginContainer/Control" unique_id=312430833]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -348.0
+offset_top = -169.0
+offset_right = -324.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.56, 0.56, 0.56, 1)
+
+[node name="SBlanco" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=161538319]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 150.0
+offset_top = -50.0
+offset_right = 250.0
+offset_bottom = 50.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = SubResource("CompressedTexture2D_44saj")
+texture_disabled = ExtResource("14_ff6ho")
+stretch_mode = 4
+
+[node name="SBrioche" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=969274698]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 150.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = -100.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = SubResource("CompressedTexture2D_44saj")
+texture_disabled = ExtResource("14_ff6ho")
+stretch_mode = 4
+
+[node name="SCenteno" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=1909916010]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 150.0
+offset_top = 100.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = SubResource("CompressedTexture2D_44saj")
+texture_disabled = ExtResource("14_ff6ho")
+stretch_mode = 4
+
+[node name="SIntegral" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=1042504456]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = SubResource("CompressedTexture2D_44saj")
+texture_disabled = ExtResource("14_ff6ho")
+stretch_mode = 4
+
+[node name="Z1" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=1475276002]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 500.0
+offset_top = -50.0
+offset_right = 600.0003
+offset_bottom = 50.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = SubResource("CompressedTexture2D_44saj")
+texture_disabled = ExtResource("14_ff6ho")
+stretch_mode = 4
+
+[node name="SMaiz" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=42525113]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 650.0
+offset_top = 100.0
+offset_right = 750.0003
+offset_bottom = 200.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = SubResource("CompressedTexture2D_44saj")
+texture_disabled = ExtResource("14_ff6ho")
+stretch_mode = 4
+
+[node name="SArroz" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=1034112796]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 650.0
+offset_top = -200.0
+offset_right = 750.0003
+offset_bottom = -100.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = SubResource("CompressedTexture2D_44saj")
+texture_disabled = ExtResource("14_ff6ho")
+stretch_mode = 4
+
+[node name="Z2" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=1405827619]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 650.0
+offset_top = -50.0
+offset_right = 750.0003
+offset_bottom = 50.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = SubResource("CompressedTexture2D_44saj")
+texture_disabled = ExtResource("14_ff6ho")
+stretch_mode = 4
+
+[node name="SOblea" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=2059634330]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -64.0
+offset_bottom = 64.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = SubResource("CompressedTexture2D_44saj")
+texture_disabled = ExtResource("14_ff6ho")
+stretch_mode = 4
+
+[node name="SaveManager" type="Node" parent="." unique_id=235248674]
+script = ExtResource("21_gm488")
+Player = SubResource("Resource_2cnsr")
+
+[connection signal="pressed" from="MainMenu/MainMenuPanel/VBoxContainer/Button" to="MainMenu" method="StartMainMenu"]

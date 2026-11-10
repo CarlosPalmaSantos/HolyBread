@@ -10,8 +10,8 @@ public partial class DoughType : Resource, IBinary<DoughType>
 {
     [Export] public string Name { get; set; }
     [Export] public string Id { get; set; }
-    [Export] public string[] Weak { get; set; }
-    [Export] public string[] Resist { get; set; }
+    [Export] public string[] Weak { get; set; } = [];
+    [Export] public string[] Resist { get; set; } = [];
 
     [Export] public float HpAff { get; set; } = 1.25f;
     [Export] public float AtkAff { get; set; } = 1.25f;
@@ -20,6 +20,9 @@ public partial class DoughType : Resource, IBinary<DoughType>
 
     public float GetMultiplier(DoughType other, out Attack.Effectiveness effectiveness)
     {
+        effectiveness = Attack.Effectiveness.NORMAL;
+        if (other == null) return 1;
+
         if (Weak.Contains(other.Id))
         {
             effectiveness = Attack.Effectiveness.WEAK;
@@ -31,8 +34,7 @@ public partial class DoughType : Resource, IBinary<DoughType>
             effectiveness = Attack.Effectiveness.RESIST;
             return 0.5f;
         }
-
-        effectiveness = Attack.Effectiveness.NORMAL;
+        
         return 1;
     }
 

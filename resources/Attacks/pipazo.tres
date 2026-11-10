@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Attack" format=3 uid="uid://b3b1d6ptym1ui"]
+
+[ext_resource type="Resource" uid="uid://c5h2glwx6bd3t" path="res://resources/Doughs/centeno.tres" id="1_lndcb"]
+[ext_resource type="Script" uid="uid://crtwedyyvaw5g" path="res://scripts/battle/Attack.cs" id="1_xrkyr"]
+
+[resource]
+script = ExtResource("1_xrkyr")
+Name = "Pipazo"
+DoughType = ExtResource("1_lndcb")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"

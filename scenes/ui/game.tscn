@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://yibfl2kvpyn2"]
+
+[ext_resource type="Script" uid="uid://yrbxjg38kxs6" path="res://scripts/GameManager.cs" id="1_wotle"]
+[ext_resource type="PackedScene" uid="uid://bw13yaim54o43" path="res://scenes/ui/battle.tscn" id="9_havr6"]
+[ext_resource type="Theme" uid="uid://cd1o8bhkt0xo" path="res://resources/theme.tres" id="16_kdq26"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5lci"]
+bg_color = Color(0.15847227, 0.15847233, 0.15847221, 1)
+
+[node name="Game" type="Node" unique_id=2087435890 node_paths=PackedStringArray("BattleUi", "SaveManager", "ChoicePanel", "LeftChoice", "LeftChoiceButton", "RightChoice", "RightChoiceButton", "PathProgressBar")]
+script = ExtResource("1_wotle")
+BattleUi = NodePath("CanvasLayer")
+SaveManager = NodePath("")
+ChoicePanel = NodePath("Choices/Panel")
+LeftChoice = NodePath("Choices/Panel/HBoxContainer/VBoxContainer2/TextureRect")
+LeftChoiceButton = NodePath("Choices/Panel/HBoxContainer/VBoxContainer2/Left")
+RightChoice = NodePath("Choices/Panel/HBoxContainer/VBoxContainer/TextureRect")
+RightChoiceButton = NodePath("Choices/Panel/HBoxContainer/VBoxContainer/Right")
+PathProgressBar = NodePath("Choices/Panel/ProgressBar2")
+
+[node name="CanvasLayer" parent="." unique_id=942398595 instance=ExtResource("9_havr6")]
+visible = false
+
+[node name="Choices" type="CanvasLayer" parent="." unique_id=479078367]
+
+[node name="Panel" type="Panel" parent="Choices" unique_id=1561068253]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_l5lci")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Choices/Panel" unique_id=1397052034]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = -56.25
+offset_right = 207.0
+offset_bottom = 56.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 120
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Choices/Panel/HBoxContainer" unique_id=1645258323]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TextureRect" type="TextureRect" parent="Choices/Panel/HBoxContainer/VBoxContainer2" unique_id=804224272]
+custom_minimum_size = Vector2(280, 280)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stretch_mode = 4
+
+[node name="Left" type="Button" parent="Choices/Panel/HBoxContainer/VBoxContainer2" unique_id=1990577169]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("16_kdq26")
+theme_override_font_sizes/font_size = 30
+text = "L"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Choices/Panel/HBoxContainer" unique_id=1728128806]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TextureRect" type="TextureRect" parent="Choices/Panel/HBoxContainer/VBoxContainer" unique_id=245291403]
+custom_minimum_size = Vector2(280, 280)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stretch_mode = 4
+
+[node name="Right" type="Button" parent="Choices/Panel/HBoxContainer/VBoxContainer" unique_id=1394952356]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("16_kdq26")
+theme_override_font_sizes/font_size = 30
+text = "R"
+
+[node name="ProgressBar2" type="ProgressBar" parent="Choices/Panel" unique_id=1923821923]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -536.0
+offset_top = 236.0
+offset_right = 536.0
+offset_bottom = 295.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("16_kdq26")

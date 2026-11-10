@@ -8,38 +8,53 @@ namespace HolyBread.scripts.battle;
 [GlobalClass]
 public partial class Entity : Resource, IBinary<Entity>
 {
+    public Entity()
+    {
+    }
+
     [Export] public string Name { get; set; }
     [Export(PropertyHint.MultilineText)] public string Description { get; set; }
 
     [Export] public DoughType DoughType { get; set; }
 
-    [Export] public int CurrentHp { get; set; }
-    public float PercentualHP => (float)CurrentHp / Hp;
+    [Export] public int CurrentHp { get; set; } = -1;
+    public float PercentualHp => (float)CurrentHp / Hp;
     [Export] public int Level { get; set; }
+    [Export] public int XP { get; set; }
+    [Export] public int LevelUpXP { get; set; }
 
-    [Export] private int BaseHp { get; set; }
-    public int Hp => Mathf.FloorToInt(Mathf.Pow(DoughType.HpAff, Level) * BaseHp);
 
-    [Export] private int BaseAtk { get; set; }
-    public int Atk => Mathf.FloorToInt(Mathf.Pow(DoughType.AtkAff, Level) * BaseAtk);
+    [Export] public int BaseHp { private get; set; } = 100;
+    public int Hp => Mathf.FloorToInt(Mathf.Pow(DoughType.HpAff, Level - 1) * BaseHp);
 
-    [Export] private int BaseDef { get; set; }
-    public int Def => Mathf.FloorToInt(Mathf.Pow(DoughType.DefAff, Level) * BaseDef);
+    [Export] public int BaseAtk { private get; set; } = 1;
+    public int Atk => Mathf.CeilToInt(Mathf.Pow(DoughType.AtkAff, Level - 1)) * BaseAtk;
 
-    [Export] private int BaseSpd { get; set; }
-    public int Spd => Mathf.FloorToInt(Mathf.Pow(DoughType.SpdAff, Level) * BaseSpd);
+    [Export] public int BaseDef { private get; set; } = 1;
+    public int Def => Mathf.CeilToInt(Mathf.Pow(DoughType.DefAff, Level - 1)) * BaseDef;
+
+    [Export] public int BaseSpd { private get; set; } = 1;
+    public int Spd => Mathf.CeilToInt(Mathf.Pow(DoughType.SpdAff, Level - 1)) * BaseSpd;
+
+    [Export] public bool DefensePlus { get; set; }
 
     [Export] public Texture2D Texture { get; set; }
     [Export] public Attack[] AttackSet { get; set; }
-    [Export] public Bread[] BreadList { get; set; }
+    [Export] public Bread[] BreadSet { get; set; }
 
     public Attack GetAttack(int attack) => AttackSet.Length > attack ? AttackSet[attack] : null;
-    public Attack GetBreadAttack(int attack) => BreadList.Length > attack ? BreadList[attack].Attack : null;
+    public Attack GetBreadAttack(int attack) => BreadSet.Length > attack ? BreadSet[attack].Attack : null;
 
     public void TakeDamage(float damage)
     {
         CurrentHp = Mathf.FloorToInt(Mathf.Clamp(CurrentHp - damage, 0, Hp));
-        GD.Print($"Current: {CurrentHp}, Damage: {damage}");
+    }
+
+    public void Recover()
+    {
+        CurrentHp = Hp;
+        foreach (var bread in BreadSet)
+            bread.Recover();
     }
 
     public void WriteBinary(BinaryWriter writer)
@@ -54,7 +69,7 @@ public partial class Entity : Resource, IBinary<Entity>
         writer.Write(Spd);
 
         writer.Write(AttackSet);
-        writer.Write(BreadList);
+        writer.Write(BreadSet);
     }
 
     public static Entity ReadBinary(BinaryReader reader)
@@ -72,7 +87,7 @@ public partial class Entity : Resource, IBinary<Entity>
             BaseSpd = reader.ReadInt32(),
 
             AttackSet = reader.ReadArray<Attack>(),
-            BreadList = reader.ReadArray<Bread>(),
+            BreadSet = reader.ReadArray<Bread>(),
         };
     }
 }

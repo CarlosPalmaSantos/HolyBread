@@ -1,9 +1,10 @@
-using Godot;
-using System;
 using System.Collections;
+using Godot;
 using HCoroutines;
 using HolyBread.scripts.battle;
 using HolyBread.scripts.dialogues;
+
+namespace HolyBread.scripts;
 
 public partial class BattleUi : CanvasLayer
 {
@@ -23,27 +24,21 @@ public partial class BattleUi : CanvasLayer
     [Export] public Color BadHP { get; set; }
 
     [Export] public RichTextLabel EnemyName { get; set; }
+    [Export] public RichTextLabel PlayerName { get; set; }
 
     [Export] public Button Attack1Button { get; set; }
     [Export] public Button Attack2Button { get; set; }
     [Export] public Button Attack3Button { get; set; }
 
     [Export] public VBoxContainer BreadContainer { get; set; }
+    [Export] public Theme Theme { get; set; }
 
 
     public override void _Ready()
     {
-        GD.Print("Ready");
-        ShowMainMenu();
-
-        Manager.Start();
-
         Attack1Button.Pressed += () => Manager.PlayerAction(ActionType.ATTACK, 0);
         Attack2Button.Pressed += () => Manager.PlayerAction(ActionType.ATTACK, 1);
         Attack3Button.Pressed += () => Manager.PlayerAction(ActionType.ATTACK, 2);
-
-
-        UpdateInfo();
     }
 
     public void UpdateHpBar(ProgressBar bar, Entity entity)
@@ -53,8 +48,8 @@ public partial class BattleUi : CanvasLayer
         bar.AddThemeStyleboxOverride("fill",
             new StyleBoxFlat()
             {
-                BgColor = entity.PercentualHP > 0.5f ? GoodHP :
-                    entity.PercentualHP > 0.25f ? MediumHP : BadHP
+                BgColor = entity.PercentualHp > 0.5f ? GoodHP :
+                    entity.PercentualHp > 0.25f ? MediumHP : BadHP
             });
     }
 
@@ -67,10 +62,22 @@ public partial class BattleUi : CanvasLayer
     public IEnumerator AnimHpBar(Entity entity)
     {
         var bar = entity == Manager.Player ? PlayerBar : EnemyBar;
+        if ((int)bar.Value == entity.CurrentHp) yield break;
 
-        for (var hp = bar.Value; hp >= entity.CurrentHp; hp--)
+        var step = bar.Value > entity.CurrentHp ? -1 : 1;
+
+        for (var hp = bar.Value; step * hp <= step * entity.CurrentHp; hp += step)
         {
             bar.Value = hp;
+            var percent = hp / entity.Hp;
+
+            bar.AddThemeStyleboxOverride("fill",
+                new StyleBoxFlat()
+                {
+                    BgColor = percent > 0.5f ? GoodHP :
+                        percent > 0.25f ? MediumHP : BadHP
+                });
+
             yield return Co.Wait(0.02f);
         }
     }
@@ -80,7 +87,9 @@ public partial class BattleUi : CanvasLayer
         UpdateHpBar(Manager.Player);
         UpdateHpBar(Manager.Enemy);
 
-        EnemyName.Text = Manager.Enemy.Name;
+        PlayerName.Text = $"{Manager.Player.Name}   [m. {Manager.Player.Level}]";
+
+        EnemyName.Text = $"{Manager.Enemy.Name}   [m. {Manager.Enemy.Level}]";
         EnemyRect.Texture = Manager.Enemy.Texture;
 
         var atk1 = Manager.Player.GetAttack(0);
@@ -95,16 +104,38 @@ public partial class BattleUi : CanvasLayer
         Attack3Button.Text = atk3 != null ? atk3.Name : "---";
         Attack3Button.Disabled = atk3 == null;
 
-        for (var i = 0; i < Manager.Player.BreadList.Length; i++)
+        foreach (var child in BreadContainer.GetChildren())
         {
-            var bread = Manager.Player.BreadList[i];
+            BreadContainer.RemoveChild(child);
+        }
+
+        for (var i = 0; i < Manager.Player.BreadSet.Length; i++)
+        {
+            var bread = Manager.Player.BreadSet[i];
+            if (bread.Durability <= 0)
+                continue;
+
             var b = new Button();
-            b.Text = bread.Name;
+            b.Theme = Theme;
+            b.Text = bread.Name + $" [{bread.Durability}/{bread.MaxDurability}]";
 
             var i1 = i;
             b.Pressed += () => Manager.PlayerAction(ActionType.BREAD, i1);
             BreadContainer.AddChild(b);
-            i++;
+        }
+
+        for (var i = 0; i < Manager.Player.BreadSet.Length; i++)
+        {
+            var bread = Manager.Player.BreadSet[i];
+            if (bread.Durability > 0)
+                continue;
+
+            var b = new Button();
+            b.Theme = Theme;
+            b.Text = bread.Name + $" [{bread.Durability}/{bread.MaxDurability}]";
+            b.Disabled = true;
+
+            BreadContainer.AddChild(b);
         }
     }
 
@@ -149,7 +180,7 @@ public partial class BattleUi : CanvasLayer
             [
                 new DialogueLine()
                 {
-                    Text = "NO PUEDES HUIR DE TU [b]DESTINO[/b]",
+                    Text = "NO PUEDES HUIR DE TU [g]DESTINO[/g]",
                     Centered = true,
                 }
             ],
@@ -158,5 +189,13 @@ public partial class BattleUi : CanvasLayer
         DialogManager.Play(dialog);
 
         GetViewport().GuiReleaseFocus();
+    }
+
+    public void Load(Entity player, Enemy enemy)
+    {
+        Show();
+        ShowMainMenu();
+        Manager.Load(player, enemy);
+        UpdateInfo();
     }
 }

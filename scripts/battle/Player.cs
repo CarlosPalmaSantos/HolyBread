@@ -2,15 +2,37 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Godot;
 using HolyBread.scripts.utiles;
 
 namespace HolyBread.scripts.battle;
 
-public class Player : IBinary<Player>
+[GlobalClass]
+public partial class Player : Resource, IBinary<Player>
 {
-    private Dictionary<DoughType, Entity> DoughVariants { get; init; } = [];
-    public DoughType DoughType { get; set; }
-    public Entity Entity => DoughVariants[DoughType];
+    [Export] private Entity[] doughVariantList = [];
+    [Export] public Bread[] BreadSet { get; set; } = [];
+    private Dictionary<DoughType, Entity> doughVariants;
+
+    private Dictionary<DoughType, Entity> DoughVariants
+    {
+        get
+        {
+            doughVariants ??= doughVariantList.ToDictionary(d => d.DoughType);
+            return doughVariants;
+        }
+    }
+
+    [Export] public DoughType DoughType { get; set; }
+    public Entity Entity
+    {
+        get
+        {
+            var res = DoughVariants[DoughType];
+            res.BreadSet = BreadSet; // No es lo mas óptimo, pero se va a quedar así
+            return res;
+        }
+    }
 
     public void ChangeDoughType(DoughType doughType)
     {
@@ -20,12 +42,15 @@ public class Player : IBinary<Player>
     public void WriteBinary(BinaryWriter writer)
     {
         writer.Write(DoughType);
-        DoughType.WriteBinary(writer);
+        writer.Write(doughVariantList);
+        writer.Write(BreadSet);
     }
 
     public static Player ReadBinary(BinaryReader reader) => new()
     {
-        DoughVariants = reader.ReadDictionary<DoughType, Entity>(),
         DoughType = reader.Read<DoughType>(),
+        doughVariants = null,
+        doughVariantList = reader.ReadArray<Entity>(),
+        BreadSet = reader.ReadArray<Bread>()
     };
 }

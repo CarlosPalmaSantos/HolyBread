@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Attack" format=3 uid="uid://byu7lrnocc77n"]
+
+[ext_resource type="Script" uid="uid://crtwedyyvaw5g" path="res://scripts/battle/Attack.cs" id="1_k6bff"]
+[ext_resource type="Resource" uid="uid://dfbyd68s7hp8g" path="res://resources/Doughs/blanco.tres" id="1_np12b"]
+
+[resource]
+script = ExtResource("1_k6bff")
+Name = "Lanza Migajera"
+DoughType = ExtResource("1_np12b")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"

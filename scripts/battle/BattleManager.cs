@@ -13,11 +13,12 @@ public partial class BattleManager : Node
     [Export] public Entity Player { get; set; }
     [Export] public Enemy Enemy { get; set; }
 
-    public void Start()
-    {
-        if (Player.CurrentHp < 0) Player.CurrentHp = Player.Hp;
-        if (Enemy.CurrentHp < 0) Enemy.CurrentHp = Enemy.Hp;
-    }
+    [Signal]
+    public delegate void OnEnemyDefeatedEventHandler();
+
+    [Signal]
+    public delegate void OnPlayerDefeatedEventHandler();
+
 
     private static void UseAttack(Entity user, Entity target, int attack, out Attack.Effectiveness effectiveness)
     {
@@ -25,8 +26,13 @@ public partial class BattleManager : Node
     }
 
     private static void UseBreadAttack(Entity user, Entity target, int attack,
-        out Attack.Effectiveness effectiveness) =>
-        target.BreadList[attack].Attack.Act(user, target, out effectiveness);
+        out Attack.Effectiveness effectiveness)
+    {
+        var bread = user.BreadSet[attack];
+        bread.Attack.Act(user, target, out effectiveness);
+
+        bread.Durability--;
+    }
 
     public void PlayerAction(ActionType actionType, int arg)
     {
@@ -53,7 +59,15 @@ public partial class BattleManager : Node
 
         Ui.HideMenu();
         yield return ExecuteActionCoroutine(firstAction, first, last);
+        yield return Co.Wait(0.25f);
         yield return ExecuteActionCoroutine(lastAction, last, first);
+
+        if (Enemy.CurrentHp <= 0)
+            EmitSignalOnEnemyDefeated();
+
+        if (Player.CurrentHp <= 0)
+            EmitSignalOnPlayerDefeated();
+
         Ui.ShowMainMenu();
         Ui.UpdateInfo();
     }
@@ -61,27 +75,55 @@ public partial class BattleManager : Node
 
     private IEnumerator ExecuteActionCoroutine((ActionType, int) action, Entity user, Entity target)
     {
+        if (user.CurrentHp <= 0)
+            yield break;
+
+        var eff = Attack.Effectiveness.NONE;
+
         switch (action.Item1)
         {
             case ActionType.NONE:
                 yield return DialogManager.PlayCoroutine(
-                    $"[b]{user.Name}[/b] te mira fijamente");
+                    $"[b][color={Ui.BadHP}]{user.Name}[/color][/b] te mira fijamente", keepPanel: true);
                 break;
             case ActionType.ATTACK:
                 yield return DialogManager.PlayCoroutine(
-                    $"[b]{user.Name}[/b] usó [b]{user.AttackSet[action.Item2].Name}[/b]");
-                UseAttack(user, target, action.Item2, out var basicEff);
-                yield return Ui.AnimHpBar(target);
-
+                    $"[b]{user.Name}[/b] usó [g]{user.AttackSet[action.Item2].Name}[/g]", keepPanel: true);
+                UseAttack(user, target, action.Item2, out eff);
                 break;
             case ActionType.BREAD:
                 yield return DialogManager.PlayCoroutine(
-                    $"[b]{user.Name}[/b] usó [b]{user.AttackSet[action.Item2].Name}[/b]");
-                UseBreadAttack(user, target, action.Item2, out var breadEff);
+                    $"[b]{user.Name}[/b] usó [g]{user.BreadSet[action.Item2].Name}[/g]", keepPanel: true);
+                UseBreadAttack(user, target, action.Item2, out eff);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
+        
+        yield return Ui.AnimHpBar(user);
+        yield return Ui.AnimHpBar(target);
+        
+        yield return Co.Wait(0.2f);
+
+        if (eff == Attack.Effectiveness.NONE) yield break;
+        var dialogText = eff switch
+        {
+            Attack.Effectiveness.NORMAL => "Fue un golpe normal",
+            Attack.Effectiveness.WEAK => $"Fue un golpe [b][color={Ui.GoodHP.ToHtml(false)}]muy eficaz[/color][/b]",
+            Attack.Effectiveness.RESIST => $"Fue un golpe [b][color={Ui.BadHP.ToHtml(false)}]poco eficaz[/color][/b]",
+            _ => throw new ArgumentOutOfRangeException()
+        };
+
+        yield return DialogManager.PlayCoroutine(dialogText, keepPanel: true);
+
+    }
+
+    public void Load(Entity player, Enemy enemy)
+    {
+        Player = player;
+        Enemy = enemy;
+        if (Player.CurrentHp < 0) Player.CurrentHp = Player.Hp;
+        if (Enemy.CurrentHp < 0) Enemy.CurrentHp = Enemy.Hp;
     }
 }
 

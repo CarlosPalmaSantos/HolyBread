@@ -20,7 +20,6 @@ public partial class DialogManager : CanvasLayer
     public override void _EnterTree()
     {
         Instance = this;
-        GD.Print("DialogManager: Instanced");
     }
 
     public override void _Ready()
@@ -39,9 +38,6 @@ public partial class DialogManager : CanvasLayer
 
     private void OnMainPanelGuiInput(InputEvent @event)
     {
-        if (@event is InputEventMouseButton mb)
-            GD.Print($"Botón: {mb.ButtonIndex}, Pressed: {mb.Pressed}");
-
         if (@event is InputEventMouseButton { ButtonIndex: MouseButton.Left, Pressed: true })
             Advance();
     }
@@ -58,9 +54,10 @@ public partial class DialogManager : CanvasLayer
         else FastForward = true;
     }
 
-    public static void Play(string text, float speed = 1) => Co.Run(PlayCoroutine(text, speed));
+    public static void Play(string text, float speed = 1, bool keepPanel = false) =>
+        Co.Run(PlayCoroutine(text, speed, keepPanel));
 
-    public static IEnumerator PlayCoroutine(string text, float speed = 1)
+    public static IEnumerator PlayCoroutine(string text, float speed = 1, bool keepPanel = false)
     {
         yield return Instance.PlayDialogueCoroutine(
             new Dialogue()
@@ -77,7 +74,7 @@ public partial class DialogManager : CanvasLayer
                 Shadow = false,
             });
     }
-
+    
     public static void Play(Dialogue dialogue) => Co.Run(PlayCoroutine(dialogue));
 
     public static IEnumerator PlayCoroutine(Dialogue dialogue)
@@ -90,11 +87,12 @@ public partial class DialogManager : CanvasLayer
 
     private IEnumerator PlayDialogueCoroutine(Dialogue dialogue)
     {
-        TextLabel.Text = "";
-        MainPanel.Show();
+        Instance.MainPanel.Show();
 
-        if (dialogue.Shadow) Background.Show();
-        else Background.Hide();
+        if (dialogue.Shadow) Instance.Background.Show();
+        else Instance.Background.Hide();
+
+        TextLabel.Text = "";
 
         foreach (var line in dialogue.Lines)
         {
@@ -138,8 +136,8 @@ public partial class DialogManager : CanvasLayer
 
     private IEnumerator ShowTextCoroutine(string text, float speed)
     {
-        text = text.Replace("[b]", "[b][color=ffbc30]").Replace("[/b]", "[/color][/b]");
-        
+        text = text.Replace("[g]", "[b][color=ffbc30]").Replace("[/g]", "[/color][/b]");
+
         var richFlag = false;
         var str = "";
         foreach (var c in text)

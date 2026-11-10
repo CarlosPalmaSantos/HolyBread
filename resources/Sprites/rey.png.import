@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2yylqvqk5yu5"
-path="res://.godot/imported/granjera_1_1.png-bebd21f8881f3771fa6f80c2a635fbc0.ctex"
+uid="uid://d1cy4c8rkewyn"
+path="res://.godot/imported/rey.png-b82468c62bf28c390f950af205a2f7ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Sprites/granjera_1_1.png"
-dest_files=["res://.godot/imported/granjera_1_1.png-bebd21f8881f3771fa6f80c2a635fbc0.ctex"]
+source_file="res://resources/Sprites/rey.png"
+dest_files=["res://.godot/imported/rey.png-b82468c62bf28c390f950af205a2f7ee.ctex"]
 
 [params]
 

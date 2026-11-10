@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="Path" format=3 uid="uid://cp2lypvv3en07"]
+
+[ext_resource type="Resource" uid="uid://b6uwittxgurb1" path="res://resources/Attacks/puno_artesanal.tres" id="1_36h8e"]
+[ext_resource type="Resource" uid="uid://byu7lrnocc77n" path="res://resources/Attacks/lanza_migajera.tres" id="2_54aw7"]
+[ext_resource type="Resource" uid="uid://dfbyd68s7hp8g" path="res://resources/Doughs/blanco.tres" id="3_162l1"]
+[ext_resource type="Texture2D" uid="uid://i2jqdq8s8rtq" path="res://resources/Sprites/granjera_1.tres" id="4_dp3wq"]
+[ext_resource type="Texture2D" uid="uid://bl852wxcd05rd" path="res://resources/Sprites/granjero_1.tres" id="5_whb0f"]
+[ext_resource type="Texture2D" uid="uid://ry3im3g3s05j" path="res://resources/Sprites/granjera_2.tres" id="6_qa11w"]
+[ext_resource type="Texture2D" uid="uid://lknjlm64ictr" path="res://resources/Sprites/granjero_2.tres" id="7_k2kp3"]
+[ext_resource type="Script" uid="uid://t4qwh37cywa1" path="res://scripts/EnemyPreset.cs" id="8_justd"]
+[ext_resource type="Script" uid="uid://cqf8sw07ulelr" path="res://scripts/Paths/Spot.cs" id="9_4ny75"]
+[ext_resource type="Resource" uid="uid://c5h2glwx6bd3t" path="res://resources/Doughs/centeno.tres" id="9_54aw7"]
+[ext_resource type="Resource" uid="uid://b3b1d6ptym1ui" path="res://resources/Attacks/pipazo.tres" id="9_162l1"]
+[ext_resource type="Script" uid="uid://lymbpxjw8y4j" path="res://scripts/Paths/Path.cs" id="10_i1gcr"]
+[ext_resource type="Resource" uid="uid://ci81aokyil1p6" path="res://resources/Attacks/latigo_integral.tres" id="10_whb0f"]
+[ext_resource type="Resource" uid="uid://cmoo5pkm4jhym" path="res://resources/Attacks/mantequillazo.tres" id="11_qa11w"]
+[ext_resource type="Resource" uid="uid://dff151iu4v3ec" path="res://resources/Doughs/brioche.tres" id="12_whb0f"]
+[ext_resource type="Resource" uid="uid://ugp12pmplwrt" path="res://resources/Doughs/integral.tres" id="14_k2kp3"]
+
+[sub_resource type="Resource" id="Resource_daiq8"]
+script = ExtResource("8_justd")
+DoughType = ExtResource("3_162l1")
+Names = PackedStringArray("Panosio", "Carpan", "Panblo", "Pandro")
+Textures = [ExtResource("4_dp3wq"), ExtResource("5_whb0f"), ExtResource("6_qa11w"), ExtResource("7_k2kp3")]
+Attacks = [ExtResource("1_36h8e"), ExtResource("2_54aw7"), ExtResource("9_162l1"), ExtResource("10_whb0f"), ExtResource("11_qa11w")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_5jxlq"]
+script = ExtResource("8_justd")
+DoughType = ExtResource("9_54aw7")
+Names = PackedStringArray("Panosio", "Carpan", "Panblo", "Pandro")
+Textures = [ExtResource("4_dp3wq"), ExtResource("5_whb0f"), ExtResource("6_qa11w"), ExtResource("7_k2kp3")]
+Attacks = [ExtResource("1_36h8e"), ExtResource("2_54aw7"), ExtResource("9_162l1"), ExtResource("10_whb0f"), ExtResource("11_qa11w")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_dp3wq"]
+script = ExtResource("8_justd")
+DoughType = ExtResource("12_whb0f")
+Names = PackedStringArray("Panosio", "Carpan", "Panblo", "Pandro")
+Textures = [ExtResource("4_dp3wq"), ExtResource("5_whb0f"), ExtResource("6_qa11w"), ExtResource("7_k2kp3")]
+Attacks = [ExtResource("1_36h8e"), ExtResource("2_54aw7"), ExtResource("9_162l1"), ExtResource("10_whb0f"), ExtResource("11_qa11w")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_qa11w"]
+script = ExtResource("8_justd")
+DoughType = ExtResource("14_k2kp3")
+Names = PackedStringArray("Panosio", "Carpan", "Panblo", "Pandro")
+Textures = [ExtResource("4_dp3wq"), ExtResource("5_whb0f"), ExtResource("6_qa11w"), ExtResource("7_k2kp3")]
+Attacks = [ExtResource("1_36h8e"), ExtResource("2_54aw7"), ExtResource("9_162l1"), ExtResource("10_whb0f"), ExtResource("11_qa11w")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_ajshl"]
+script = ExtResource("9_4ny75")
+BattleChance = 1.0
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_162l1"]
+script = ExtResource("9_4ny75")
+BattleChance = 0.9
+HardBattleChance = 0.1
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_ff6ho"]
+script = ExtResource("9_4ny75")
+BattleChance = 0.9
+HardBattleChance = 0.1
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_36h8e"]
+script = ExtResource("9_4ny75")
+HardBattleChance = 1.0
+UniqueSpot = 1.0
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[resource]
+script = ExtResource("10_i1gcr")
+Spots = [SubResource("Resource_ajshl"), SubResource("Resource_162l1"), SubResource("Resource_ff6ho"), SubResource("Resource_36h8e")]
+Enemies = [SubResource("Resource_daiq8"), SubResource("Resource_5jxlq"), SubResource("Resource_dp3wq"), SubResource("Resource_qa11w")]
+metadata/_custom_type_script = "uid://lymbpxjw8y4j"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2bfqryuokhkl"
-path="res://.godot/imported/granjero_1_1.png-1c8f145e10408484570ffda3200088b6.ctex"
+uid="uid://baydvdy54kgbp"
+path="res://.godot/imported/granjero_2.png-9390d52e99ded1a249f10cd0201dd0e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Sprites/granjero_1_1.png"
-dest_files=["res://.godot/imported/granjero_1_1.png-1c8f145e10408484570ffda3200088b6.ctex"]
+source_file="res://resources/Sprites/granjero_2.png"
+dest_files=["res://.godot/imported/granjero_2.png-9390d52e99ded1a249f10cd0201dd0e7.ctex"]
 
 [params]
 

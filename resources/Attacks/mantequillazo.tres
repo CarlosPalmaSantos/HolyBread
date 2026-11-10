@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Attack" format=3 uid="uid://cmoo5pkm4jhym"]
+
+[ext_resource type="Script" uid="uid://crtwedyyvaw5g" path="res://scripts/battle/Attack.cs" id="1_hqcas"]
+[ext_resource type="Resource" uid="uid://dff151iu4v3ec" path="res://resources/Doughs/brioche.tres" id="1_lnu7e"]
+
+[resource]
+script = ExtResource("1_hqcas")
+Name = "Mantequillazo"
+DoughType = ExtResource("1_lnu7e")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
