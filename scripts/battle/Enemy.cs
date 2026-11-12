@@ -49,7 +49,7 @@ public partial class Enemy : Entity
 
     public Attack GetBestAttack(BattleManager battle)
     {
-        (Attack, float) max = (null, 0);
+        (Attack, float) max = (null, -1);
 
         foreach (var atk in AttackSet)
         {

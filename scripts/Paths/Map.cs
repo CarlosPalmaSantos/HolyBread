@@ -52,7 +52,7 @@ public partial class Map : CanvasLayer
                     Position = index1;
                     EnableConnections();
                     gameManager.QueueFree();
-                    this.Show();
+                    Show();
                 };
                 gameManager.NextChoices();
                 

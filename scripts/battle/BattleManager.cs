@@ -19,7 +19,6 @@ public partial class BattleManager : Node
     [Signal]
     public delegate void OnPlayerDefeatedEventHandler();
 
-
     private static void UseAttack(Entity user, Entity target, int attack, out Attack.Effectiveness effectiveness)
     {
         user.AttackSet[attack].Act(user, target, out effectiveness);
@@ -36,6 +35,9 @@ public partial class BattleManager : Node
 
     public void PlayerAction(ActionType actionType, int arg)
     {
+        if (TutorialPart == 4 && actionType == ActionType.BREAD) 
+            TutorialPart = 5;
+        
         Co.Run(PlayerActionCoroutine(actionType, arg));
     }
 
@@ -84,7 +86,7 @@ public partial class BattleManager : Node
         {
             case ActionType.NONE:
                 yield return DialogManager.PlayCoroutine(
-                    $"[b][color={Ui.BadHP}]{user.Name}[/color][/b] te mira fijamente", keepPanel: true);
+                    $"[b][color={Ui.BadHPTexture}]{user.Name}[/color][/b] te mira fijamente", keepPanel: true);
                 break;
             case ActionType.ATTACK:
                 yield return DialogManager.PlayCoroutine(
@@ -99,10 +101,10 @@ public partial class BattleManager : Node
             default:
                 throw new ArgumentOutOfRangeException();
         }
-        
+
         yield return Ui.AnimHpBar(user);
         yield return Ui.AnimHpBar(target);
-        
+
         yield return Co.Wait(0.2f);
 
         if (eff == Attack.Effectiveness.NONE) yield break;
@@ -115,15 +117,21 @@ public partial class BattleManager : Node
         };
 
         yield return DialogManager.PlayCoroutine(dialogText, keepPanel: true);
-
     }
 
-    public void Load(Entity player, Enemy enemy)
+    public void Load(Entity player, Enemy enemy, bool tutorial)
     {
+        Tutorial = tutorial;
+        
         Player = player;
         Enemy = enemy;
         if (Player.CurrentHp < 0) Player.CurrentHp = Player.Hp;
         if (Enemy.CurrentHp < 0) Enemy.CurrentHp = Enemy.Hp;
+
+        if (!Tutorial) return;
+        TutorialPart = 1;
+        Ui.HideMenu();
+        Co.Run(Tutorial1());
     }
 }
 

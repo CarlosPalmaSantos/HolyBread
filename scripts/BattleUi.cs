@@ -9,19 +9,21 @@ namespace HolyBread.scripts;
 public partial class BattleUi : CanvasLayer
 {
     [Export] public BattleManager Manager { get; set; }
-    [Export] public Panel Panel { get; set; }
+    [Export] public TextureRect Panel { get; set; }
     [Export] public Container MainMenu { get; set; }
     [Export] public Container AttackMenu { get; set; }
     [Export] public Container BreadMenu { get; set; }
 
-    [Export] public ProgressBar EnemyBar { get; set; }
-    [Export] public ProgressBar PlayerBar { get; set; }
+    [Export] public Range EnemyBar { get; set; }
+    [Export] public Range PlayerBar { get; set; }
     [Export] public TextureRect EnemyRect { get; set; }
     [Export] public TextureRect PlayerRect { get; set; }
 
     [Export] public Color GoodHP { get; set; }
-    [Export] public Color MediumHP { get; set; }
     [Export] public Color BadHP { get; set; }
+    [Export] public Texture2D GoodHPTexture { get; set; }
+    [Export] public Texture2D MediumHPTexture { get; set; }
+    [Export] public Texture2D BadHPTexture { get; set; }
 
     [Export] public RichTextLabel EnemyName { get; set; }
     [Export] public RichTextLabel PlayerName { get; set; }
@@ -41,16 +43,15 @@ public partial class BattleUi : CanvasLayer
         Attack3Button.Pressed += () => Manager.PlayerAction(ActionType.ATTACK, 2);
     }
 
-    public void UpdateHpBar(ProgressBar bar, Entity entity)
+    public void UpdateHpBar(Range bar, Entity entity)
     {
         bar.MaxValue = entity.Hp;
         bar.Value = entity.CurrentHp;
-        bar.AddThemeStyleboxOverride("fill",
-            new StyleBoxFlat()
-            {
-                BgColor = entity.PercentualHp > 0.5f ? GoodHP :
-                    entity.PercentualHp > 0.25f ? MediumHP : BadHP
-            });
+        if (bar is TextureProgressBar textureBar)
+        {
+            textureBar.TextureProgress = entity.PercentualHp > 0.5f ? GoodHPTexture :
+                entity.PercentualHp > 0.25f ? MediumHPTexture : BadHPTexture;
+        }
     }
 
     public void UpdateHpBar(Entity entity)
@@ -71,12 +72,11 @@ public partial class BattleUi : CanvasLayer
             bar.Value = hp;
             var percent = hp / entity.Hp;
 
-            bar.AddThemeStyleboxOverride("fill",
-                new StyleBoxFlat()
-                {
-                    BgColor = percent > 0.5f ? GoodHP :
-                        percent > 0.25f ? MediumHP : BadHP
-                });
+            if (bar is TextureProgressBar textureBar)
+            {
+                textureBar.TextureProgress = percent > 0.5f ? GoodHPTexture :
+                    percent > 0.25f ? MediumHPTexture : BadHPTexture;
+            }
 
             yield return Co.Wait(0.02f);
         }
@@ -116,6 +116,11 @@ public partial class BattleUi : CanvasLayer
                 continue;
 
             var b = new Button();
+            b.CustomMinimumSize = new Vector2(200, 86);
+            b.CustomMaximumSize = new Vector2(200, 86);
+            b.Alignment = HorizontalAlignment.Center;
+            b.SizeFlagsHorizontal = Control.SizeFlags.ShrinkCenter;
+
             b.Theme = Theme;
             b.Text = bread.Name + $" [{bread.Durability}/{bread.MaxDurability}]";
 
@@ -149,6 +154,28 @@ public partial class BattleUi : CanvasLayer
 
     public void ShowMainMenu()
     {
+        if (Manager.TutorialPart == 2)
+        {
+            return;
+        }
+
+        if (Manager.TutorialPart == 3)
+        {
+            Co.Run(Manager.Tutorial3());
+        }
+
+        if (Manager.TutorialPart == 4)
+        {
+            DialogManager.Play(Manager.ThirdDialogue);
+            return;
+        }
+
+        if (Manager.TutorialPart == 5)
+        {
+            Co.Run(Manager.Tutorial4());
+            return;
+        }
+
         Panel.Show();
         MainMenu.Show();
         AttackMenu.Hide();
@@ -157,14 +184,32 @@ public partial class BattleUi : CanvasLayer
 
     public void ShowBasicAttackMenu()
     {
+        if (Manager.TutorialPart == 4)
+        {
+            DialogManager.Play(Manager.ThirdDialogue);
+            return;
+        }
+
+
         Panel.Show();
         MainMenu.Hide();
         AttackMenu.Show();
         BreadMenu.Hide();
+
+        if (Manager.TutorialPart == 2)
+        {
+            Co.Run(Manager.Tutorial2());
+        }
     }
 
     public void ShowBreadAttackMenu()
     {
+        if (Manager.TutorialPart == 2)
+        {
+            DialogManager.Play(Manager.NoCorrectButtonAttackDialogue);
+            return;
+        }
+
         Panel.Show();
         MainMenu.Hide();
         AttackMenu.Hide();
@@ -173,6 +218,18 @@ public partial class BattleUi : CanvasLayer
 
     public void RunAway()
     {
+        if (Manager.TutorialPart == 2)
+        {
+            DialogManager.Play(Manager.NoCorrectButtonAttackDialogue);
+            return;
+        }
+
+        if (Manager.TutorialPart == 4)
+        {
+            DialogManager.Play(Manager.ThirdDialogue);
+            return;
+        }
+
         HideMenu();
         var dialog = new Dialogue()
         {
@@ -185,17 +242,17 @@ public partial class BattleUi : CanvasLayer
                 }
             ],
         };
-        dialog.OnDialogueEnd += () => ShowMainMenu();
+        dialog.OnDialogueEnd += ShowMainMenu;
         DialogManager.Play(dialog);
 
         GetViewport().GuiReleaseFocus();
     }
 
-    public void Load(Entity player, Enemy enemy)
+    public void Load(Entity player, Enemy enemy, bool tutorial = false)
     {
         Show();
         ShowMainMenu();
-        Manager.Load(player, enemy);
+        Manager.Load(player, enemy, tutorial);
         UpdateInfo();
     }
 }

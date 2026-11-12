@@ -100,9 +100,9 @@ public partial class GameManager : Node
         GenChoice(spot, RightChoiceButton, RightChoice);
     }
 
-    public void StartBattle(Entity player, Enemy enemy)
+    public void StartBattle(Entity player, Enemy enemy, bool tutorial = false)
     {
-        BattleUi.Load(player, enemy);
+        BattleUi.Load(player, enemy, tutorial);
     }
 
     public void PlayerDefeated()

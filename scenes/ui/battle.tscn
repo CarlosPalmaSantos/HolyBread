@@ -3,8 +3,124 @@
 [ext_resource type="Script" uid="uid://b26vrkcm2jbew" path="res://scripts/BattleUi.cs" id="1_bg8yg"]
 [ext_resource type="Script" uid="uid://irur1cjkbubm" path="res://scripts/battle/BattleManager.cs" id="1_m63d4"]
 [ext_resource type="Theme" uid="uid://cd1o8bhkt0xo" path="res://resources/theme.tres" id="2_bg8yg"]
+[ext_resource type="Texture2D" uid="uid://cnk6u17hktlm2" path="res://resources/Sprites/barra_de_vida_amarillo.png" id="3_k3fhr"]
+[ext_resource type="Texture2D" uid="uid://5w7yr1ykucre" path="res://resources/Sprites/barra_de_vida_rojo.png" id="4_c2mh6"]
+[ext_resource type="Script" uid="uid://oa12qcxp7bxb" path="res://scripts/dialogues/DialogueLine.cs" id="4_evq16"]
+[ext_resource type="Script" uid="uid://cjdyw14nsx3u5" path="res://scripts/dialogues/Dialogue.cs" id="5_fbd0j"]
+[ext_resource type="Texture2D" uid="uid://brj77vc88j6vo" path="res://resources/Sprites/panel_principal_1.png" id="7_fbd0j"]
 [ext_resource type="Texture2D" uid="uid://ks4sqhjahn62" path="res://resources/Sprites/player.png" id="7_tfm2p"]
+[ext_resource type="Texture2D" uid="uid://2y4dom776wis" path="res://resources/Sprites/barra_de_vida_vacia.png" id="8_mqini"]
+[ext_resource type="Texture2D" uid="uid://bpi7cupu13q73" path="res://resources/Sprites/barra_de_vida_verde.png" id="8_tfm2p"]
+[ext_resource type="Theme" uid="uid://wemvxejou07q" path="res://resources/large_button_theme.tres" id="8_xeu4k"]
 [ext_resource type="Texture2D" uid="uid://cylpgf5nhhr73" path="res://icon.svg" id="9_xeu4k"]
+
+[sub_resource type="Resource" id="Resource_eiab3"]
+script = ExtResource("4_evq16")
+Speaker = "Pandado"
+Text = "Bienvenido viajero al monte sagrado"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_evq16"]
+script = ExtResource("4_evq16")
+Speaker = "Pandado"
+Text = "Antes de permitirte pasar, debo comprobar que sabes lo básico"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_xeu4k"]
+script = ExtResource("4_evq16")
+Speaker = "Pandado"
+Text = "¿Que no sabes nada?
+Deja que te de un par de consejos entonces"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_k3fhr"]
+script = ExtResource("4_evq16")
+Speaker = "Pandado"
+Text = "Para atacar pulsa... bueno... [g]ATACAR[/g]"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_8l5c3"]
+script = ExtResource("5_fbd0j")
+Lines = Array[Object]([SubResource("Resource_eiab3"), SubResource("Resource_evq16"), SubResource("Resource_xeu4k"), SubResource("Resource_k3fhr")])
+Shadow = true
+metadata/_custom_type_script = "uid://cjdyw14nsx3u5"
+
+[sub_resource type="Resource" id="Resource_tfm2p"]
+script = ExtResource("4_evq16")
+Speaker = "Pandado"
+Text = "Ahora selecciona el ataque [g]PUÑO ARTESANAL[/g]"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_c2mh6"]
+script = ExtResource("4_evq16")
+Speaker = "Pandado"
+Text = "Este ataque hace [g]20 de Potencia[/g] y es del [g]mismo tipo[/g]"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_fbd0j"]
+script = ExtResource("5_fbd0j")
+Lines = Array[Object]([SubResource("Resource_tfm2p"), SubResource("Resource_c2mh6")])
+Shadow = true
+metadata/_custom_type_script = "uid://cjdyw14nsx3u5"
+
+[sub_resource type="Resource" id="Resource_04581"]
+script = ExtResource("4_evq16")
+Speaker = "Pandado"
+Text = "No, ahí no, a [g]ATACAR[/g]"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_mqini"]
+script = ExtResource("5_fbd0j")
+Lines = Array[Object]([SubResource("Resource_04581")])
+Shadow = true
+metadata/_custom_type_script = "uid://cjdyw14nsx3u5"
+
+[sub_resource type="Resource" id="Resource_c6rvn"]
+script = ExtResource("4_evq16")
+Speaker = "Pandado"
+Text = "Ahora deberías curarte..."
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_tk4r7"]
+script = ExtResource("4_evq16")
+Speaker = "Pandado"
+Text = "Pulsa [g]PAN[/g] y utiliza una [g]VIENA[/g]..."
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_k2f2v"]
+script = ExtResource("4_evq16")
+Speaker = "Pandado"
+Text = "Recuperarás [g]30%[/g] de la vida"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_daiq8"]
+script = ExtResource("5_fbd0j")
+Lines = Array[Object]([SubResource("Resource_c6rvn"), SubResource("Resource_tk4r7"), SubResource("Resource_k2f2v")])
+Shadow = true
+metadata/_custom_type_script = "uid://cjdyw14nsx3u5"
+
+[sub_resource type="Resource" id="Resource_jgpvw"]
+script = ExtResource("4_evq16")
+Speaker = "Pandado"
+Text = "Con esto ya estás listo para ir a la montaña"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_7jovc"]
+script = ExtResource("4_evq16")
+Speaker = "Pandado"
+Text = "Pero antes de nada, toma esta [g]Baguette[/g]"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_fqis5"]
+script = ExtResource("4_evq16")
+Speaker = "Pandado"
+Text = "Hace un golpe de [g]60 de Potencia[/g] de tu mismo tipo"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_agplw"]
+script = ExtResource("5_fbd0j")
+Lines = Array[Object]([SubResource("Resource_jgpvw"), SubResource("Resource_7jovc"), SubResource("Resource_fqis5")])
+metadata/_custom_type_script = "uid://cjdyw14nsx3u5"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mqini"]
 atlas = ExtResource("7_tfm2p")
@@ -12,10 +128,6 @@ region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5lci"]
 bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lirfm"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8b6bk"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=942398595 node_paths=PackedStringArray("Manager", "Panel", "MainMenu", "AttackMenu", "BreadMenu", "EnemyBar", "PlayerBar", "EnemyRect", "PlayerRect", "EnemyName", "PlayerName", "Attack1Button", "Attack2Button", "Attack3Button", "BreadContainer")]
 script = ExtResource("1_bg8yg")
@@ -29,19 +141,26 @@ PlayerBar = NodePath("Player/MarginContainer/VBoxContainer/MarginContainer/Progr
 EnemyRect = NodePath("TextureRect2")
 PlayerRect = NodePath("TextureRect")
 GoodHP = Color(0.5058824, 0.48235294, 0.101960786, 1)
-MediumHP = Color(1, 0.7372549, 0.1882353, 1)
 BadHP = Color(0.6745098, 0.26666668, 0.15294118, 1)
+GoodHPTexture = ExtResource("8_tfm2p")
+MediumHPTexture = ExtResource("3_k3fhr")
+BadHPTexture = ExtResource("4_c2mh6")
 EnemyName = NodePath("Panel2/MarginContainer/VBoxContainer/MarginContainer2/RichTextLabel")
 PlayerName = NodePath("Player/MarginContainer/VBoxContainer/MarginContainer2/RichTextLabel")
 Attack1Button = NodePath("Panel/attack/MarginContainer/Main/Attack1")
 Attack2Button = NodePath("Panel/attack/MarginContainer/Main/Attack2")
 Attack3Button = NodePath("Panel/attack/MarginContainer/Main/Attack3")
 BreadContainer = NodePath("Panel/bread/MarginContainer/ScrollContainer/VBoxContainer")
-Theme = ExtResource("2_bg8yg")
+Theme = ExtResource("8_xeu4k")
 
 [node name="Node" type="Node" parent="." unique_id=2039075978 node_paths=PackedStringArray("Ui")]
 script = ExtResource("1_m63d4")
 Ui = NodePath("..")
+FirstDialogue = SubResource("Resource_8l5c3")
+SecondDialogue = SubResource("Resource_fbd0j")
+NoCorrectButtonAttackDialogue = SubResource("Resource_mqini")
+ThirdDialogue = SubResource("Resource_daiq8")
+FourthDialogue = SubResource("Resource_agplw")
 
 [node name="TextureRect3" type="TextureRect" parent="." unique_id=633222610]
 anchors_preset = 15
@@ -106,18 +225,19 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ProgressBar" type="ProgressBar" parent="Player/MarginContainer/VBoxContainer/MarginContainer" unique_id=1702204126]
+[node name="ProgressBar" type="TextureProgressBar" parent="Player/MarginContainer/VBoxContainer/MarginContainer" unique_id=1241582889]
 layout_mode = 2
 theme = ExtResource("2_bg8yg")
-theme_override_styles/fill = SubResource("StyleBoxFlat_lirfm")
-step = 1.0
 value = 100.0
+texture_under = ExtResource("8_mqini")
+texture_progress = ExtResource("8_tfm2p")
 
-[node name="Panel" type="Panel" parent="." unique_id=678694151]
+[node name="Panel" type="TextureRect" parent="." unique_id=1439497380]
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 280.0
 grow_vertical = 2
+texture = ExtResource("7_fbd0j")
 
 [node name="main" type="VBoxContainer" parent="Panel" unique_id=1737144836]
 layout_mode = 1
@@ -130,8 +250,8 @@ theme_override_constants/separation = 80
 alignment = 1
 
 [node name="Attack" type="Button" parent="Panel/main" unique_id=110686804]
-custom_minimum_size = Vector2(200, 0)
-custom_maximum_size = Vector2(200, -1)
+custom_minimum_size = Vector2(200, 56)
+custom_maximum_size = Vector2(200, 56)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -141,8 +261,8 @@ text = "ATACAR"
 autowrap_mode = 3
 
 [node name="bread" type="Button" parent="Panel/main" unique_id=934590800]
-custom_minimum_size = Vector2(200, 0)
-custom_maximum_size = Vector2(200, -1)
+custom_minimum_size = Vector2(200, 56)
+custom_maximum_size = Vector2(200, 56)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -152,8 +272,8 @@ text = "PAN"
 autowrap_mode = 3
 
 [node name="run away" type="Button" parent="Panel/main" unique_id=303882329]
-custom_minimum_size = Vector2(200, 0)
-custom_maximum_size = Vector2(200, -1)
+custom_minimum_size = Vector2(200, 56)
+custom_maximum_size = Vector2(200, 56)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -168,6 +288,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -3.5
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 80
@@ -175,10 +297,10 @@ alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/attack" unique_id=52424533]
 layout_mode = 2
-theme_override_constants/margin_left = 0
+theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = 80
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 40
 
 [node name="Main" type="VBoxContainer" parent="Panel/attack/MarginContainer" unique_id=1084024592]
 layout_mode = 2
@@ -186,24 +308,24 @@ theme_override_constants/separation = 40
 alignment = 1
 
 [node name="Attack1" type="Button" parent="Panel/attack/MarginContainer/Main" unique_id=408097863]
-custom_minimum_size = Vector2(250, 0)
-custom_maximum_size = Vector2(250, -1)
+custom_minimum_size = Vector2(200, 86)
+custom_maximum_size = Vector2(200, 86)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("2_bg8yg")
+theme = ExtResource("8_xeu4k")
 theme_override_font_sizes/font_size = 30
 text = "Ataque 1"
 autowrap_mode = 3
 clip_text = true
 
 [node name="Attack2" type="Button" parent="Panel/attack/MarginContainer/Main" unique_id=829233442]
-custom_minimum_size = Vector2(250, 0)
-custom_maximum_size = Vector2(250, -1)
+custom_minimum_size = Vector2(200, 86)
+custom_maximum_size = Vector2(200, 86)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("2_bg8yg")
+theme = ExtResource("8_xeu4k")
 theme_override_font_sizes/font_size = 30
 text = "Ataque 2
 
@@ -211,12 +333,12 @@ text = "Ataque 2
 autowrap_mode = 3
 
 [node name="Attack3" type="Button" parent="Panel/attack/MarginContainer/Main" unique_id=1753997078]
-custom_minimum_size = Vector2(250, 0)
-custom_maximum_size = Vector2(250, -1)
+custom_minimum_size = Vector2(200, 86)
+custom_maximum_size = Vector2(200, 86)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("2_bg8yg")
+theme = ExtResource("8_xeu4k")
 theme_override_font_sizes/font_size = 30
 text = "Ataque 3
 
@@ -225,11 +347,11 @@ autowrap_mode = 3
 
 [node name="MarginContainer2" type="MarginContainer" parent="Panel/attack" unique_id=1128810136]
 layout_mode = 2
-theme_override_constants/margin_bottom = 40
+theme_override_constants/margin_bottom = 80
 
 [node name="Button4" type="Button" parent="Panel/attack/MarginContainer2" unique_id=129296074]
-custom_minimum_size = Vector2(200, 0)
-custom_maximum_size = Vector2(200, -1)
+custom_minimum_size = Vector2(200, 56)
+custom_maximum_size = Vector2(200, 56)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -241,6 +363,7 @@ text = "Volver
 autowrap_mode = 3
 
 [node name="bread" type="VBoxContainer" parent="Panel" unique_id=1974491678]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -341,13 +464,12 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ProgressBar" type="ProgressBar" parent="Panel2/MarginContainer/VBoxContainer/MarginContainer" unique_id=2129313069]
+[node name="ProgressBar" type="TextureProgressBar" parent="Panel2/MarginContainer/VBoxContainer/MarginContainer" unique_id=1796511594]
 layout_mode = 2
 theme = ExtResource("2_bg8yg")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/fill = SubResource("StyleBoxFlat_8b6bk")
-step = 1.0
 value = 100.0
+texture_under = ExtResource("8_mqini")
+texture_progress = ExtResource("8_tfm2p")
 
 [connection signal="pressed" from="Panel/main/Attack" to="." method="ShowBasicAttackMenu"]
 [connection signal="pressed" from="Panel/main/bread" to="." method="ShowBreadAttackMenu"]
