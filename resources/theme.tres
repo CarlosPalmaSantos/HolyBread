@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cddfrdl3vkxii" path="res://resources/Sprites/boton_1.png" id="2_7ct1h"]
 [ext_resource type="Texture2D" uid="uid://cvcs0nbbtxrcy" path="res://resources/Sprites/boton_1_hover.png" id="2_886mr"]
 [ext_resource type="Texture2D" uid="uid://bfbm13uvn54p6" path="res://resources/Sprites/boton_1_disabled.png" id="2_b751m"]
+[ext_resource type="Texture2D" uid="uid://cjge4656yq657" path="res://resources/Sprites/boton_2_hover.png" id="5_owntx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b751m"]
 texture = ExtResource("2_b751m")
@@ -13,6 +14,9 @@ texture = ExtResource("2_886mr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbd0j"]
 texture = ExtResource("2_7ct1h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8elgj"]
+texture = ExtResource("5_owntx")
 
 [sub_resource type="FontVariation" id="FontVariation_mqini"]
 base_font = ExtResource("1_d4nwg")
@@ -106,6 +110,7 @@ Button/fonts/font = ExtResource("1_d4nwg")
 Button/styles/disabled = SubResource("StyleBoxTexture_b751m")
 Button/styles/hover = SubResource("StyleBoxTexture_7ct1h")
 Button/styles/normal = SubResource("StyleBoxTexture_fbd0j")
+Button/styles/pressed = SubResource("StyleBoxTexture_8elgj")
 ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
 ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
 ProgressBar/constants/outline_size = 0

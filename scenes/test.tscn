@@ -141,8 +141,8 @@ text = "Jugar"
 [node name="Map" type="CanvasLayer" parent="." unique_id=1320104553 node_paths=PackedStringArray("Connections", "Buttons", "SaveManager")]
 visible = false
 script = ExtResource("6_lpvoh")
-Connections = [NodePath("Paths/Low/Blanco-Brioche"), NodePath("Paths/Low/Blanco-Integral"), NodePath("Paths/Low/Blanco-Centeno"), NodePath("Paths/Low/Blanco-Z1")]
-Buttons = [NodePath("MarginContainer/Control/SBrioche"), NodePath("MarginContainer/Control/SIntegral"), NodePath("MarginContainer/Control/SCenteno"), NodePath("MarginContainer/Control/SBlanco"), NodePath("MarginContainer/Control/Z1"), NodePath("MarginContainer/Control/SMaiz"), NodePath("MarginContainer/Control/SArroz"), NodePath("MarginContainer/Control/Z2"), NodePath("MarginContainer/Control/SOblea")]
+Connections = [NodePath("Paths/Low/Blanco-Brioche"), NodePath("Paths/Low/Blanco-Integral"), NodePath("Paths/Low/Blanco-Centeno"), NodePath("Paths/Low/Blanco-Z1"), NodePath("Paths/Low/Z1 - Z2"), NodePath("Paths/Low/Z2 - SMaiz"), NodePath("Paths/Low/Z2 - SArroz"), NodePath("Paths/Low/Z2 - SOblea")]
+Buttons = [NodePath("MarginContainer/Control/SCenteno"), NodePath("MarginContainer/Control/SBlanco"), NodePath("MarginContainer/Control/SBrioche"), NodePath("MarginContainer/Control/SIntegral"), NodePath("MarginContainer/Control/Z1"), NodePath("MarginContainer/Control/SMaiz"), NodePath("MarginContainer/Control/SArroz"), NodePath("MarginContainer/Control/Z2"), NodePath("MarginContainer/Control/SOblea")]
 Position = 1
 GMScene = ExtResource("2_74lek")
 EnabledTexture = ExtResource("13_7mbro")

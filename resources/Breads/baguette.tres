@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Bread" format=3 uid="uid://cu01qjkny5nt4"]
+[gd_resource type="Resource" format=3 uid="uid://cu01qjkny5nt4"]
 
 [ext_resource type="Script" uid="uid://cy8g2sy8ee1gg" path="res://scripts/battle/Bread.cs" id="1_je43b"]
 [ext_resource type="Script" uid="uid://d0tgwnpio1mhk" path="res://scripts/battle/Attacks/SameTypeAttack.cs" id="1_ri0g4"]

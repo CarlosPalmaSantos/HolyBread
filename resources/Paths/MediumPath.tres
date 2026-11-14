@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Path" format=3 uid="uid://dnymmv84jfppm"]
+[gd_resource type="Resource" format=3 uid="uid://dnymmv84jfppm"]
 
 [ext_resource type="Resource" uid="uid://b6uwittxgurb1" path="res://resources/Attacks/puno_artesanal.tres" id="1_v87rv"]
 [ext_resource type="Resource" uid="uid://byu7lrnocc77n" path="res://resources/Attacks/lanza_migajera.tres" id="2_pirbx"]

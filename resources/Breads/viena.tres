@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Bread" format=3 uid="uid://c7bmbms1mp5g6"]
+[gd_resource type="Resource" format=3 uid="uid://c7bmbms1mp5g6"]
 
 [ext_resource type="Script" uid="uid://cu4d4l0ovv8wq" path="res://scripts/battle/Attacks/HealOnlyAttack.cs" id="1_ay8is"]
 [ext_resource type="Script" uid="uid://cy8g2sy8ee1gg" path="res://scripts/battle/Bread.cs" id="1_qdgdl"]
