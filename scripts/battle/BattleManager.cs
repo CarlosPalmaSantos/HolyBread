@@ -10,7 +10,8 @@ namespace HolyBread.scripts.battle;
 public partial class BattleManager : Node
 {
     [Export] public BattleUi Ui { get; set; }
-    [Export] public Entity Player { get; set; }
+    [Export] public Player Player { get; set; }
+    [Export] public Entity PlayerEntity { get; set; }
     [Export] public Enemy Enemy { get; set; }
 
     [Signal]
@@ -45,17 +46,17 @@ public partial class BattleManager : Node
     {
         var enemyAction = Enemy.GetEnemyAction(this);
 
-        Entity first = Player;
+        Entity first = PlayerEntity;
         var firstAction = (actionType, arg);
         Entity last = Enemy;
         var lastAction = enemyAction;
 
-        if (Player.Spd < Enemy.Spd || (Player.Spd == Enemy.Spd && Random.Shared.NextSingle() < 0.5))
+        if (PlayerEntity.Spd < Enemy.Spd || (PlayerEntity.Spd == Enemy.Spd && Random.Shared.NextSingle() < 0.5))
         {
             first = Enemy;
             firstAction = enemyAction;
 
-            last = Player;
+            last = PlayerEntity;
             lastAction = (actionType, arg);
         }
 
@@ -67,7 +68,7 @@ public partial class BattleManager : Node
         if (Enemy.CurrentHp <= 0)
             EmitSignalOnEnemyDefeated();
 
-        if (Player.CurrentHp <= 0)
+        if (PlayerEntity.CurrentHp <= 0)
             EmitSignalOnPlayerDefeated();
 
         Ui.ShowMainMenu();
@@ -119,13 +120,14 @@ public partial class BattleManager : Node
         yield return DialogManager.PlayCoroutine(dialogText, keepPanel: true);
     }
 
-    public void Load(Entity player, Enemy enemy, bool tutorial)
+    public void Load(Player player, Enemy enemy, bool tutorial)
     {
         Tutorial = tutorial;
         
         Player = player;
+        PlayerEntity = player.Entity;
         Enemy = enemy;
-        if (Player.CurrentHp < 0) Player.CurrentHp = Player.Hp;
+        if (PlayerEntity.CurrentHp < 0) PlayerEntity.CurrentHp = PlayerEntity.Hp;
         if (Enemy.CurrentHp < 0) Enemy.CurrentHp = Enemy.Hp;
 
         if (!Tutorial) return;

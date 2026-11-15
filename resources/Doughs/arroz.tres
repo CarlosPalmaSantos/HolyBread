@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="DoughType" format=3 uid="uid://b3fm511m6stxr"]
 
+[ext_resource type="Texture2D" uid="uid://ubwremx133p" path="res://resources/Sprites/arroz_icon.tres" id="1_7k7bj"]
 [ext_resource type="Script" uid="uid://dtvo6h8m3136a" path="res://scripts/battle/DoughType.cs" id="1_y1wr0"]
 
 [resource]
@@ -9,6 +10,8 @@ Id = "arroz"
 Weak = PackedStringArray("arroz", "maiz")
 Resist = PackedStringArray("blanco", "centeno")
 HpAff = 1.15
-AtkAff = 1.05
+AtkAff = 1.1
 DefAff = 1.15
+SpdAff = 1.2
+Texture = ExtResource("1_7k7bj")
 metadata/_custom_type_script = "uid://dtvo6h8m3136a"

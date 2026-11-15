@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_hqcas")
 Name = "Mantequillazo"
+Description = "Ataque de [b]15 de potencia[/b] de tipo brioche"
 DoughType = ExtResource("1_lnu7e")
 Power = 15
 metadata/_custom_type_script = "uid://crtwedyyvaw5g"

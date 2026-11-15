@@ -1,10 +1,11 @@
-[gd_resource type="Resource" format=3 uid="uid://cu01qjkny5nt4"]
+[gd_resource type="Resource" script_class="Bread" format=3 uid="uid://cu01qjkny5nt4"]
 
 [ext_resource type="Script" uid="uid://cy8g2sy8ee1gg" path="res://scripts/battle/Bread.cs" id="1_je43b"]
 [ext_resource type="Script" uid="uid://d0tgwnpio1mhk" path="res://scripts/battle/Attacks/SameTypeAttack.cs" id="1_ri0g4"]
 
 [sub_resource type="Resource" id="Resource_je43b"]
 script = ExtResource("1_ri0g4")
+Description = "Embestida con una larga baguette que tiene [b]60 de potencia[/b]"
 Power = 60
 metadata/_custom_type_script = "uid://d0tgwnpio1mhk"
 

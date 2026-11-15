@@ -14,16 +14,50 @@
 [ext_resource type="Texture2D" uid="uid://bcj6nd1fbir63" path="res://resources/Sprites/blue.png" id="8_c6rvn"]
 [ext_resource type="Resource" uid="uid://dfbyd68s7hp8g" path="res://resources/Doughs/blanco.tres" id="8_ghpyy"]
 [ext_resource type="Resource" uid="uid://b6uwittxgurb1" path="res://resources/Attacks/puno_artesanal.tres" id="9_ff6ho"]
-[ext_resource type="Resource" uid="uid://cp2lypvv3en07" path="res://resources/Paths/RegularLowPath.tres" id="10_5jxlq"]
-[ext_resource type="Resource" uid="uid://dnymmv84jfppm" path="res://resources/Paths/MediumPath.tres" id="11_c6rvn"]
 [ext_resource type="Texture2D" uid="uid://dgh1j2kfogcfi" path="res://resources/Sprites/green.png" id="13_7mbro"]
+[ext_resource type="Texture2D" uid="uid://se64imffa3gv" path="res://resources/Sprites/fondo_zona_baja.png" id="14_5f8cm"]
 [ext_resource type="Texture2D" uid="uid://cwpxhpoqdmnr7" path="res://resources/Sprites/red.png" id="14_ff6ho"]
 [ext_resource type="Theme" uid="uid://cd1o8bhkt0xo" path="res://resources/theme.tres" id="15_ff6ho"]
+[ext_resource type="Texture2D" uid="uid://dy2efp7acteo2" path="res://resources/Sprites/fondo_zona_media_1.png" id="15_kay4s"]
+[ext_resource type="Texture2D" uid="uid://djbic8bjqytnk" path="res://resources/Sprites/fondo_zona_alta.png" id="16_j7bvy"]
+[ext_resource type="Texture2D" uid="uid://cqeji56q1cyoc" path="res://resources/Sprites/fondo_santuarios_.png" id="17_75pfo"]
+[ext_resource type="Script" uid="uid://lymbpxjw8y4j" path="res://scripts/Paths/Path.cs" id="17_pn65j"]
+[ext_resource type="Resource" uid="uid://c55ibc2tgn0du" path="res://resources/Doughs/oblea.tres" id="18_1xwo4"]
+[ext_resource type="Resource" uid="uid://dff151iu4v3ec" path="res://resources/Doughs/brioche.tres" id="18_emonu"]
+[ext_resource type="Resource" uid="uid://ccpogbqeus0k" path="res://resources/Attacks/hostion.tres" id="18_iq7xp"]
+[ext_resource type="Script" uid="uid://d0tgwnpio1mhk" path="res://scripts/battle/Attacks/SameTypeAttack.cs" id="19_4k8fq"]
+[ext_resource type="Script" uid="uid://dtvo6h8m3136a" path="res://scripts/battle/DoughType.cs" id="20_75pfo"]
+[ext_resource type="Resource" uid="uid://c5h2glwx6bd3t" path="res://resources/Doughs/centeno.tres" id="20_pdwa4"]
+[ext_resource type="Resource" uid="uid://ugp12pmplwrt" path="res://resources/Doughs/integral.tres" id="21_335pd"]
 [ext_resource type="Script" uid="uid://cdkvovpwj7cn" path="res://scripts/SaveManager.cs" id="21_gm488"]
-[ext_resource type="Resource" uid="uid://c7bmbms1mp5g6" path="res://resources/Breads/viena.tres" id="22_kay4s"]
-[ext_resource type="Resource" uid="uid://cu01qjkny5nt4" path="res://resources/Breads/baguette.tres" id="23_j7bvy"]
+[ext_resource type="Script" uid="uid://crtwedyyvaw5g" path="res://scripts/battle/Attack.cs" id="21_gv2t6"]
+[ext_resource type="Script" uid="uid://denhbgxe7k7c2" path="res://scripts/NameSet.cs" id="22_1xwo4"]
+[ext_resource type="Script" uid="uid://bdavedn7um3eb" path="res://scripts/battle/BreadGodEnemy.cs" id="22_iq7xp"]
 [ext_resource type="Script" uid="uid://dnv0pgk1tcyws" path="res://scripts/battle/Entity.cs" id="24_1dqgb"]
 [ext_resource type="Script" uid="uid://gco72akkni3y" path="res://scripts/battle/Player.cs" id="25_y81of"]
+[ext_resource type="Texture2D" uid="uid://do2ejsph2157" path="res://resources/Sprites/dios_del_pan.png" id="29_gv2t6"]
+[ext_resource type="Texture2D" uid="uid://bvxhlvew62eyd" path="res://resources/Sprites/blanco_icon.tres" id="31_mi64w"]
+[ext_resource type="Script" uid="uid://t4qwh37cywa1" path="res://scripts/EnemyPreset.cs" id="31_n11rl"]
+[ext_resource type="Resource" uid="uid://bq3n4e1i0nohg" path="res://resources/Sprites/names.tres" id="32_2ixbo"]
+[ext_resource type="Texture2D" uid="uid://n5jg1tr610de" path="res://resources/Sprites/brioche_icon.tres" id="32_mi64w"]
+[ext_resource type="Texture2D" uid="uid://2kod2ud58pie" path="res://resources/Sprites/centeno_icon.tres" id="33_ds53i"]
+[ext_resource type="Texture2D" uid="uid://i2jqdq8s8rtq" path="res://resources/Sprites/granjera_1.tres" id="33_uig8d"]
+[ext_resource type="Texture2D" uid="uid://c2vhw1hrtjuhb" path="res://resources/Sprites/integral_icon.tres" id="34_3ss0b"]
+[ext_resource type="Texture2D" uid="uid://bl852wxcd05rd" path="res://resources/Sprites/granjero_1.tres" id="34_eixnv"]
+[ext_resource type="Texture2D" uid="uid://ry3im3g3s05j" path="res://resources/Sprites/granjera_2.tres" id="35_68ewr"]
+[ext_resource type="Texture2D" uid="uid://b3vvm4asdgncf" path="res://resources/Sprites/maiz_icon.tres" id="35_mftsw"]
+[ext_resource type="Script" uid="uid://cqf8sw07ulelr" path="res://scripts/Paths/Spot.cs" id="36_8nvs4"]
+[ext_resource type="Texture2D" uid="uid://ubwremx133p" path="res://resources/Sprites/arroz_icon.tres" id="36_mftsw"]
+[ext_resource type="Texture2D" uid="uid://lknjlm64ictr" path="res://resources/Sprites/granjero_2.tres" id="36_osnag"]
+[ext_resource type="Texture2D" uid="uid://diqrl8s0ce5qq" path="res://resources/Sprites/oblea_icon.tres" id="37_q6ayx"]
+[ext_resource type="Resource" uid="uid://b3fm511m6stxr" path="res://resources/Doughs/arroz.tres" id="44_emonu"]
+[ext_resource type="Texture2D" uid="uid://bp5c5nhg2ov5w" path="res://resources/Sprites/guerrero_1.tres" id="44_vqdru"]
+[ext_resource type="Texture2D" uid="uid://bmtw81vqt6btw" path="res://resources/Sprites/sacerdote.png" id="45_tnm51"]
+[ext_resource type="Resource" uid="uid://byu7lrnocc77n" path="res://resources/Attacks/lanza_migajera.tres" id="48_qx18j"]
+[ext_resource type="Resource" uid="uid://cmoo5pkm4jhym" path="res://resources/Attacks/mantequillazo.tres" id="48_xsg57"]
+[ext_resource type="Resource" uid="uid://b3b1d6ptym1ui" path="res://resources/Attacks/pipazo.tres" id="49_cgmg2"]
+[ext_resource type="Resource" uid="uid://b7yfq87od2d2e" path="res://resources/Attacks/puno_artesanal_plus.tres" id="51_n11rl"]
+[ext_resource type="Resource" uid="uid://ci81aokyil1p6" path="res://resources/Attacks/latigo_integral.tres" id="52_y8o6s"]
 
 [sub_resource type="Resource" id="Resource_lpvoh"]
 script = ExtResource("2_j5jx5")
@@ -81,23 +115,1445 @@ AttackSet = Array[Object]([SubResource("Resource_l5lci")])
 BreadSet = Array[Object]([])
 metadata/_custom_type_script = "uid://cqjs7dteads80"
 
+[sub_resource type="Gradient" id="Gradient_q6ayx"]
+offsets = PackedFloat32Array(0, 0.49823323, 1)
+colors = PackedColorArray(0, 0, 0, 0.78431374, 0, 0, 0, 0.50980395, 0, 0, 0, 0.78431374)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l5lci"]
+gradient = SubResource("Gradient_q6ayx")
+
+[sub_resource type="Resource" id="Resource_rlev3"]
+script = ExtResource("2_j5jx5")
+Speaker = "Pandado"
+Text = "Este es el mapa, en el puedes encontrar algunos puntos interesantes..."
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_q6ayx"]
+script = ExtResource("2_j5jx5")
+Speaker = "Pandado"
+Text = "Los símbolos que puedes ver son los [g]Santuarios[/g] de los diferentes tipos de masas de pan."
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_iq7xp"]
+script = ExtResource("2_j5jx5")
+Speaker = "Pandado"
+Text = "Cuando llegues allí, serás capaz de cambiar tu tipo al de dicho santuario."
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_ho4wr"]
+script = ExtResource("2_j5jx5")
+Speaker = "Pandado"
+Text = "La [g]Maestría[/g] indica como de fuerte eres con una masa de pan, a si que tienes una maestria diferente por cada una."
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_3w526"]
+script = ExtResource("2_j5jx5")
+Speaker = "Pandado"
+Text = "Los tipos de masa de pan son"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_hpsc0"]
+script = ExtResource("2_j5jx5")
+Speaker = "Pandado"
+Text = "[img=32]res://resources/Sprites/blanco_icon.tres[/img] Blanco
+Débil a Centeno
+Resistente a Brioche
+"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_g2gmo"]
+script = ExtResource("2_j5jx5")
+Speaker = "Pandado"
+Text = "[img=32]res://resources/Sprites/brioche_icon.tres[/img] Brioche
+Débil a Blanco
+Resistente a Integral"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_1d0gi"]
+script = ExtResource("2_j5jx5")
+Speaker = "Pandado"
+Text = "[img=32]res://resources/Sprites/centeno_icon.tres[/img] Centeno
+Débil a Integral
+Resistente a Blanco"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_c05ib"]
+script = ExtResource("2_j5jx5")
+Speaker = "Pandado"
+Text = "[img=32]res://resources/Sprites/integral_icon.tres[/img] Integral
+Débil a Brioche
+Resistente a Centeno"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_nwu0k"]
+script = ExtResource("2_j5jx5")
+Speaker = "Pandado"
+Text = "[img=32]res://resources/Sprites/maiz_icon.tres[/img] Maiz
+Débil a Maiz y a Arroz
+Resistente a Integral y a Brioche"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_tgrws"]
+script = ExtResource("2_j5jx5")
+Speaker = "Pandado"
+Text = "[img=32]res://resources/Sprites/arroz_icon.tres[/img] Arroz
+Débil a Maiz y a Arroz
+Resistente a Blanco y a Integral"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_4amwq"]
+script = ExtResource("2_j5jx5")
+Speaker = "Pandado"
+Text = "[img=32]res://resources/Sprites/oblea_icon.tres[/img] Es donde se encuentra el pan sagrado, tu destino"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_8pbqr"]
+script = ExtResource("2_j5jx5")
+Speaker = "Pandado"
+Text = "En el mapa tu ubicación está señalizada con el azul y el verde es a donde puedes ir"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_5wyof"]
+script = ExtResource("3_lpvoh")
+Lines = Array[Object]([SubResource("Resource_rlev3"), SubResource("Resource_q6ayx"), SubResource("Resource_iq7xp"), SubResource("Resource_ho4wr"), SubResource("Resource_3w526"), SubResource("Resource_hpsc0"), SubResource("Resource_g2gmo"), SubResource("Resource_1d0gi"), SubResource("Resource_c05ib"), SubResource("Resource_nwu0k"), SubResource("Resource_tgrws"), SubResource("Resource_4amwq"), SubResource("Resource_8pbqr")])
+Shadow = true
+metadata/_custom_type_script = "uid://cjdyw14nsx3u5"
+
+[sub_resource type="Resource" id="Resource_uig8d"]
+script = ExtResource("2_j5jx5")
+Text = "Llegas a un santuario..."
+Centered = true
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_2ixbo"]
+script = ExtResource("2_j5jx5")
+Text = "¿Quieres cambiar de tipo?"
+Centered = true
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_aw7an"]
+script = ExtResource("3_lpvoh")
+Lines = Array[Object]([SubResource("Resource_uig8d"), SubResource("Resource_2ixbo")])
+metadata/_custom_type_script = "uid://cjdyw14nsx3u5"
+
+[sub_resource type="Resource" id="Resource_0xerh"]
+script = ExtResource("2_j5jx5")
+Speaker = "[g]Dios del Pan[/g]"
+Text = "Suficiente... ya has mostrado tu valía"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_d06u7"]
+script = ExtResource("2_j5jx5")
+Speaker = "[g]Dios del Pan[/g]"
+Text = "Aquí tienes el [g]Pan Sagrado[/g]"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_knsa6"]
+script = ExtResource("2_j5jx5")
+Text = "Una luz ilumina el cielo y cae gracilmente sobre tus manos"
+Centered = true
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_7psng"]
+script = ExtResource("2_j5jx5")
+Text = "Es un manjar de doradas cortezas y tierno interior"
+Centered = true
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_q881y"]
+script = ExtResource("2_j5jx5")
+Text = "El olor no puede ser definido con palabras"
+Centered = true
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_gbxhh"]
+script = ExtResource("2_j5jx5")
+Text = "Sustento de solo aquellos más dignos"
+Centered = true
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_i80v7"]
+script = ExtResource("2_j5jx5")
+Text = "Definitivamente..."
+Centered = true
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_qft1g"]
+script = ExtResource("2_j5jx5")
+Text = "Es un [g]Pan[/g]"
+Speed = 0.5
+Centered = true
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_yj8m3"]
+script = ExtResource("3_lpvoh")
+Lines = Array[Object]([SubResource("Resource_0xerh"), SubResource("Resource_d06u7"), SubResource("Resource_knsa6"), SubResource("Resource_7psng"), SubResource("Resource_q881y"), SubResource("Resource_gbxhh"), SubResource("Resource_i80v7"), SubResource("Resource_qft1g")])
+metadata/_custom_type_script = "uid://cjdyw14nsx3u5"
+
+[sub_resource type="Resource" id="Resource_gv2t6"]
+script = ExtResource("2_j5jx5")
+Text = "Tras tu arduo camino..."
+Centered = true
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_1xwo4"]
+script = ExtResource("2_j5jx5")
+Text = "Llegas a la cima del [g]Monte Sagrado[/g]"
+Centered = true
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_5civd"]
+script = ExtResource("2_j5jx5")
+Text = "El paisaje nevado resulta desolador"
+Centered = true
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_mi64w"]
+script = ExtResource("2_j5jx5")
+Text = "De pronto, sientes una presencia superior a todo aquello a lo que te has enfrentado"
+Centered = true
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_xsg57"]
+script = ExtResource("2_j5jx5")
+Text = "Miras hacia arriba y..."
+Centered = true
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_n11rl"]
+script = ExtResource("3_lpvoh")
+Lines = Array[Object]([SubResource("Resource_gv2t6"), SubResource("Resource_1xwo4"), SubResource("Resource_5civd"), SubResource("Resource_mi64w"), SubResource("Resource_xsg57")])
+metadata/_custom_type_script = "uid://cjdyw14nsx3u5"
+
+[sub_resource type="Resource" id="Resource_qx18j"]
+script = ExtResource("2_j5jx5")
+Speaker = "[g]Dios del Pan[/g]"
+Text = "Bienvenido mortal..."
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_y8o6s"]
+script = ExtResource("2_j5jx5")
+Speaker = "[g]Dios del Pan[/g]"
+Text = "Has recorrido una larga travesía para llegar hasta aquí..."
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_1urli"]
+script = ExtResource("2_j5jx5")
+Speaker = "[g]Dios del Pan[/g]"
+Text = "Sé a por qué has venido..."
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_35prk"]
+script = ExtResource("2_j5jx5")
+Speaker = "[g]Dios del Pan[/g]"
+Text = "No obstante, para obtener el [g]Pan Sagrado[/g] deberás pasar por una última prueba..."
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_eokji"]
+script = ExtResource("2_j5jx5")
+Speaker = "[g]Dios del Pan[/g]"
+Text = "¡¡¡Demuéstrame de que masa estás hecho!!!"
+metadata/_custom_type_script = "uid://oa12qcxp7bxb"
+
+[sub_resource type="Resource" id="Resource_cgmg2"]
+script = ExtResource("3_lpvoh")
+Lines = Array[Object]([SubResource("Resource_qx18j"), SubResource("Resource_y8o6s"), SubResource("Resource_1urli"), SubResource("Resource_35prk"), SubResource("Resource_eokji")])
+metadata/_custom_type_script = "uid://cjdyw14nsx3u5"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iq7xp"]
+load_path = "res://.godot/imported/dios_del_pan.png-c58375fc81e428960815eca233e73639.ctex"
+
+[sub_resource type="Resource" id="Resource_8o50k"]
+script = ExtResource("22_iq7xp")
+hostion = ExtResource("18_iq7xp")
+Name = "Dios del Pan"
+DoughType = ExtResource("18_1xwo4")
+Level = 7
+BaseHp = 110
+Texture = SubResource("CompressedTexture2D_iq7xp")
+AttackSet = Array[Object]([ExtResource("18_iq7xp"), ExtResource("9_ff6ho")])
+BreadSet = Array[Object]([])
+metadata/_custom_type_script = "uid://bdavedn7um3eb"
+
+[sub_resource type="Resource" id="Resource_vwa82"]
+script = ExtResource("31_n11rl")
+DoughType = ExtResource("8_ghpyy")
+Names = ExtResource("32_2ixbo")
+Textures = [ExtResource("33_uig8d"), ExtResource("34_eixnv"), ExtResource("35_68ewr"), ExtResource("36_osnag")]
+Attacks = [ExtResource("9_ff6ho"), ExtResource("48_qx18j"), ExtResource("49_cgmg2"), ExtResource("52_y8o6s"), ExtResource("48_xsg57")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_dp3wq"]
+script = ExtResource("31_n11rl")
+DoughType = ExtResource("21_335pd")
+Names = ExtResource("32_2ixbo")
+Textures = [ExtResource("33_uig8d"), ExtResource("34_eixnv"), ExtResource("35_68ewr"), ExtResource("36_osnag")]
+Attacks = [ExtResource("9_ff6ho"), ExtResource("48_qx18j"), ExtResource("49_cgmg2"), ExtResource("52_y8o6s"), ExtResource("48_xsg57")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_qa11w"]
+script = ExtResource("31_n11rl")
+DoughType = ExtResource("18_emonu")
+Names = ExtResource("32_2ixbo")
+Textures = [ExtResource("33_uig8d"), ExtResource("34_eixnv"), ExtResource("35_68ewr"), ExtResource("36_osnag")]
+Attacks = [ExtResource("9_ff6ho"), ExtResource("48_qx18j"), ExtResource("49_cgmg2"), ExtResource("52_y8o6s"), ExtResource("48_xsg57")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_k2kp3"]
+script = ExtResource("31_n11rl")
+DoughType = ExtResource("20_pdwa4")
+Names = ExtResource("32_2ixbo")
+Textures = [ExtResource("33_uig8d"), ExtResource("34_eixnv"), ExtResource("35_68ewr"), ExtResource("36_osnag")]
+Attacks = [ExtResource("9_ff6ho"), ExtResource("48_qx18j"), ExtResource("49_cgmg2"), ExtResource("52_y8o6s"), ExtResource("48_xsg57")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_ajshl"]
+script = ExtResource("36_8nvs4")
+BattleChance = 1.0
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_162l1"]
+script = ExtResource("36_8nvs4")
+BattleChance = 0.9
+HardBattleChance = 0.1
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_ff6ho"]
+script = ExtResource("36_8nvs4")
+BattleChance = 0.9
+HardBattleChance = 0.1
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_36h8e"]
+script = ExtResource("36_8nvs4")
+HardBattleChance = 1.0
+UniqueSpot = 1.0
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_jfe00"]
+script = ExtResource("17_pn65j")
+Spots = [SubResource("Resource_ajshl"), SubResource("Resource_162l1"), SubResource("Resource_ff6ho"), SubResource("Resource_36h8e")]
+Enemies = [SubResource("Resource_vwa82"), SubResource("Resource_dp3wq"), SubResource("Resource_qa11w"), SubResource("Resource_k2kp3")]
+metadata/_custom_type_script = "uid://lymbpxjw8y4j"
+
+[sub_resource type="Resource" id="Resource_mf2kp"]
+script = ExtResource("17_pn65j")
+Spots = [SubResource("Resource_ajshl"), SubResource("Resource_162l1"), SubResource("Resource_ff6ho"), SubResource("Resource_36h8e")]
+Enemies = [SubResource("Resource_vwa82"), SubResource("Resource_dp3wq"), SubResource("Resource_qa11w"), SubResource("Resource_k2kp3")]
+metadata/_custom_type_script = "uid://lymbpxjw8y4j"
+
+[sub_resource type="Resource" id="Resource_b65qk"]
+script = ExtResource("17_pn65j")
+Spots = [SubResource("Resource_ajshl"), SubResource("Resource_162l1"), SubResource("Resource_ff6ho"), SubResource("Resource_36h8e")]
+Enemies = [SubResource("Resource_vwa82"), SubResource("Resource_dp3wq"), SubResource("Resource_qa11w"), SubResource("Resource_k2kp3")]
+metadata/_custom_type_script = "uid://lymbpxjw8y4j"
+
+[sub_resource type="Resource" id="Resource_335pd"]
+script = ExtResource("19_4k8fq")
+Name = "Puño Artesanal"
+Power = 20
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_376r3"]
+script = ExtResource("20_75pfo")
+Name = "Blanco"
+Id = "blanco"
+Weak = PackedStringArray("centeno", "oblea")
+Resist = PackedStringArray("brioche")
+HpAff = 1.15
+AtkAff = 1.15
+DefAff = 1.05
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_ds53i"]
+script = ExtResource("21_gv2t6")
+Name = "Lanza Migajera"
+DoughType = SubResource("Resource_376r3")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_p8c7m"]
+script = ExtResource("20_75pfo")
+Name = "Centeno"
+Id = "centeno"
+Weak = PackedStringArray("integral", "oblea")
+Resist = PackedStringArray("blanco")
+HpAff = 1.15
+AtkAff = 1.15
+SpdAff = 1.05
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_3ss0b"]
+script = ExtResource("21_gv2t6")
+Name = "Pipazo"
+DoughType = SubResource("Resource_p8c7m")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_mftsw"]
+script = ExtResource("20_75pfo")
+Name = "Integral"
+Id = "integral"
+Weak = PackedStringArray("brioche", "oblea")
+Resist = PackedStringArray("centeno")
+HpAff = 1.15
+AtkAff = 1.05
+SpdAff = 1.15
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_80m0l"]
+script = ExtResource("21_gv2t6")
+Name = "Látigo Integral"
+DoughType = SubResource("Resource_mftsw")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_qfy4l"]
+script = ExtResource("20_75pfo")
+Name = "Brioche"
+Id = "brioche"
+Weak = PackedStringArray("integral", "oblea")
+Resist = PackedStringArray("centeno")
+HpAff = 1.15
+DefAff = 1.05
+SpdAff = 1.15
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_s6cx0"]
+script = ExtResource("21_gv2t6")
+Name = "Mantequillazo"
+DoughType = SubResource("Resource_qfy4l")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_emonu"]
+script = ExtResource("20_75pfo")
+Name = "Blanco"
+Id = "blanco"
+Weak = PackedStringArray("centeno", "oblea")
+Resist = PackedStringArray("brioche")
+HpAff = 1.15
+AtkAff = 1.15
+DefAff = 1.05
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_pdwa4"]
+script = ExtResource("22_1xwo4")
+Names = PackedStringArray("Alepandro", "Panblo", "Panberto", "Daviena", "Panuel", "Paniela", "José Pan", "Paría", "Pancracio")
+metadata/_custom_type_script = "uid://denhbgxe7k7c2"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_335pd"]
+load_path = "res://.godot/imported/granjera_1.png-1b05ce1bc94f83e19303d10407ed71ae.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_376r3"]
+atlas = SubResource("CompressedTexture2D_335pd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xsg57"]
+load_path = "res://.godot/imported/granjero_1.png-2ec46050f0e269b4f3698fe03272f739.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx18j"]
+atlas = SubResource("CompressedTexture2D_xsg57")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cgmg2"]
+load_path = "res://.godot/imported/granjera_2.png-aaffaf16941caeacfc61f1154e96b978.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n11rl"]
+atlas = SubResource("CompressedTexture2D_cgmg2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y8o6s"]
+load_path = "res://.godot/imported/granjero_2.png-9390d52e99ded1a249f10cd0201dd0e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1urli"]
+atlas = SubResource("CompressedTexture2D_y8o6s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_35prk"]
+load_path = "res://.godot/imported/guerrero_1.png-eb50d6926b8cdb11e302b41802bcfc8b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eokji"]
+atlas = SubResource("CompressedTexture2D_35prk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8nvs4"]
+load_path = "res://.godot/imported/guerrero_2.png-b57ed8670371858886be7fdcf60bac94.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ixbo"]
+atlas = SubResource("CompressedTexture2D_8nvs4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_8nvs4"]
+script = ExtResource("31_n11rl")
+MinLevel = 2
+MaxLevel = 2
+DoughType = SubResource("Resource_emonu")
+Names = SubResource("Resource_pdwa4")
+Textures = [SubResource("AtlasTexture_376r3"), SubResource("AtlasTexture_qx18j"), SubResource("AtlasTexture_n11rl"), SubResource("AtlasTexture_1urli"), SubResource("AtlasTexture_eokji"), SubResource("AtlasTexture_2ixbo")]
+Attacks = [SubResource("Resource_335pd"), SubResource("Resource_ds53i"), SubResource("Resource_3ss0b"), SubResource("Resource_80m0l"), SubResource("Resource_s6cx0")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_eixnv"]
+script = ExtResource("19_4k8fq")
+Name = "Puño Artesanal"
+Power = 20
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_68ewr"]
+script = ExtResource("20_75pfo")
+Name = "Blanco"
+Id = "blanco"
+Weak = PackedStringArray("centeno", "oblea")
+Resist = PackedStringArray("brioche")
+HpAff = 1.15
+AtkAff = 1.15
+DefAff = 1.05
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_osnag"]
+script = ExtResource("21_gv2t6")
+Name = "Lanza Migajera"
+DoughType = SubResource("Resource_68ewr")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_vqdru"]
+script = ExtResource("20_75pfo")
+Name = "Centeno"
+Id = "centeno"
+Weak = PackedStringArray("integral", "oblea")
+Resist = PackedStringArray("blanco")
+HpAff = 1.15
+AtkAff = 1.15
+SpdAff = 1.05
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_tnm51"]
+script = ExtResource("21_gv2t6")
+Name = "Pipazo"
+DoughType = SubResource("Resource_vqdru")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_tbman"]
+script = ExtResource("20_75pfo")
+Name = "Integral"
+Id = "integral"
+Weak = PackedStringArray("brioche", "oblea")
+Resist = PackedStringArray("centeno")
+HpAff = 1.15
+AtkAff = 1.05
+SpdAff = 1.15
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_gwri7"]
+script = ExtResource("21_gv2t6")
+Name = "Látigo Integral"
+DoughType = SubResource("Resource_tbman")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_3t5ks"]
+script = ExtResource("20_75pfo")
+Name = "Brioche"
+Id = "brioche"
+Weak = PackedStringArray("integral", "oblea")
+Resist = PackedStringArray("centeno")
+HpAff = 1.15
+DefAff = 1.05
+SpdAff = 1.15
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_elqqf"]
+script = ExtResource("21_gv2t6")
+Name = "Mantequillazo"
+DoughType = SubResource("Resource_3t5ks")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_tdgre"]
+script = ExtResource("20_75pfo")
+Name = "Centeno"
+Id = "centeno"
+Weak = PackedStringArray("integral", "oblea")
+Resist = PackedStringArray("blanco")
+HpAff = 1.15
+AtkAff = 1.15
+SpdAff = 1.05
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_c0b3m"]
+script = ExtResource("22_1xwo4")
+Names = PackedStringArray("Alepandro", "Panblo", "Panberto", "Daviena", "Panuel", "Paniela", "José Pan", "Paría", "Pancracio")
+metadata/_custom_type_script = "uid://denhbgxe7k7c2"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_80m0l"]
+load_path = "res://.godot/imported/granjera_1.png-1b05ce1bc94f83e19303d10407ed71ae.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfy4l"]
+atlas = SubResource("CompressedTexture2D_80m0l")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ho4wr"]
+load_path = "res://.godot/imported/granjero_1.png-2ec46050f0e269b4f3698fe03272f739.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4amwq"]
+atlas = SubResource("CompressedTexture2D_ho4wr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3w526"]
+load_path = "res://.godot/imported/granjera_2.png-aaffaf16941caeacfc61f1154e96b978.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpsc0"]
+atlas = SubResource("CompressedTexture2D_3w526")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tgrws"]
+load_path = "res://.godot/imported/granjero_2.png-9390d52e99ded1a249f10cd0201dd0e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2gmo"]
+atlas = SubResource("CompressedTexture2D_tgrws")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1d0gi"]
+load_path = "res://.godot/imported/guerrero_1.png-eb50d6926b8cdb11e302b41802bcfc8b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c05ib"]
+atlas = SubResource("CompressedTexture2D_1d0gi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nwu0k"]
+load_path = "res://.godot/imported/guerrero_2.png-b57ed8670371858886be7fdcf60bac94.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pbqr"]
+atlas = SubResource("CompressedTexture2D_nwu0k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_ugxyt"]
+script = ExtResource("31_n11rl")
+MinLevel = 2
+MaxLevel = 2
+DoughType = SubResource("Resource_tdgre")
+Names = SubResource("Resource_c0b3m")
+Textures = [SubResource("AtlasTexture_qfy4l"), SubResource("AtlasTexture_4amwq"), SubResource("AtlasTexture_hpsc0"), SubResource("AtlasTexture_g2gmo"), SubResource("AtlasTexture_c05ib"), SubResource("AtlasTexture_8pbqr")]
+Attacks = [SubResource("Resource_eixnv"), SubResource("Resource_osnag"), SubResource("Resource_tnm51"), SubResource("Resource_gwri7"), SubResource("Resource_elqqf")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_itbbc"]
+script = ExtResource("19_4k8fq")
+Name = "Puño Artesanal"
+Power = 20
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_2w7nf"]
+script = ExtResource("20_75pfo")
+Name = "Blanco"
+Id = "blanco"
+Weak = PackedStringArray("centeno", "oblea")
+Resist = PackedStringArray("brioche")
+HpAff = 1.15
+AtkAff = 1.15
+DefAff = 1.05
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_vspyu"]
+script = ExtResource("21_gv2t6")
+Name = "Lanza Migajera"
+DoughType = SubResource("Resource_2w7nf")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_vs3tm"]
+script = ExtResource("20_75pfo")
+Name = "Centeno"
+Id = "centeno"
+Weak = PackedStringArray("integral", "oblea")
+Resist = PackedStringArray("blanco")
+HpAff = 1.15
+AtkAff = 1.15
+SpdAff = 1.05
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_yuwb2"]
+script = ExtResource("21_gv2t6")
+Name = "Pipazo"
+DoughType = SubResource("Resource_vs3tm")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_xfgcb"]
+script = ExtResource("20_75pfo")
+Name = "Integral"
+Id = "integral"
+Weak = PackedStringArray("brioche", "oblea")
+Resist = PackedStringArray("centeno")
+HpAff = 1.15
+AtkAff = 1.05
+SpdAff = 1.15
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_6rksj"]
+script = ExtResource("21_gv2t6")
+Name = "Látigo Integral"
+DoughType = SubResource("Resource_xfgcb")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_oyxl4"]
+script = ExtResource("20_75pfo")
+Name = "Brioche"
+Id = "brioche"
+Weak = PackedStringArray("integral", "oblea")
+Resist = PackedStringArray("centeno")
+HpAff = 1.15
+DefAff = 1.05
+SpdAff = 1.15
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_xsyvi"]
+script = ExtResource("21_gv2t6")
+Name = "Mantequillazo"
+DoughType = SubResource("Resource_oyxl4")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_mervl"]
+script = ExtResource("20_75pfo")
+Name = "Brioche"
+Id = "brioche"
+Weak = PackedStringArray("integral", "oblea")
+Resist = PackedStringArray("centeno")
+HpAff = 1.15
+DefAff = 1.05
+SpdAff = 1.15
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_tc0w7"]
+script = ExtResource("22_1xwo4")
+Names = PackedStringArray("Alepandro", "Panblo", "Panberto", "Daviena", "Panuel", "Paniela", "José Pan", "Paría", "Pancracio")
+metadata/_custom_type_script = "uid://denhbgxe7k7c2"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aw7an"]
+load_path = "res://.godot/imported/granjera_1.png-1b05ce1bc94f83e19303d10407ed71ae.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o50k"]
+atlas = SubResource("CompressedTexture2D_aw7an")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t8aaa"]
+load_path = "res://.godot/imported/granjero_1.png-2ec46050f0e269b4f3698fe03272f739.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lsv5"]
+atlas = SubResource("CompressedTexture2D_t8aaa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wv7sc"]
+load_path = "res://.godot/imported/granjera_2.png-aaffaf16941caeacfc61f1154e96b978.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qcsl"]
+atlas = SubResource("CompressedTexture2D_wv7sc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7dcpw"]
+load_path = "res://.godot/imported/granjero_2.png-9390d52e99ded1a249f10cd0201dd0e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwa82"]
+atlas = SubResource("CompressedTexture2D_7dcpw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jfe00"]
+load_path = "res://.godot/imported/guerrero_1.png-eb50d6926b8cdb11e302b41802bcfc8b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf2kp"]
+atlas = SubResource("CompressedTexture2D_jfe00")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b65qk"]
+load_path = "res://.godot/imported/guerrero_2.png-b57ed8670371858886be7fdcf60bac94.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2p4a"]
+atlas = SubResource("CompressedTexture2D_b65qk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_etvgs"]
+script = ExtResource("31_n11rl")
+MinLevel = 2
+MaxLevel = 2
+DoughType = SubResource("Resource_mervl")
+Names = SubResource("Resource_tc0w7")
+Textures = [SubResource("AtlasTexture_8o50k"), SubResource("AtlasTexture_4lsv5"), SubResource("AtlasTexture_7qcsl"), SubResource("AtlasTexture_vwa82"), SubResource("AtlasTexture_mf2kp"), SubResource("AtlasTexture_y2p4a")]
+Attacks = [SubResource("Resource_itbbc"), SubResource("Resource_vspyu"), SubResource("Resource_yuwb2"), SubResource("Resource_6rksj"), SubResource("Resource_xsyvi")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_h5c55"]
+script = ExtResource("19_4k8fq")
+Name = "Puño Artesanal"
+Power = 20
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_2pxgj"]
+script = ExtResource("20_75pfo")
+Name = "Blanco"
+Id = "blanco"
+Weak = PackedStringArray("centeno", "oblea")
+Resist = PackedStringArray("brioche")
+HpAff = 1.15
+AtkAff = 1.15
+DefAff = 1.05
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_mxsuy"]
+script = ExtResource("21_gv2t6")
+Name = "Lanza Migajera"
+DoughType = SubResource("Resource_2pxgj")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_83c18"]
+script = ExtResource("20_75pfo")
+Name = "Centeno"
+Id = "centeno"
+Weak = PackedStringArray("integral", "oblea")
+Resist = PackedStringArray("blanco")
+HpAff = 1.15
+AtkAff = 1.15
+SpdAff = 1.05
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_sao6w"]
+script = ExtResource("21_gv2t6")
+Name = "Pipazo"
+DoughType = SubResource("Resource_83c18")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_5un4f"]
+script = ExtResource("20_75pfo")
+Name = "Integral"
+Id = "integral"
+Weak = PackedStringArray("brioche", "oblea")
+Resist = PackedStringArray("centeno")
+HpAff = 1.15
+AtkAff = 1.05
+SpdAff = 1.15
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_f81g6"]
+script = ExtResource("21_gv2t6")
+Name = "Látigo Integral"
+DoughType = SubResource("Resource_5un4f")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_2npwi"]
+script = ExtResource("20_75pfo")
+Name = "Brioche"
+Id = "brioche"
+Weak = PackedStringArray("integral", "oblea")
+Resist = PackedStringArray("centeno")
+HpAff = 1.15
+DefAff = 1.05
+SpdAff = 1.15
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_5205d"]
+script = ExtResource("21_gv2t6")
+Name = "Mantequillazo"
+DoughType = SubResource("Resource_2npwi")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_32c8b"]
+script = ExtResource("20_75pfo")
+Name = "Integral"
+Id = "integral"
+Weak = PackedStringArray("brioche", "oblea")
+Resist = PackedStringArray("centeno")
+HpAff = 1.15
+AtkAff = 1.05
+SpdAff = 1.15
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_hj8ru"]
+script = ExtResource("22_1xwo4")
+Names = PackedStringArray("Alepandro", "Panblo", "Panberto", "Daviena", "Panuel", "Paniela", "José Pan", "Paría", "Pancracio")
+metadata/_custom_type_script = "uid://denhbgxe7k7c2"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wf13j"]
+load_path = "res://.godot/imported/granjera_1.png-1b05ce1bc94f83e19303d10407ed71ae.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1phw"]
+atlas = SubResource("CompressedTexture2D_wf13j")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2x75j"]
+load_path = "res://.godot/imported/granjero_1.png-2ec46050f0e269b4f3698fe03272f739.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yku5"]
+atlas = SubResource("CompressedTexture2D_2x75j")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xred0"]
+load_path = "res://.godot/imported/granjera_2.png-aaffaf16941caeacfc61f1154e96b978.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ap7sd"]
+atlas = SubResource("CompressedTexture2D_xred0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cd78x"]
+load_path = "res://.godot/imported/granjero_2.png-9390d52e99ded1a249f10cd0201dd0e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gow5c"]
+atlas = SubResource("CompressedTexture2D_cd78x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lxpqy"]
+load_path = "res://.godot/imported/guerrero_1.png-eb50d6926b8cdb11e302b41802bcfc8b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68bh8"]
+atlas = SubResource("CompressedTexture2D_lxpqy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yj8m3"]
+load_path = "res://.godot/imported/guerrero_2.png-b57ed8670371858886be7fdcf60bac94.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xerh"]
+atlas = SubResource("CompressedTexture2D_yj8m3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_d6eso"]
+script = ExtResource("31_n11rl")
+MinLevel = 2
+MaxLevel = 2
+DoughType = SubResource("Resource_32c8b")
+Names = SubResource("Resource_hj8ru")
+Textures = [SubResource("AtlasTexture_l1phw"), SubResource("AtlasTexture_4yku5"), SubResource("AtlasTexture_ap7sd"), SubResource("AtlasTexture_gow5c"), SubResource("AtlasTexture_68bh8"), SubResource("AtlasTexture_0xerh")]
+Attacks = [SubResource("Resource_h5c55"), SubResource("Resource_mxsuy"), SubResource("Resource_sao6w"), SubResource("Resource_f81g6"), SubResource("Resource_5205d")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_bg6ob"]
+script = ExtResource("19_4k8fq")
+Name = "Puño Artesanal"
+Power = 20
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_p16r8"]
+script = ExtResource("20_75pfo")
+Name = "Blanco"
+Id = "blanco"
+Weak = PackedStringArray("centeno", "oblea")
+Resist = PackedStringArray("brioche")
+HpAff = 1.15
+AtkAff = 1.15
+DefAff = 1.05
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_h7phc"]
+script = ExtResource("21_gv2t6")
+Name = "Lanza Migajera"
+DoughType = SubResource("Resource_p16r8")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_jonjh"]
+script = ExtResource("20_75pfo")
+Name = "Centeno"
+Id = "centeno"
+Weak = PackedStringArray("integral", "oblea")
+Resist = PackedStringArray("blanco")
+HpAff = 1.15
+AtkAff = 1.15
+SpdAff = 1.05
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_4qgo0"]
+script = ExtResource("21_gv2t6")
+Name = "Pipazo"
+DoughType = SubResource("Resource_jonjh")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_wa3wq"]
+script = ExtResource("20_75pfo")
+Name = "Integral"
+Id = "integral"
+Weak = PackedStringArray("brioche", "oblea")
+Resist = PackedStringArray("centeno")
+HpAff = 1.15
+AtkAff = 1.05
+SpdAff = 1.15
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_okn2c"]
+script = ExtResource("21_gv2t6")
+Name = "Látigo Integral"
+DoughType = SubResource("Resource_wa3wq")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_k0hd2"]
+script = ExtResource("20_75pfo")
+Name = "Brioche"
+Id = "brioche"
+Weak = PackedStringArray("integral", "oblea")
+Resist = PackedStringArray("centeno")
+HpAff = 1.15
+DefAff = 1.05
+SpdAff = 1.15
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_vteq7"]
+script = ExtResource("21_gv2t6")
+Name = "Mantequillazo"
+DoughType = SubResource("Resource_k0hd2")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_xjfkh"]
+script = ExtResource("20_75pfo")
+Name = "Maiz"
+Id = "maiz"
+Weak = PackedStringArray("arroz", "maiz")
+Resist = PackedStringArray("integral", "brioche")
+HpAff = 1.15
+DefAff = 1.15
+SpdAff = 1.05
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_kive8"]
+script = ExtResource("22_1xwo4")
+Names = PackedStringArray("Alepandro", "Panblo", "Panberto", "Daviena", "Panuel", "Paniela", "José Pan", "Paría", "Pancracio")
+metadata/_custom_type_script = "uid://denhbgxe7k7c2"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d6eso"]
+load_path = "res://.godot/imported/guerrero_1.png-eb50d6926b8cdb11e302b41802bcfc8b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knsa6"]
+atlas = SubResource("CompressedTexture2D_d6eso")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7psng"]
+load_path = "res://.godot/imported/guerrero_2.png-b57ed8670371858886be7fdcf60bac94.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2486v"]
+atlas = SubResource("CompressedTexture2D_7psng")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_2486v"]
+script = ExtResource("31_n11rl")
+MinLevel = 2
+MaxLevel = 2
+DoughType = SubResource("Resource_xjfkh")
+Names = SubResource("Resource_kive8")
+Textures = [SubResource("AtlasTexture_knsa6"), SubResource("AtlasTexture_2486v")]
+Attacks = [SubResource("Resource_bg6ob"), SubResource("Resource_h7phc"), SubResource("Resource_4qgo0"), SubResource("Resource_okn2c"), SubResource("Resource_vteq7")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_bsstp"]
+script = ExtResource("19_4k8fq")
+Name = "Puño Artesanal"
+Power = 20
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_afju0"]
+script = ExtResource("20_75pfo")
+Name = "Blanco"
+Id = "blanco"
+Weak = PackedStringArray("centeno", "oblea")
+Resist = PackedStringArray("brioche")
+HpAff = 1.15
+AtkAff = 1.15
+DefAff = 1.05
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_we728"]
+script = ExtResource("21_gv2t6")
+Name = "Lanza Migajera"
+DoughType = SubResource("Resource_afju0")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_te4pb"]
+script = ExtResource("20_75pfo")
+Name = "Centeno"
+Id = "centeno"
+Weak = PackedStringArray("integral", "oblea")
+Resist = PackedStringArray("blanco")
+HpAff = 1.15
+AtkAff = 1.15
+SpdAff = 1.05
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_m1w0u"]
+script = ExtResource("21_gv2t6")
+Name = "Pipazo"
+DoughType = SubResource("Resource_te4pb")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_3yvdh"]
+script = ExtResource("20_75pfo")
+Name = "Integral"
+Id = "integral"
+Weak = PackedStringArray("brioche", "oblea")
+Resist = PackedStringArray("centeno")
+HpAff = 1.15
+AtkAff = 1.05
+SpdAff = 1.15
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_rerqb"]
+script = ExtResource("21_gv2t6")
+Name = "Látigo Integral"
+DoughType = SubResource("Resource_3yvdh")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_jgpah"]
+script = ExtResource("20_75pfo")
+Name = "Brioche"
+Id = "brioche"
+Weak = PackedStringArray("integral", "oblea")
+Resist = PackedStringArray("centeno")
+HpAff = 1.15
+DefAff = 1.05
+SpdAff = 1.15
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_dkcng"]
+script = ExtResource("21_gv2t6")
+Name = "Mantequillazo"
+DoughType = SubResource("Resource_jgpah")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
+
+[sub_resource type="Resource" id="Resource_xwpai"]
+script = ExtResource("20_75pfo")
+Name = "Arroz"
+Id = "arroz"
+Weak = PackedStringArray("arroz", "maiz")
+Resist = PackedStringArray("blanco", "centeno")
+HpAff = 1.15
+AtkAff = 1.05
+DefAff = 1.15
+metadata/_custom_type_script = "uid://dtvo6h8m3136a"
+
+[sub_resource type="Resource" id="Resource_uqlwj"]
+script = ExtResource("22_1xwo4")
+Names = PackedStringArray("Alepandro", "Panblo", "Panberto", "Daviena", "Panuel", "Paniela", "José Pan", "Paría", "Pancracio")
+metadata/_custom_type_script = "uid://denhbgxe7k7c2"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bsstp"]
+load_path = "res://.godot/imported/guerrero_1.png-eb50d6926b8cdb11e302b41802bcfc8b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afju0"]
+atlas = SubResource("CompressedTexture2D_bsstp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_we728"]
+load_path = "res://.godot/imported/guerrero_2.png-b57ed8670371858886be7fdcf60bac94.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frg8x"]
+atlas = SubResource("CompressedTexture2D_we728")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_8r5h8"]
+script = ExtResource("31_n11rl")
+MinLevel = 2
+MaxLevel = 2
+DoughType = SubResource("Resource_xwpai")
+Names = SubResource("Resource_uqlwj")
+Textures = [SubResource("AtlasTexture_afju0"), SubResource("AtlasTexture_frg8x")]
+Attacks = [SubResource("Resource_bsstp"), SubResource("Resource_we728"), SubResource("Resource_m1w0u"), SubResource("Resource_rerqb"), SubResource("Resource_dkcng")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_2c7a2"]
+script = ExtResource("36_8nvs4")
+BattleChance = 1.0
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_dtp80"]
+script = ExtResource("36_8nvs4")
+BattleChance = 0.9
+HardBattleChance = 0.1
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_q67p4"]
+script = ExtResource("36_8nvs4")
+BattleChance = 0.9
+HardBattleChance = 0.1
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_bd1r4"]
+script = ExtResource("36_8nvs4")
+HardBattleChance = 1.0
+UniqueSpot = 1.0
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_2teej"]
+script = ExtResource("17_pn65j")
+Spots = [SubResource("Resource_2c7a2"), SubResource("Resource_dtp80"), SubResource("Resource_q67p4"), SubResource("Resource_bd1r4")]
+Enemies = [SubResource("Resource_8nvs4"), SubResource("Resource_ugxyt"), SubResource("Resource_etvgs"), SubResource("Resource_d6eso"), SubResource("Resource_2486v"), SubResource("Resource_8r5h8")]
+Background = 1
+metadata/_custom_type_script = "uid://lymbpxjw8y4j"
+
+[sub_resource type="Resource" id="Resource_y2p4a"]
+script = ExtResource("31_n11rl")
+MinLevel = 2
+MaxLevel = 3
+DoughType = ExtResource("8_ghpyy")
+Names = ExtResource("32_2ixbo")
+Textures = [ExtResource("33_uig8d"), ExtResource("34_eixnv"), ExtResource("35_68ewr"), ExtResource("36_osnag"), ExtResource("44_vqdru"), ExtResource("6_pn65j")]
+Attacks = [ExtResource("9_ff6ho"), ExtResource("48_qx18j"), ExtResource("49_cgmg2"), ExtResource("52_y8o6s"), ExtResource("48_xsg57")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_5jxlq"]
+script = ExtResource("31_n11rl")
+MinLevel = 2
+MaxLevel = 3
+DoughType = ExtResource("20_pdwa4")
+Names = ExtResource("32_2ixbo")
+Textures = [ExtResource("33_uig8d"), ExtResource("34_eixnv"), ExtResource("35_68ewr"), ExtResource("36_osnag"), ExtResource("44_vqdru"), ExtResource("6_pn65j")]
+Attacks = [ExtResource("9_ff6ho"), ExtResource("48_qx18j"), ExtResource("49_cgmg2"), ExtResource("52_y8o6s"), ExtResource("48_xsg57")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_wf13j"]
+script = ExtResource("31_n11rl")
+MinLevel = 2
+MaxLevel = 3
+DoughType = ExtResource("18_emonu")
+Names = ExtResource("32_2ixbo")
+Textures = [ExtResource("33_uig8d"), ExtResource("34_eixnv"), ExtResource("35_68ewr"), ExtResource("36_osnag"), ExtResource("44_vqdru"), ExtResource("6_pn65j")]
+Attacks = [ExtResource("9_ff6ho"), ExtResource("48_qx18j"), ExtResource("49_cgmg2"), ExtResource("52_y8o6s"), ExtResource("48_xsg57")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_l1phw"]
+script = ExtResource("31_n11rl")
+MinLevel = 2
+MaxLevel = 3
+DoughType = ExtResource("21_335pd")
+Names = ExtResource("32_2ixbo")
+Textures = [ExtResource("33_uig8d"), ExtResource("34_eixnv"), ExtResource("35_68ewr"), ExtResource("36_osnag"), ExtResource("44_vqdru"), ExtResource("6_pn65j")]
+Attacks = [ExtResource("9_ff6ho"), ExtResource("48_qx18j"), ExtResource("49_cgmg2"), ExtResource("52_y8o6s"), ExtResource("48_xsg57")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8o6s"]
+atlas = ExtResource("45_tnm51")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_dc41f"]
+script = ExtResource("31_n11rl")
+MinLevel = 2
+MaxLevel = 3
+DoughType = ExtResource("5_pn65j")
+Names = ExtResource("32_2ixbo")
+Textures = [ExtResource("44_vqdru"), ExtResource("6_pn65j"), SubResource("AtlasTexture_y8o6s")]
+Attacks = [ExtResource("9_ff6ho"), ExtResource("48_qx18j"), ExtResource("49_cgmg2"), ExtResource("52_y8o6s"), ExtResource("48_xsg57")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_2x75j"]
+script = ExtResource("31_n11rl")
+MinLevel = 2
+MaxLevel = 3
+DoughType = ExtResource("44_emonu")
+Names = ExtResource("32_2ixbo")
+Textures = [ExtResource("44_vqdru"), ExtResource("6_pn65j"), SubResource("AtlasTexture_y8o6s")]
+Attacks = [ExtResource("9_ff6ho"), ExtResource("48_qx18j"), ExtResource("49_cgmg2"), ExtResource("52_y8o6s"), ExtResource("48_xsg57")]
+metadata/_custom_type_script = "uid://t4qwh37cywa1"
+
+[sub_resource type="Resource" id="Resource_4yku5"]
+script = ExtResource("36_8nvs4")
+BattleChance = 1.0
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_xred0"]
+script = ExtResource("36_8nvs4")
+BattleChance = 0.9
+HardBattleChance = 0.1
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_ap7sd"]
+script = ExtResource("36_8nvs4")
+BattleChance = 0.9
+HardBattleChance = 0.1
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_cd78x"]
+script = ExtResource("36_8nvs4")
+HardBattleChance = 1.0
+UniqueSpot = 1.0
+metadata/_custom_type_script = "uid://cqf8sw07ulelr"
+
+[sub_resource type="Resource" id="Resource_gow5c"]
+script = ExtResource("17_pn65j")
+Spots = [SubResource("Resource_4yku5"), SubResource("Resource_xred0"), SubResource("Resource_ap7sd"), SubResource("Resource_cd78x")]
+Enemies = [SubResource("Resource_y2p4a"), SubResource("Resource_5jxlq"), SubResource("Resource_wf13j"), SubResource("Resource_l1phw"), SubResource("Resource_dc41f"), SubResource("Resource_2x75j")]
+Background = 1
+metadata/_custom_type_script = "uid://lymbpxjw8y4j"
+
+[sub_resource type="Resource" id="Resource_lxpqy"]
+script = ExtResource("17_pn65j")
+Spots = [SubResource("Resource_4yku5"), SubResource("Resource_xred0"), SubResource("Resource_ap7sd"), SubResource("Resource_cd78x")]
+Enemies = [SubResource("Resource_y2p4a"), SubResource("Resource_5jxlq"), SubResource("Resource_wf13j"), SubResource("Resource_l1phw"), SubResource("Resource_dc41f"), SubResource("Resource_2x75j")]
+Background = 1
+metadata/_custom_type_script = "uid://lymbpxjw8y4j"
+
+[sub_resource type="Resource" id="Resource_68bh8"]
+script = ExtResource("17_pn65j")
+Spots = [SubResource("Resource_4yku5"), SubResource("Resource_xred0"), SubResource("Resource_ap7sd"), SubResource("Resource_cd78x")]
+Enemies = [SubResource("Resource_y2p4a"), SubResource("Resource_5jxlq"), SubResource("Resource_wf13j"), SubResource("Resource_l1phw"), SubResource("Resource_dc41f"), SubResource("Resource_2x75j")]
+Background = 1
+metadata/_custom_type_script = "uid://lymbpxjw8y4j"
+
+[sub_resource type="Resource" id="Resource_si7kk"]
+script = ExtResource("17_pn65j")
+Background = 2
+metadata/_custom_type_script = "uid://lymbpxjw8y4j"
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_44saj"]
 load_path = "res://.godot/imported/green.png-00c73af28d81addb598fa1561be3f600.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krlva"]
+atlas = ExtResource("29_gv2t6")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="Animation" id="Animation_1xwo4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_krlva")]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5wyof"]
+load_path = "res://.godot/imported/dios_del_pan.png-c58375fc81e428960815eca233e73639.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6ayx"]
+atlas = SubResource("CompressedTexture2D_5wyof")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5civd"]
+atlas = ExtResource("29_gv2t6")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi64w"]
+atlas = ExtResource("29_gv2t6")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds53i"]
+atlas = ExtResource("29_gv2t6")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8c7m"]
+atlas = ExtResource("29_gv2t6")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gv2t6"]
+atlas = ExtResource("29_gv2t6")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ss0b"]
+atlas = ExtResource("29_gv2t6")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mftsw"]
+atlas = ExtResource("29_gv2t6")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="Animation" id="Animation_gv2t6"]
+resource_name = "idle"
+length = 1.13333672577478
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.6, 0.73333335, 0.8666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_q6ayx"), SubResource("AtlasTexture_5civd"), SubResource("AtlasTexture_mi64w"), SubResource("AtlasTexture_ds53i"), SubResource("AtlasTexture_p8c7m"), SubResource("AtlasTexture_gv2t6"), SubResource("AtlasTexture_3ss0b"), SubResource("AtlasTexture_mftsw")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1xwo4"]
+_data = {
+&"RESET": SubResource("Animation_1xwo4"),
+&"idle": SubResource("Animation_gv2t6")
+}
 
 [sub_resource type="Resource" id="Resource_gsk6d"]
 script = ExtResource("24_1dqgb")
 Name = "Panson"
 DoughType = ExtResource("8_ghpyy")
 Level = 1
-LevelUpXP = 2
+LevelUpXP = 1
 AttackSet = Array[Object]([ExtResource("9_ff6ho")])
+BreadSet = Array[Object]([])
+metadata/_custom_type_script = "uid://dnv0pgk1tcyws"
+
+[sub_resource type="Resource" id="Resource_4lsv5"]
+script = ExtResource("24_1dqgb")
+Name = "Panson"
+DoughType = ExtResource("21_335pd")
+Level = 1
+LevelUpXP = 1
+AttackSet = Array[Object]([ExtResource("9_ff6ho"), ExtResource("48_qx18j")])
+BreadSet = Array[Object]([])
+metadata/_custom_type_script = "uid://dnv0pgk1tcyws"
+
+[sub_resource type="Resource" id="Resource_t8aaa"]
+script = ExtResource("24_1dqgb")
+Name = "Panson"
+DoughType = ExtResource("18_emonu")
+Level = 1
+LevelUpXP = 1
+AttackSet = Array[Object]([ExtResource("9_ff6ho"), ExtResource("49_cgmg2")])
+BreadSet = Array[Object]([])
+metadata/_custom_type_script = "uid://dnv0pgk1tcyws"
+
+[sub_resource type="Resource" id="Resource_wv7sc"]
+script = ExtResource("24_1dqgb")
+Name = "Panson"
+DoughType = ExtResource("20_pdwa4")
+Level = 1
+LevelUpXP = 1
+AttackSet = Array[Object]([ExtResource("9_ff6ho"), ExtResource("48_xsg57")])
+BreadSet = Array[Object]([])
+metadata/_custom_type_script = "uid://dnv0pgk1tcyws"
+
+[sub_resource type="Resource" id="Resource_7qcsl"]
+script = ExtResource("24_1dqgb")
+Name = "Panson"
+DoughType = ExtResource("5_pn65j")
+Level = 1
+LevelUpXP = 1
+AttackSet = Array[Object]([ExtResource("51_n11rl"), ExtResource("52_y8o6s"), ExtResource("48_xsg57")])
+BreadSet = Array[Object]([])
+metadata/_custom_type_script = "uid://dnv0pgk1tcyws"
+
+[sub_resource type="Resource" id="Resource_7dcpw"]
+script = ExtResource("24_1dqgb")
+Name = "Panson"
+DoughType = ExtResource("44_emonu")
+Level = 1
+LevelUpXP = 1
+AttackSet = Array[Object]([ExtResource("51_n11rl"), ExtResource("48_qx18j"), ExtResource("49_cgmg2")])
 BreadSet = Array[Object]([])
 metadata/_custom_type_script = "uid://dnv0pgk1tcyws"
 
 [sub_resource type="Resource" id="Resource_2cnsr"]
 script = ExtResource("25_y81of")
-doughVariantList = [SubResource("Resource_gsk6d")]
-BreadSet = [ExtResource("22_kay4s"), ExtResource("23_j7bvy")]
+doughVariantList = [SubResource("Resource_gsk6d"), SubResource("Resource_4lsv5"), SubResource("Resource_t8aaa"), SubResource("Resource_wv7sc"), SubResource("Resource_7qcsl"), SubResource("Resource_7dcpw")]
 DoughType = ExtResource("8_ghpyy")
 metadata/_custom_type_script = "uid://gco72akkni3y"
 
@@ -111,6 +1567,23 @@ Map = NodePath("../Map")
 GMScene = ExtResource("4_n74k2")
 SaveManager = NodePath("../SaveManager")
 TutorialEnemy = SubResource("Resource_daiq8")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu" unique_id=926479620]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_5f8cm")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/TextureRect" unique_id=2051133347]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_l5lci")
 
 [node name="MainMenuPanel" type="Panel" parent="MainMenu" unique_id=1535792667]
 anchors_preset = 15
@@ -126,6 +1599,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 50
 alignment = 1
 
 [node name="Button" type="Button" parent="MainMenu/MainMenuPanel/VBoxContainer" unique_id=1997247267]
@@ -138,16 +1612,56 @@ theme = ExtResource("15_ff6ho")
 theme_override_font_sizes/font_size = 34
 text = "Jugar"
 
-[node name="Map" type="CanvasLayer" parent="." unique_id=1320104553 node_paths=PackedStringArray("Connections", "Buttons", "SaveManager")]
+[node name="Button2" type="Button" parent="MainMenu/MainMenuPanel/VBoxContainer" unique_id=2123665448]
+custom_minimum_size = Vector2(200, 56)
+custom_maximum_size = Vector2(200, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("15_ff6ho")
+theme_override_font_sizes/font_size = 34
+text = "Salir
+"
+
+[node name="Map" type="CanvasLayer" parent="." unique_id=1320104553 node_paths=PackedStringArray("Connections", "Buttons", "SaveManager", "BackgroundRect", "Layer", "ChoiceDough", "BreadGod")]
 visible = false
 script = ExtResource("6_lpvoh")
 Connections = [NodePath("Paths/Low/Blanco-Brioche"), NodePath("Paths/Low/Blanco-Integral"), NodePath("Paths/Low/Blanco-Centeno"), NodePath("Paths/Low/Blanco-Z1"), NodePath("Paths/Low/Z1 - Z2"), NodePath("Paths/Low/Z2 - SMaiz"), NodePath("Paths/Low/Z2 - SArroz"), NodePath("Paths/Low/Z2 - SOblea")]
-Buttons = [NodePath("MarginContainer/Control/SCenteno"), NodePath("MarginContainer/Control/SBlanco"), NodePath("MarginContainer/Control/SBrioche"), NodePath("MarginContainer/Control/SIntegral"), NodePath("MarginContainer/Control/Z1"), NodePath("MarginContainer/Control/SMaiz"), NodePath("MarginContainer/Control/SArroz"), NodePath("MarginContainer/Control/Z2"), NodePath("MarginContainer/Control/SOblea")]
-Position = 1
+Buttons = [NodePath("MarginContainer/Control/SBrioche"), NodePath("MarginContainer/Control/SBlanco"), NodePath("MarginContainer/Control/SCenteno"), NodePath("MarginContainer/Control/SIntegral"), NodePath("MarginContainer/Control/Z1"), NodePath("MarginContainer/Control/SMaiz"), NodePath("MarginContainer/Control/SArroz"), NodePath("MarginContainer/Control/Z2"), NodePath("MarginContainer/Control/SOblea")]
+Position = 7
 GMScene = ExtResource("2_74lek")
+BattleScene = ExtResource("4_n74k2")
 EnabledTexture = ExtResource("13_7mbro")
 CurrentTexture = ExtResource("8_c6rvn")
 SaveManager = NodePath("../SaveManager")
+BackgroundRect = NodePath("TextureRect")
+Backgrounds = Array[Texture2D]([ExtResource("14_5f8cm"), ExtResource("15_kay4s"), ExtResource("16_j7bvy"), ExtResource("17_75pfo")])
+Layer = NodePath("MarginContainer")
+MapTutorial = SubResource("Resource_5wyof")
+SantuarioDialogue = SubResource("Resource_aw7an")
+EndDialogue = SubResource("Resource_yj8m3")
+ChoiceDough = NodePath("VBoxContainer")
+Types = Array[Object]([ExtResource("18_emonu"), ExtResource("8_ghpyy"), ExtResource("20_pdwa4"), ExtResource("21_335pd"), null, ExtResource("5_pn65j"), ExtResource("44_emonu"), null, null])
+FinalBattlePrevDialogue = Array[Object]([SubResource("Resource_n11rl"), SubResource("Resource_cgmg2")])
+BreadGod = NodePath("PanGod")
+BreadGodEnemy = SubResource("Resource_8o50k")
+
+[node name="TextureRect" type="TextureRect" parent="Map" unique_id=1732621580]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_75pfo")
+
+[node name="TextureRect" type="TextureRect" parent="Map/TextureRect" unique_id=615221049]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_l5lci")
 
 [node name="Paths" type="Node" parent="Map" unique_id=341382231]
 
@@ -155,55 +1669,57 @@ SaveManager = NodePath("../SaveManager")
 
 [node name="Blanco-Brioche" type="Node" parent="Map/Paths/Low" unique_id=1492956040 node_paths=PackedStringArray("A", "B")]
 script = ExtResource("7_7mbro")
-A = NodePath("../../../MarginContainer/Control/SBlanco")
+A = NodePath("../../../MarginContainer/Control/SIntegral")
 B = NodePath("../../../MarginContainer/Control/SBrioche")
-Path = ExtResource("10_5jxlq")
+Path = SubResource("Resource_jfe00")
 
 [node name="Blanco-Integral" type="Node" parent="Map/Paths/Low" unique_id=34009262 node_paths=PackedStringArray("A", "B")]
 script = ExtResource("7_7mbro")
-A = NodePath("../../../MarginContainer/Control/SIntegral")
-B = NodePath("../../../MarginContainer/Control/SBlanco")
-Path = ExtResource("10_5jxlq")
+A = NodePath("../../../MarginContainer/Control/SBlanco")
+B = NodePath("../../../MarginContainer/Control/SIntegral")
+Path = SubResource("Resource_mf2kp")
 
 [node name="Blanco-Centeno" type="Node" parent="Map/Paths/Low" unique_id=1640849025 node_paths=PackedStringArray("A", "B")]
 script = ExtResource("7_7mbro")
-A = NodePath("../../../MarginContainer/Control/SBlanco")
+A = NodePath("../../../MarginContainer/Control/SIntegral")
 B = NodePath("../../../MarginContainer/Control/SCenteno")
-Path = ExtResource("10_5jxlq")
+Path = SubResource("Resource_b65qk")
 
 [node name="Blanco-Z1" type="Node" parent="Map/Paths/Low" unique_id=1657206477 node_paths=PackedStringArray("A", "B")]
 script = ExtResource("7_7mbro")
-A = NodePath("../../../MarginContainer/Control/SBlanco")
+A = NodePath("../../../MarginContainer/Control/SIntegral")
 B = NodePath("../../../MarginContainer/Control/Z1")
-Path = ExtResource("11_c6rvn")
+Path = SubResource("Resource_2teej")
 
 [node name="Z1 - Z2" type="Node" parent="Map/Paths/Low" unique_id=951053994 node_paths=PackedStringArray("A", "B")]
 script = ExtResource("7_7mbro")
 A = NodePath("../../../MarginContainer/Control/Z1")
 B = NodePath("../../../MarginContainer/Control/Z2")
-Path = ExtResource("11_c6rvn")
+Path = SubResource("Resource_gow5c")
 
 [node name="Z2 - SMaiz" type="Node" parent="Map/Paths/Low" unique_id=1591666619 node_paths=PackedStringArray("A", "B")]
 script = ExtResource("7_7mbro")
 A = NodePath("../../../MarginContainer/Control/SMaiz")
 B = NodePath("../../../MarginContainer/Control/Z2")
-Path = ExtResource("11_c6rvn")
+Path = SubResource("Resource_lxpqy")
 
 [node name="Z2 - SArroz" type="Node" parent="Map/Paths/Low" unique_id=86315599 node_paths=PackedStringArray("A", "B")]
 script = ExtResource("7_7mbro")
 A = NodePath("../../../MarginContainer/Control/SArroz")
 B = NodePath("../../../MarginContainer/Control/Z2")
-Path = ExtResource("11_c6rvn")
+Path = SubResource("Resource_68bh8")
 
 [node name="Z2 - SOblea" type="Node" parent="Map/Paths/Low" unique_id=734237137 node_paths=PackedStringArray("A", "B")]
 script = ExtResource("7_7mbro")
 A = NodePath("../../../MarginContainer/Control/Z2")
 B = NodePath("../../../MarginContainer/Control/SOblea")
+Path = SubResource("Resource_si7kk")
 
 [node name="MarginContainer" type="MarginContainer" parent="Map" unique_id=1542845737]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -322.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 40
@@ -233,9 +1749,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 152.00012
+offset_left = 27.0
 offset_top = -169.0
-offset_right = 176.00012
+offset_right = 51.0
 offset_bottom = 169.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -248,15 +1764,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -348.0
+offset_left = -187.0
 offset_top = -169.0
-offset_right = -324.0
+offset_right = -163.0
 offset_bottom = 169.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.56, 0.56, 0.56, 1)
 
-[node name="SBlanco" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=161538319]
+[node name="SIntegral" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=161538319]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -271,6 +1787,21 @@ size_flags_vertical = 4
 texture_normal = SubResource("CompressedTexture2D_44saj")
 texture_disabled = ExtResource("14_ff6ho")
 stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="Map/MarginContainer/Control/SIntegral" unique_id=1200678263]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("34_3ss0b")
 
 [node name="SBrioche" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=969274698]
 layout_mode = 1
@@ -288,6 +1819,21 @@ texture_normal = SubResource("CompressedTexture2D_44saj")
 texture_disabled = ExtResource("14_ff6ho")
 stretch_mode = 4
 
+[node name="TextureRect" type="TextureRect" parent="Map/MarginContainer/Control/SBrioche" unique_id=1843420896]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("32_mi64w")
+
 [node name="SCenteno" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=1909916010]
 layout_mode = 1
 anchors_preset = 4
@@ -304,7 +1850,22 @@ texture_normal = SubResource("CompressedTexture2D_44saj")
 texture_disabled = ExtResource("14_ff6ho")
 stretch_mode = 4
 
-[node name="SIntegral" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=1042504456]
+[node name="TextureRect" type="TextureRect" parent="Map/MarginContainer/Control/SCenteno" unique_id=1992281546]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("33_ds53i")
+
+[node name="SBlanco" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=1042504456]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 4
@@ -320,15 +1881,33 @@ texture_normal = SubResource("CompressedTexture2D_44saj")
 texture_disabled = ExtResource("14_ff6ho")
 stretch_mode = 4
 
+[node name="TextureRect" type="TextureRect" parent="Map/MarginContainer/Control/SBlanco" unique_id=1120970015]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("31_mi64w")
+
 [node name="Z1" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=1475276002]
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 500.0
+offset_left = -11.0
 offset_top = -50.0
-offset_right = 600.0003
+offset_right = 89.000305
 offset_bottom = 50.0
+grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -341,9 +1920,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 650.0
+offset_left = 364.0
 offset_top = 100.0
-offset_right = 750.0003
+offset_right = 464.0003
 offset_bottom = 200.0
 grow_vertical = 2
 size_flags_horizontal = 0
@@ -352,15 +1931,30 @@ texture_normal = SubResource("CompressedTexture2D_44saj")
 texture_disabled = ExtResource("14_ff6ho")
 stretch_mode = 4
 
+[node name="TextureRect" type="TextureRect" parent="Map/MarginContainer/Control/SMaiz" unique_id=1229612298]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("35_mftsw")
+
 [node name="SArroz" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=1034112796]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 650.0
+offset_left = 364.0
 offset_top = -200.0
-offset_right = 750.0003
+offset_right = 464.0003
 offset_bottom = -100.0
 grow_vertical = 2
 size_flags_horizontal = 0
@@ -369,14 +1963,29 @@ texture_normal = SubResource("CompressedTexture2D_44saj")
 texture_disabled = ExtResource("14_ff6ho")
 stretch_mode = 4
 
+[node name="TextureRect" type="TextureRect" parent="Map/MarginContainer/Control/SArroz" unique_id=1709404526]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_mftsw")
+
 [node name="Z2" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=1405827619]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 650.0
+offset_left = 514.0
 offset_top = -50.0
-offset_right = 750.0003
+offset_right = 614.0003
 offset_bottom = 50.0
 grow_vertical = 2
 size_flags_horizontal = 0
@@ -388,15 +1997,16 @@ stretch_mode = 4
 [node name="SOblea" type="TextureButton" parent="Map/MarginContainer/Control" unique_id=2059634330]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
+offset_left = 314.0
 offset_top = -64.0
+offset_right = 442.0
 offset_bottom = 64.0
-grow_horizontal = 0
+grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -404,8 +2014,77 @@ texture_normal = SubResource("CompressedTexture2D_44saj")
 texture_disabled = ExtResource("14_ff6ho")
 stretch_mode = 4
 
+[node name="TextureRect" type="TextureRect" parent="Map/MarginContainer/Control/SOblea" unique_id=472526562]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("37_q6ayx")
+
+[node name="PanGod" type="TextureRect" parent="Map" unique_id=1041481950]
+visible = false
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -390.0
+offset_bottom = -3.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = SubResource("AtlasTexture_krlva")
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Map/PanGod" unique_id=1867943867]
+libraries/ = SubResource("AnimationLibrary_1xwo4")
+autoplay = &"idle"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Map" unique_id=1984872667]
+visible = false
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 754.0
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Cambiar" type="Button" parent="Map/VBoxContainer" unique_id=748883128]
+custom_minimum_size = Vector2(200, 56)
+custom_maximum_size = Vector2(200, 56)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("15_ff6ho")
+theme_override_font_sizes/font_size = 40
+text = "CAMBIAR"
+autowrap_mode = 3
+
+[node name="Seguir" type="Button" parent="Map/VBoxContainer" unique_id=974491413]
+custom_minimum_size = Vector2(200, 56)
+custom_maximum_size = Vector2(200, 56)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("15_ff6ho")
+theme_override_font_sizes/font_size = 40
+text = "SALIR"
+autowrap_mode = 3
+
 [node name="SaveManager" type="Node" parent="." unique_id=235248674]
 script = ExtResource("21_gm488")
 Player = SubResource("Resource_2cnsr")
 
 [connection signal="pressed" from="MainMenu/MainMenuPanel/VBoxContainer/Button" to="MainMenu" method="StartMainMenu"]
+[connection signal="pressed" from="MainMenu/MainMenuPanel/VBoxContainer/Button2" to="MainMenu" method="Exit"]
+[connection signal="pressed" from="Map/VBoxContainer/Cambiar" to="Map" method="ChangeElement"]
+[connection signal="pressed" from="Map/VBoxContainer/Seguir" to="Map" method="Continue"]

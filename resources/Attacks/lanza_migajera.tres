@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_k6bff")
 Name = "Lanza Migajera"
+Description = "Ataque de [b]15 de potencia[/b] de tipo blanco"
 DoughType = ExtResource("1_np12b")
 Power = 15
 metadata/_custom_type_script = "uid://crtwedyyvaw5g"

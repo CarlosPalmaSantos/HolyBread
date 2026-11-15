@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="DoughType" format=3 uid="uid://c55ibc2tgn0du"]
 
+[ext_resource type="Texture2D" uid="uid://diqrl8s0ce5qq" path="res://resources/Sprites/oblea_icon.tres" id="1_nmmhj"]
 [ext_resource type="Script" uid="uid://dtvo6h8m3136a" path="res://scripts/battle/DoughType.cs" id="1_x305f"]
 
 [resource]
@@ -11,4 +12,5 @@ HpAff = 1.15
 AtkAff = 1.15
 DefAff = 1.15
 SpdAff = 1.15
+Texture = ExtResource("1_nmmhj")
 metadata/_custom_type_script = "uid://dtvo6h8m3136a"

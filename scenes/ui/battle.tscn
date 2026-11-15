@@ -3,16 +3,25 @@
 [ext_resource type="Script" uid="uid://b26vrkcm2jbew" path="res://scripts/BattleUi.cs" id="1_bg8yg"]
 [ext_resource type="Script" uid="uid://irur1cjkbubm" path="res://scripts/battle/BattleManager.cs" id="1_m63d4"]
 [ext_resource type="Theme" uid="uid://cd1o8bhkt0xo" path="res://resources/theme.tres" id="2_bg8yg"]
+[ext_resource type="Texture2D" uid="uid://se64imffa3gv" path="res://resources/Sprites/fondo_zona_baja.png" id="2_jgpvw"]
+[ext_resource type="Texture2D" uid="uid://dy2efp7acteo2" path="res://resources/Sprites/fondo_zona_media_1.png" id="3_7jovc"]
 [ext_resource type="Texture2D" uid="uid://cnk6u17hktlm2" path="res://resources/Sprites/barra_de_vida_amarillo.png" id="3_k3fhr"]
 [ext_resource type="Texture2D" uid="uid://5w7yr1ykucre" path="res://resources/Sprites/barra_de_vida_rojo.png" id="4_c2mh6"]
 [ext_resource type="Script" uid="uid://oa12qcxp7bxb" path="res://scripts/dialogues/DialogueLine.cs" id="4_evq16"]
+[ext_resource type="Texture2D" uid="uid://djbic8bjqytnk" path="res://resources/Sprites/fondo_zona_alta.png" id="4_fqis5"]
+[ext_resource type="Texture2D" uid="uid://cqeji56q1cyoc" path="res://resources/Sprites/fondo_santuarios_.png" id="5_5wyof"]
 [ext_resource type="Script" uid="uid://cjdyw14nsx3u5" path="res://scripts/dialogues/Dialogue.cs" id="5_fbd0j"]
 [ext_resource type="Texture2D" uid="uid://brj77vc88j6vo" path="res://resources/Sprites/panel_principal_1.png" id="7_fbd0j"]
 [ext_resource type="Texture2D" uid="uid://ks4sqhjahn62" path="res://resources/Sprites/player.png" id="7_tfm2p"]
 [ext_resource type="Texture2D" uid="uid://2y4dom776wis" path="res://resources/Sprites/barra_de_vida_vacia.png" id="8_mqini"]
 [ext_resource type="Texture2D" uid="uid://bpi7cupu13q73" path="res://resources/Sprites/barra_de_vida_verde.png" id="8_tfm2p"]
 [ext_resource type="Theme" uid="uid://wemvxejou07q" path="res://resources/large_button_theme.tres" id="8_xeu4k"]
+[ext_resource type="Resource" uid="uid://c7bmbms1mp5g6" path="res://resources/Breads/viena.tres" id="9_tk4r7"]
 [ext_resource type="Texture2D" uid="uid://cylpgf5nhhr73" path="res://icon.svg" id="9_xeu4k"]
+[ext_resource type="Resource" uid="uid://cu01qjkny5nt4" path="res://resources/Breads/baguette.tres" id="10_k2f2v"]
+[ext_resource type="Resource" uid="uid://ci81aokyil1p6" path="res://resources/Attacks/latigo_integral.tres" id="14_7jovc"]
+[ext_resource type="Texture2D" uid="uid://do2ejsph2157" path="res://resources/Sprites/dios_del_pan.png" id="19_fqis5"]
+[ext_resource type="Script" uid="uid://drlho05ugopw" path="res://scripts/AttackButton.cs" id="20_rlev3"]
 
 [sub_resource type="Resource" id="Resource_eiab3"]
 script = ExtResource("4_evq16")
@@ -90,7 +99,7 @@ metadata/_custom_type_script = "uid://oa12qcxp7bxb"
 [sub_resource type="Resource" id="Resource_k2f2v"]
 script = ExtResource("4_evq16")
 Speaker = "Pandado"
-Text = "Recuperarás [g]30%[/g] de la vida"
+Text = "Recuperarás [g]75%[/g] de la vida"
 metadata/_custom_type_script = "uid://oa12qcxp7bxb"
 
 [sub_resource type="Resource" id="Resource_daiq8"]
@@ -122,6 +131,12 @@ script = ExtResource("5_fbd0j")
 Lines = Array[Object]([SubResource("Resource_jgpvw"), SubResource("Resource_7jovc"), SubResource("Resource_fqis5")])
 metadata/_custom_type_script = "uid://cjdyw14nsx3u5"
 
+[sub_resource type="Gradient" id="Gradient_jgpvw"]
+colors = PackedColorArray(0, 0, 0, 0.49019608, 0, 0, 0, 0.49019608)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l5lci"]
+gradient = SubResource("Gradient_jgpvw")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_mqini"]
 atlas = ExtResource("7_tfm2p")
 region = Rect2(0, 96, 32, 32)
@@ -129,29 +144,114 @@ region = Rect2(0, 96, 32, 32)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5lci"]
 bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=942398595 node_paths=PackedStringArray("Manager", "Panel", "MainMenu", "AttackMenu", "BreadMenu", "EnemyBar", "PlayerBar", "EnemyRect", "PlayerRect", "EnemyName", "PlayerName", "Attack1Button", "Attack2Button", "Attack3Button", "BreadContainer")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_krlva"]
+atlas = ExtResource("19_fqis5")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="Animation" id="Animation_1xwo4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_krlva")]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5wyof"]
+load_path = "res://.godot/imported/dios_del_pan.png-c58375fc81e428960815eca233e73639.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6ayx"]
+atlas = SubResource("CompressedTexture2D_5wyof")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5civd"]
+atlas = ExtResource("19_fqis5")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi64w"]
+atlas = ExtResource("19_fqis5")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds53i"]
+atlas = ExtResource("19_fqis5")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8c7m"]
+atlas = ExtResource("19_fqis5")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gv2t6"]
+atlas = ExtResource("19_fqis5")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ss0b"]
+atlas = ExtResource("19_fqis5")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mftsw"]
+atlas = ExtResource("19_fqis5")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="Animation" id="Animation_gv2t6"]
+resource_name = "idle"
+length = 1.13333672577478
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.6, 0.73333335, 0.8666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_q6ayx"), SubResource("AtlasTexture_5civd"), SubResource("AtlasTexture_mi64w"), SubResource("AtlasTexture_ds53i"), SubResource("AtlasTexture_p8c7m"), SubResource("AtlasTexture_gv2t6"), SubResource("AtlasTexture_3ss0b"), SubResource("AtlasTexture_mftsw")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rlev3"]
+_data = {
+&"RESET": SubResource("Animation_1xwo4"),
+&"idle": SubResource("Animation_gv2t6")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlev3"]
+bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=942398595 node_paths=PackedStringArray("Manager", "Panel", "MainMenu", "AttackMenu", "BreadMenu", "BackgroundRect", "EnemyBar", "PlayerBar", "EnemyRect", "PlayerRect", "DoughTypeRect", "EnemyName", "PlayerName", "Attack1Button", "Attack2Button", "Attack3Button", "BreadContainer", "BreadGod", "Description")]
 script = ExtResource("1_bg8yg")
 Manager = NodePath("Node")
 Panel = NodePath("Panel")
 MainMenu = NodePath("Panel/main")
 AttackMenu = NodePath("Panel/attack")
 BreadMenu = NodePath("Panel/bread")
+BackgroundRect = NodePath("TextureRect3")
+Backgrounds = Array[Texture2D]([ExtResource("2_jgpvw"), ExtResource("3_7jovc"), ExtResource("4_fqis5"), ExtResource("5_5wyof")])
 EnemyBar = NodePath("Panel2/MarginContainer/VBoxContainer/MarginContainer/ProgressBar")
 PlayerBar = NodePath("Player/MarginContainer/VBoxContainer/MarginContainer/ProgressBar")
 EnemyRect = NodePath("TextureRect2")
 PlayerRect = NodePath("TextureRect")
+DoughTypeRect = NodePath("Player/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/TextureRect")
 GoodHP = Color(0.5058824, 0.48235294, 0.101960786, 1)
 BadHP = Color(0.6745098, 0.26666668, 0.15294118, 1)
 GoodHPTexture = ExtResource("8_tfm2p")
 MediumHPTexture = ExtResource("3_k3fhr")
 BadHPTexture = ExtResource("4_c2mh6")
 EnemyName = NodePath("Panel2/MarginContainer/VBoxContainer/MarginContainer2/RichTextLabel")
-PlayerName = NodePath("Player/MarginContainer/VBoxContainer/MarginContainer2/RichTextLabel")
+PlayerName = NodePath("Player/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/RichTextLabel")
 Attack1Button = NodePath("Panel/attack/MarginContainer/Main/Attack1")
 Attack2Button = NodePath("Panel/attack/MarginContainer/Main/Attack2")
 Attack3Button = NodePath("Panel/attack/MarginContainer/Main/Attack3")
 BreadContainer = NodePath("Panel/bread/MarginContainer/ScrollContainer/VBoxContainer")
 Theme = ExtResource("8_xeu4k")
+BreadGod = NodePath("PanGod")
+Description = NodePath("Panel3/RichTextLabel")
 
 [node name="Node" type="Node" parent="." unique_id=2039075978 node_paths=PackedStringArray("Ui")]
 script = ExtResource("1_m63d4")
@@ -159,6 +259,9 @@ Ui = NodePath("..")
 FirstDialogue = SubResource("Resource_8l5c3")
 SecondDialogue = SubResource("Resource_fbd0j")
 NoCorrectButtonAttackDialogue = SubResource("Resource_mqini")
+VienaBread = ExtResource("9_tk4r7")
+InitialBread = ExtResource("10_k2f2v")
+NextAttack = ExtResource("14_7jovc")
 ThirdDialogue = SubResource("Resource_daiq8")
 FourthDialogue = SubResource("Resource_agplw")
 
@@ -168,6 +271,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_jgpvw")
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect3" unique_id=729167292]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_l5lci")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1273425548]
 custom_minimum_size = Vector2(300, 300)
@@ -209,14 +322,25 @@ theme_override_constants/separation = 0
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Player/MarginContainer/VBoxContainer/MarginContainer2" unique_id=481533889]
+[node name="HBoxContainer" type="HBoxContainer" parent="Player/MarginContainer/VBoxContainer/MarginContainer2" unique_id=338728820]
 layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=481533889]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_bg8yg")
 theme_override_font_sizes/normal_font_size = 28
 text = "Tú"
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Player/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=539045855]
+custom_minimum_size = Vector2(45, 0)
+custom_maximum_size = Vector2(45, -1)
+layout_mode = 2
+stretch_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="Player/MarginContainer/VBoxContainer" unique_id=1388849305]
 layout_mode = 2
@@ -240,6 +364,7 @@ grow_vertical = 2
 texture = ExtResource("7_fbd0j")
 
 [node name="main" type="VBoxContainer" parent="Panel" unique_id=1737144836]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -283,7 +408,6 @@ text = "HUIR"
 autowrap_mode = 3
 
 [node name="attack" type="VBoxContainer" parent="Panel" unique_id=2075663717]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -318,6 +442,7 @@ theme_override_font_sizes/font_size = 30
 text = "Ataque 1"
 autowrap_mode = 3
 clip_text = true
+script = ExtResource("20_rlev3")
 
 [node name="Attack2" type="Button" parent="Panel/attack/MarginContainer/Main" unique_id=829233442]
 custom_minimum_size = Vector2(200, 86)
@@ -331,6 +456,7 @@ text = "Ataque 2
 
 "
 autowrap_mode = 3
+script = ExtResource("20_rlev3")
 
 [node name="Attack3" type="Button" parent="Panel/attack/MarginContainer/Main" unique_id=1753997078]
 custom_minimum_size = Vector2(200, 86)
@@ -344,6 +470,7 @@ text = "Ataque 3
 
 "
 autowrap_mode = 3
+script = ExtResource("20_rlev3")
 
 [node name="MarginContainer2" type="MarginContainer" parent="Panel/attack" unique_id=1128810136]
 layout_mode = 2
@@ -406,6 +533,27 @@ text = "Volver
 
 "
 autowrap_mode = 3
+
+[node name="PanGod" type="TextureRect" parent="." unique_id=1821338243]
+visible = false
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -338.0
+offset_top = 105.0
+offset_right = -1.0
+offset_bottom = 40.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = SubResource("AtlasTexture_krlva")
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PanGod" unique_id=1738558763]
+libraries/ = SubResource("AnimationLibrary_rlev3")
+autoplay = &"idle"
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1192657058]
 custom_minimum_size = Vector2(300, 300)
@@ -470,6 +618,27 @@ theme = ExtResource("2_bg8yg")
 value = 100.0
 texture_under = ExtResource("8_mqini")
 texture_progress = ExtResource("8_tfm2p")
+
+[node name="Panel3" type="Panel" parent="." unique_id=502923160]
+offset_left = 300.0
+offset_top = 10.0
+offset_right = 600.0
+offset_bottom = 310.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rlev3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel3" unique_id=544949838]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_bg8yg")
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Panel/main/Attack" to="." method="ShowBasicAttackMenu"]
 [connection signal="pressed" from="Panel/main/bread" to="." method="ShowBreadAttackMenu"]

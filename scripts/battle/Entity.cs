@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using Godot;
+using HolyBread.scripts.dialogues;
 using HolyBread.scripts.utiles;
 
 namespace HolyBread.scripts.battle;
@@ -89,5 +90,31 @@ public partial class Entity : Resource, IBinary<Entity>
             AttackSet = reader.ReadArray<Attack>(),
             BreadSet = reader.ReadArray<Bread>(),
         };
+    }
+    
+    public void LevelUp()
+    {
+        XP++;
+        if (XP < LevelUpXP) return;
+
+        XP = 0;
+        var hp = PercentualHp;
+        Level++;
+        LevelUpXP ++;
+        CurrentHp = Mathf.CeilToInt(hp * Hp);
+
+        DialogManager.Play(new Dialogue
+        {
+            Lines =
+            [
+                new DialogueLine
+                {
+                    Text =
+                        $"[g]{Name}[/g] ha subido su maestría en [g]{DoughType.Name}[/g]!",
+                    Centered = true
+                }
+            ],
+            Shadow = true,
+        });
     }
 }

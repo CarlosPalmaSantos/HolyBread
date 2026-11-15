@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://c2vhw1hrtjuhb"]
+
+[ext_resource type="Texture2D" uid="uid://ch122xketo2p5" path="res://resources/Sprites/simbolos_panes_1.png" id="1_4nnfp"]
+
+[resource]
+atlas = ExtResource("1_4nnfp")
+region = Rect2(8, 0, 8, 8)

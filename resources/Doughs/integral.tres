@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="DoughType" format=3 uid="uid://ugp12pmplwrt"]
 
 [ext_resource type="Script" uid="uid://dtvo6h8m3136a" path="res://scripts/battle/DoughType.cs" id="1_miibv"]
+[ext_resource type="Texture2D" uid="uid://c2vhw1hrtjuhb" path="res://resources/Sprites/integral_icon.tres" id="1_mirbf"]
 
 [resource]
 script = ExtResource("1_miibv")
@@ -9,6 +10,8 @@ Id = "integral"
 Weak = PackedStringArray("brioche", "oblea")
 Resist = PackedStringArray("centeno")
 HpAff = 1.15
-AtkAff = 1.05
+AtkAff = 1.1
+DefAff = 1.2
 SpdAff = 1.15
+Texture = ExtResource("1_mirbf")
 metadata/_custom_type_script = "uid://dtvo6h8m3136a"

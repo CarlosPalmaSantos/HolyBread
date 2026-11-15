@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="DoughType" format=3 uid="uid://cj6574k1f47b1"]
 
 [ext_resource type="Script" uid="uid://dtvo6h8m3136a" path="res://scripts/battle/DoughType.cs" id="1_iwhl1"]
+[ext_resource type="Texture2D" uid="uid://b3vvm4asdgncf" path="res://resources/Sprites/maiz_icon.tres" id="1_lk6ue"]
 
 [resource]
 script = ExtResource("1_iwhl1")
@@ -9,6 +10,8 @@ Id = "maiz"
 Weak = PackedStringArray("arroz", "maiz")
 Resist = PackedStringArray("integral", "brioche")
 HpAff = 1.15
+AtkAff = 1.2
 DefAff = 1.15
-SpdAff = 1.05
+SpdAff = 1.1
+Texture = ExtResource("1_lk6ue")
 metadata/_custom_type_script = "uid://dtvo6h8m3136a"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SameTypeAttack" format=3 uid="uid://b7yfq87od2d2e"]
+
+[ext_resource type="Script" uid="uid://d0tgwnpio1mhk" path="res://scripts/battle/Attacks/SameTypeAttack.cs" id="1_a7r7t"]
+
+[resource]
+script = ExtResource("1_a7r7t")
+Name = "Puño Artesanal"
+Description = "Ataque de [b]30[/b] de potencia de tu mismo tipo de masa"
+Power = 30
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"

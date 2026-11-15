@@ -13,7 +13,7 @@ config_version=5
 config/name="HolyBread"
 run/main_scene="uid://cx3flur656dqs"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://7fw6ghm2hhby"
 
 [autoload]
 
@@ -23,7 +23,6 @@ DialogManager="*uid://bpiyqjyitfhmr"
 [display]
 
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [dotnet]
 

@@ -18,6 +18,8 @@ public partial class DoughType : Resource, IBinary<DoughType>
     [Export] public float DefAff { get; set; } = 1.25f;
     [Export] public float SpdAff { get; set; } = 1.25f;
 
+    [Export] public Texture2D Texture { get; set; }
+
     public float GetMultiplier(DoughType other, out Attack.Effectiveness effectiveness)
     {
         effectiveness = Attack.Effectiveness.NORMAL;
@@ -34,7 +36,7 @@ public partial class DoughType : Resource, IBinary<DoughType>
             effectiveness = Attack.Effectiveness.RESIST;
             return 0.5f;
         }
-        
+
         return 1;
     }
 

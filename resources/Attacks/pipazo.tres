@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_xrkyr")
 Name = "Pipazo"
+Description = "Ataque de [b]15 de potencia[/b] de tipo centeno"
 DoughType = ExtResource("1_lndcb")
 Power = 15
 metadata/_custom_type_script = "uid://crtwedyyvaw5g"

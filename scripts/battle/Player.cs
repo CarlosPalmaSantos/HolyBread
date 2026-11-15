@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Godot;
+using HCoroutines;
+using HolyBread.scripts.dialogues;
 using HolyBread.scripts.utiles;
 
 namespace HolyBread.scripts.battle;
@@ -12,6 +14,7 @@ public partial class Player : Resource, IBinary<Player>
 {
     [Export] private Entity[] doughVariantList = [];
     [Export] public Bread[] BreadSet { get; set; } = [];
+
     private Dictionary<DoughType, Entity> doughVariants;
 
     private Dictionary<DoughType, Entity> DoughVariants
@@ -24,6 +27,7 @@ public partial class Player : Resource, IBinary<Player>
     }
 
     [Export] public DoughType DoughType { get; set; }
+
     public Entity Entity
     {
         get
@@ -37,6 +41,17 @@ public partial class Player : Resource, IBinary<Player>
     public void ChangeDoughType(DoughType doughType)
     {
         DoughType = doughType;
+        DialogManager.Play(new Dialogue
+        {
+            Lines =
+            [
+                new DialogueLine
+                {
+                    Text = $"Has cambiado al tipo [g]{doughType.Name}[/g]",
+                    Centered = true
+                }
+            ]
+        });
     }
 
     public void WriteBinary(BinaryWriter writer)

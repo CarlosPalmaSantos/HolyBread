@@ -74,7 +74,7 @@ public partial class DialogManager : CanvasLayer
                 Shadow = false,
             });
     }
-    
+
     public static void Play(Dialogue dialogue) => Co.Run(PlayCoroutine(dialogue));
 
     public static IEnumerator PlayCoroutine(Dialogue dialogue)
@@ -85,51 +85,69 @@ public partial class DialogManager : CanvasLayer
     [Export] public bool Continue { get; private set; }
     private bool WaitingForContinue { get; set; }
 
+    private int _nextTicket;
+    private int _currentTicket;
+
     private IEnumerator PlayDialogueCoroutine(Dialogue dialogue)
     {
-        Instance.MainPanel.Show();
+        var ticket = _nextTicket++;
+        yield return Co.WaitUntil(() => _currentTicket == ticket);
 
-        if (dialogue.Shadow) Instance.Background.Show();
-        else Instance.Background.Hide();
-
-        TextLabel.Text = "";
-
-        foreach (var line in dialogue.Lines)
+        try
         {
-            if (!string.IsNullOrEmpty(line.Speaker))
-            {
-                SpeakerPanel.Show();
-                SpeakerLabel.Text = line.Speaker;
-            }
-
-            if (line.Centered)
-            {
-                TextLabel.HorizontalAlignment = HorizontalAlignment.Center;
-                TextLabel.VerticalAlignment = VerticalAlignment.Center;
-            }
-            else
-            {
-                TextLabel.HorizontalAlignment = HorizontalAlignment.Left;
-                TextLabel.VerticalAlignment = VerticalAlignment.Top;
-            }
-
-            yield return ShowTextCoroutine(line.Text, line.Speed);
-
-            WaitingForContinue = true;
-            yield return Co.WaitUntil(() => Continue);
-            WaitingForContinue = false;
-
             Continue = false;
+            FastForward = false;
 
-            line.FinishLine();
+            Instance.MainPanel.Show();
+
+            if (dialogue.Shadow) Instance.Background.Show();
+            else Instance.Background.Hide();
+
             TextLabel.Text = "";
-            SpeakerPanel.Hide();
+
+            foreach (var line in dialogue.Lines)
+            {
+                if (!string.IsNullOrEmpty(line.Speaker))
+                {
+                    SpeakerPanel.Show();
+                    SpeakerLabel.Text =
+                        line.Speaker.Replace("[g]", "[b][color=ffbc30]").Replace("[/g]", "[/color][/b]");
+                }
+
+                if (line.Centered)
+                {
+                    TextLabel.HorizontalAlignment = HorizontalAlignment.Center;
+                    TextLabel.VerticalAlignment = VerticalAlignment.Center;
+                }
+                else
+                {
+                    TextLabel.HorizontalAlignment = HorizontalAlignment.Left;
+                    TextLabel.VerticalAlignment = VerticalAlignment.Top;
+                }
+
+                yield return ShowTextCoroutine(line.Text, line.Speed);
+
+                WaitingForContinue = true;
+                yield return Co.WaitUntil(() => Continue);
+                WaitingForContinue = false;
+
+                Continue = false;
+
+                line.FinishLine();
+                TextLabel.Text = "";
+                SpeakerPanel.Hide();
+            }
+
+            MainPanel.Hide();
+            Background.Hide();
+
+            dialogue.FinishDialogue();
         }
-
-        MainPanel.Hide();
-        Background.Hide();
-
-        dialogue.FinishDialogue();
+        finally
+        {
+            WaitingForContinue = false;
+            _currentTicket++;
+        }
     }
 
     private bool FastForward { get; set; }
@@ -139,20 +157,42 @@ public partial class DialogManager : CanvasLayer
         text = text.Replace("[g]", "[b][color=ffbc30]").Replace("[/g]", "[/color][/b]");
 
         var richFlag = false;
+        var imgFlag = false;
+        var tag = "";
         var str = "";
         foreach (var c in text)
         {
             if (c == '[')
+            {
                 richFlag = true;
+                tag = "";
+            }
 
             str += c;
 
-            if (!richFlag)
+            if (richFlag)
+            {
+                tag += c;
+
+                if (c != ']') continue;
+                richFlag = false;
+
+                if (tag == "[img]" || tag.StartsWith("[img=") || tag.StartsWith("[img "))
+                {
+                    imgFlag = true;
+                }
+                else if (tag == "[/img]")
+                {
+                    imgFlag = false;
+                    TextLabel.Text = str;
+                    yield return FastForward ? null : Co.Wait(0.01f / speed);
+                }
+            }
+            else if (!imgFlag)
             {
                 TextLabel.Text = str;
                 yield return FastForward ? null : Co.Wait(0.01f / speed);
             }
-            else if (c == ']') richFlag = false;
         }
 
         FastForward = false;

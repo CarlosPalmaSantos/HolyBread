@@ -1,22 +1,33 @@
 [gd_scene format=3 uid="uid://yibfl2kvpyn2"]
 
 [ext_resource type="Script" uid="uid://yrbxjg38kxs6" path="res://scripts/GameManager.cs" id="1_wotle"]
+[ext_resource type="Texture2D" uid="uid://cqeji56q1cyoc" path="res://resources/Sprites/fondo_santuarios_.png" id="3_kfd0b"]
 [ext_resource type="PackedScene" uid="uid://bw13yaim54o43" path="res://scenes/ui/battle.tscn" id="9_havr6"]
 [ext_resource type="Theme" uid="uid://cd1o8bhkt0xo" path="res://resources/theme.tres" id="16_kdq26"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5lci"]
 bg_color = Color(0.15847227, 0.15847233, 0.15847221, 1)
 
-[node name="Game" type="Node" unique_id=2087435890 node_paths=PackedStringArray("BattleUi", "SaveManager", "ChoicePanel", "LeftChoice", "LeftChoiceButton", "RightChoice", "RightChoiceButton", "PathProgressBar")]
+[sub_resource type="Gradient" id="Gradient_gm488"]
+offsets = PackedFloat32Array(0, 0.49823323, 1)
+colors = PackedColorArray(0, 0, 0, 0.78431374, 0, 0, 0, 0.50980395, 0, 0, 0, 0.78431374)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lakwo"]
+gradient = SubResource("Gradient_gm488")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlev3"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Game" type="Node" unique_id=2087435890 node_paths=PackedStringArray("BattleUi", "ChoicePanel", "LeftChoice", "LeftChoiceButton", "RightChoice", "RightChoiceButton", "PathProgressBar", "BackgroundRect")]
 script = ExtResource("1_wotle")
 BattleUi = NodePath("CanvasLayer")
-SaveManager = NodePath("")
 ChoicePanel = NodePath("Choices/Panel")
 LeftChoice = NodePath("Choices/Panel/HBoxContainer/VBoxContainer2/TextureRect")
 LeftChoiceButton = NodePath("Choices/Panel/HBoxContainer/VBoxContainer2/Left")
 RightChoice = NodePath("Choices/Panel/HBoxContainer/VBoxContainer/TextureRect")
 RightChoiceButton = NodePath("Choices/Panel/HBoxContainer/VBoxContainer/Right")
 PathProgressBar = NodePath("Choices/Panel/ProgressBar2")
+BackgroundRect = NodePath("Choices/Panel/TextureRect")
 
 [node name="CanvasLayer" parent="." unique_id=942398595 instance=ExtResource("9_havr6")]
 visible = false
@@ -32,6 +43,24 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_l5lci")
+
+[node name="TextureRect" type="TextureRect" parent="Choices/Panel" unique_id=1946497372]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_kfd0b")
+
+[node name="TextureRect" type="TextureRect" parent="Choices/Panel/TextureRect" unique_id=654428574]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_lakwo")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Choices/Panel" unique_id=1397052034]
 layout_mode = 1
@@ -99,3 +128,4 @@ offset_bottom = 295.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("16_kdq26")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rlev3")

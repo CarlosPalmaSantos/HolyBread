@@ -21,6 +21,7 @@ public partial class GameManager : Node
     [Export] public TextureRect RightChoice { get; set; }
     [Export] public Button RightChoiceButton { get; set; }
     [Export] public ProgressBar PathProgressBar { get; set; }
+    [Export] public TextureRect BackgroundRect { get; set; }
 
     [Signal]
     public delegate void OnPlayerDefeatedEventHandler();
@@ -47,7 +48,7 @@ public partial class GameManager : Node
             button.ClearPressed();
             button.Pressed += () =>
             {
-                StartBattle(SaveManager.Entity, enemy);
+                StartBattle(SaveManager.Player, enemy);
                 ChoicePanel.Hide();
                 BattleUi.Show();
             };
@@ -65,7 +66,7 @@ public partial class GameManager : Node
             button.ClearPressed();
             button.Pressed += () =>
             {
-                StartBattle(SaveManager.Entity, enemy);
+                StartBattle(SaveManager.Player, enemy);
                 ChoicePanel.Hide();
                 BattleUi.Show();
             };
@@ -95,14 +96,15 @@ public partial class GameManager : Node
         PathProgressBar.Value = Path.Position;
         PathProgressBar.MaxValue = Path.Spots.Length;
 
+        BackgroundRect.Texture = BattleUi.Backgrounds[BattleUi.Background];
         ChoicePanel.Show();
         GenChoice(spot, LeftChoiceButton, LeftChoice);
         GenChoice(spot, RightChoiceButton, RightChoice);
     }
 
-    public void StartBattle(Entity player, Enemy enemy, bool tutorial = false)
+    public void StartBattle(Player player, Enemy enemy, bool tutorial = false)
     {
-        BattleUi.Load(player, enemy, tutorial);
+        BattleUi.Load(player, enemy, Path.Background, tutorial);
     }
 
     public void PlayerDefeated()
@@ -119,29 +121,7 @@ public partial class GameManager : Node
     public void OnEnemyDefeated()
     {
         NextChoices();
-
-        SaveManager.Entity.XP++;
-        if (SaveManager.Entity.XP < SaveManager.Entity.LevelUpXP) return;
-
-        SaveManager.Entity.XP = 0;
-        var hp = SaveManager.Entity.PercentualHp;
-        SaveManager.Entity.Level++;
-        SaveManager.Entity.LevelUpXP ++;
-        SaveManager.Entity.CurrentHp = Mathf.CeilToInt(hp * SaveManager.Entity.Hp);
-
-        DialogManager.Play(new Dialogue
-        {
-            Lines =
-            [
-                new DialogueLine
-                {
-                    Text =
-                        $"[g]{SaveManager.Entity.Name}[/g] ha subido su maestría en [g]{SaveManager.Entity.DoughType.Name}[/g]!",
-                    Centered = true
-                }
-            ],
-            Shadow = true,
-        });
+        SaveManager.LevelUp();
     }
 
 

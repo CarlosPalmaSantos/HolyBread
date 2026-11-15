@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_og026")
 Name = "Látigo Integral"
+Description = "Ataque de [b]15 de potencia[/b] de tipo integral"
 DoughType = ExtResource("1_r41s3")
 Power = 15
 metadata/_custom_type_script = "uid://crtwedyyvaw5g"

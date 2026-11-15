@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="DoughType" format=3 uid="uid://c5h2glwx6bd3t"]
 
 [ext_resource type="Script" uid="uid://dtvo6h8m3136a" path="res://scripts/battle/DoughType.cs" id="1_dtvv0"]
+[ext_resource type="Texture2D" uid="uid://2kod2ud58pie" path="res://resources/Sprites/centeno_icon.tres" id="1_lyna5"]
 
 [resource]
 script = ExtResource("1_dtvv0")
@@ -10,5 +11,7 @@ Weak = PackedStringArray("integral", "oblea")
 Resist = PackedStringArray("blanco")
 HpAff = 1.15
 AtkAff = 1.15
-SpdAff = 1.05
+DefAff = 1.2
+SpdAff = 1.1
+Texture = ExtResource("1_lyna5")
 metadata/_custom_type_script = "uid://dtvo6h8m3136a"

@@ -48,5 +48,10 @@ public partial class EnemyPreset : Resource
         Texture = RandomElement(Textures),
         AttackSet = PickRandomElements(3, Attacks),
         BreadSet = Breads.Length > 0 ? [RandomElement(Breads)] : [],
+        
+        BaseHp = 100,
+        BaseAtk = 1,
+        BaseDef = 1,
+        BaseSpd = 1,
     };
 }
