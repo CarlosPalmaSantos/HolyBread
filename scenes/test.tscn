@@ -53,6 +53,7 @@
 [ext_resource type="Resource" uid="uid://b3fm511m6stxr" path="res://resources/Doughs/arroz.tres" id="44_emonu"]
 [ext_resource type="Texture2D" uid="uid://bp5c5nhg2ov5w" path="res://resources/Sprites/guerrero_1.tres" id="44_vqdru"]
 [ext_resource type="Texture2D" uid="uid://bmtw81vqt6btw" path="res://resources/Sprites/sacerdote.png" id="45_tnm51"]
+[ext_resource type="Resource" uid="uid://dfow1o3egm80m" path="res://resources/Attacks/popopop.tres" id="46_uig8d"]
 [ext_resource type="Resource" uid="uid://byu7lrnocc77n" path="res://resources/Attacks/lanza_migajera.tres" id="48_qx18j"]
 [ext_resource type="Resource" uid="uid://cmoo5pkm4jhym" path="res://resources/Attacks/mantequillazo.tres" id="48_xsg57"]
 [ext_resource type="Resource" uid="uid://b3b1d6ptym1ui" path="res://resources/Attacks/pipazo.tres" id="49_cgmg2"]
@@ -82,7 +83,7 @@ metadata/_custom_type_script = "uid://oa12qcxp7bxb"
 
 [sub_resource type="Resource" id="Resource_at5dv"]
 script = ExtResource("2_j5jx5")
-Text = "Nadie sabe concerteza que ocurre al tomar tal alimento..."
+Text = "Nadie sabe con certeza que ocurre al tomar tal alimento..."
 Speed = 0.25
 Centered = true
 metadata/_custom_type_script = "uid://oa12qcxp7bxb"
@@ -1349,7 +1350,7 @@ MaxLevel = 3
 DoughType = ExtResource("5_pn65j")
 Names = ExtResource("32_2ixbo")
 Textures = [ExtResource("44_vqdru"), ExtResource("6_pn65j"), SubResource("AtlasTexture_y8o6s")]
-Attacks = [ExtResource("9_ff6ho"), ExtResource("48_qx18j"), ExtResource("49_cgmg2"), ExtResource("52_y8o6s"), ExtResource("48_xsg57")]
+Attacks = [ExtResource("9_ff6ho"), ExtResource("48_qx18j"), ExtResource("49_cgmg2"), ExtResource("52_y8o6s"), ExtResource("48_xsg57"), ExtResource("46_uig8d")]
 metadata/_custom_type_script = "uid://t4qwh37cywa1"
 
 [sub_resource type="Resource" id="Resource_2x75j"]
@@ -1359,7 +1360,7 @@ MaxLevel = 3
 DoughType = ExtResource("44_emonu")
 Names = ExtResource("32_2ixbo")
 Textures = [ExtResource("44_vqdru"), ExtResource("6_pn65j"), SubResource("AtlasTexture_y8o6s")]
-Attacks = [ExtResource("9_ff6ho"), ExtResource("48_qx18j"), ExtResource("49_cgmg2"), ExtResource("52_y8o6s"), ExtResource("48_xsg57")]
+Attacks = [ExtResource("9_ff6ho"), ExtResource("48_qx18j"), ExtResource("49_cgmg2"), ExtResource("52_y8o6s"), ExtResource("48_xsg57"), ExtResource("46_uig8d")]
 metadata/_custom_type_script = "uid://t4qwh37cywa1"
 
 [sub_resource type="Resource" id="Resource_4yku5"]
@@ -1626,9 +1627,9 @@ text = "Salir
 [node name="Map" type="CanvasLayer" parent="." unique_id=1320104553 node_paths=PackedStringArray("Connections", "Buttons", "SaveManager", "BackgroundRect", "Layer", "ChoiceDough", "BreadGod")]
 visible = false
 script = ExtResource("6_lpvoh")
-Connections = [NodePath("Paths/Low/Blanco-Brioche"), NodePath("Paths/Low/Blanco-Integral"), NodePath("Paths/Low/Blanco-Centeno"), NodePath("Paths/Low/Blanco-Z1"), NodePath("Paths/Low/Z1 - Z2"), NodePath("Paths/Low/Z2 - SMaiz"), NodePath("Paths/Low/Z2 - SArroz"), NodePath("Paths/Low/Z2 - SOblea")]
+Connections = [NodePath("Paths/Low/Blanco-Brioche"), NodePath("Paths/Low/Blanco-Integral"), NodePath("Paths/Low/Blanco-Centeno"), NodePath("Paths/Low/Blanco-Z1"), NodePath("Paths/Low/Z1 - Z2"), NodePath("Paths/Low/Z1 - SMaiz"), NodePath("Paths/Low/Z1 - SArroz"), NodePath("Paths/Low/Z2 - SOblea")]
 Buttons = [NodePath("MarginContainer/Control/SBrioche"), NodePath("MarginContainer/Control/SBlanco"), NodePath("MarginContainer/Control/SCenteno"), NodePath("MarginContainer/Control/SIntegral"), NodePath("MarginContainer/Control/Z1"), NodePath("MarginContainer/Control/SMaiz"), NodePath("MarginContainer/Control/SArroz"), NodePath("MarginContainer/Control/Z2"), NodePath("MarginContainer/Control/SOblea")]
-Position = 7
+Position = 1
 GMScene = ExtResource("2_74lek")
 BattleScene = ExtResource("4_n74k2")
 EnabledTexture = ExtResource("13_7mbro")
@@ -1697,16 +1698,16 @@ A = NodePath("../../../MarginContainer/Control/Z1")
 B = NodePath("../../../MarginContainer/Control/Z2")
 Path = SubResource("Resource_gow5c")
 
-[node name="Z2 - SMaiz" type="Node" parent="Map/Paths/Low" unique_id=1591666619 node_paths=PackedStringArray("A", "B")]
+[node name="Z1 - SMaiz" type="Node" parent="Map/Paths/Low" unique_id=1591666619 node_paths=PackedStringArray("A", "B")]
 script = ExtResource("7_7mbro")
 A = NodePath("../../../MarginContainer/Control/SMaiz")
-B = NodePath("../../../MarginContainer/Control/Z2")
+B = NodePath("../../../MarginContainer/Control/Z1")
 Path = SubResource("Resource_lxpqy")
 
-[node name="Z2 - SArroz" type="Node" parent="Map/Paths/Low" unique_id=86315599 node_paths=PackedStringArray("A", "B")]
+[node name="Z1 - SArroz" type="Node" parent="Map/Paths/Low" unique_id=86315599 node_paths=PackedStringArray("A", "B")]
 script = ExtResource("7_7mbro")
 A = NodePath("../../../MarginContainer/Control/SArroz")
-B = NodePath("../../../MarginContainer/Control/Z2")
+B = NodePath("../../../MarginContainer/Control/Z1")
 Path = SubResource("Resource_68bh8")
 
 [node name="Z2 - SOblea" type="Node" parent="Map/Paths/Low" unique_id=734237137 node_paths=PackedStringArray("A", "B")]

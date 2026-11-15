@@ -6,5 +6,5 @@
 script = ExtResource("1_a7r7t")
 Name = "Puño Artesanal"
 Description = "Ataque de [b]30[/b] de potencia de tu mismo tipo de masa"
-Power = 30
+Power = 35
 metadata/_custom_type_script = "uid://crtwedyyvaw5g"

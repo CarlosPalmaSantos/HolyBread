@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Attack" format=3 uid="uid://hhrmof3ue1sy"]
+
+[ext_resource type="Resource" uid="uid://cj6574k1f47b1" path="res://resources/Doughs/maiz.tres" id="1_1ab76"]
+[ext_resource type="Script" uid="uid://crtwedyyvaw5g" path="res://scripts/battle/Attack.cs" id="2_1q5bo"]
+
+[resource]
+script = ExtResource("2_1q5bo")
+Name = "Pop Pop Pop"
+Description = "Ataque de [b]15 de potencia[/b] de tipo arroz"
+DoughType = ExtResource("1_1ab76")
+Power = 15
+metadata/_custom_type_script = "uid://crtwedyyvaw5g"
